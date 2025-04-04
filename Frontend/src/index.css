@@ -1,0 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family:Inter, Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+.root, html{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    
+}
+
+
+

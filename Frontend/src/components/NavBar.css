@@ -1,0 +1,1403 @@
+.Nav-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: relative;
+    z-index: 3;
+}
+
+
+.Nav-content h1{
+    /* color: #17ACAC; */
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    background-image:linear-gradient(#17ACAC,#17ACAC,#000000) ;
+    background-clip: text;
+    color: transparent;
+}
+
+.Nav-content ul{
+    display: flex;
+    gap: 55px;
+    font-size:18px ;
+    font-weight: 700;
+
+}
+
+.Nav-content li{
+   list-style-type: none;
+   cursor: pointer;
+}
+
+.Nav-content a{
+  text-decoration: none;
+  color: #444444;
+}
+
+
+.drop-Down-menu{
+  display: flex;
+  gap: 8px;
+  margin-right: -20px;
+  cursor: pointer;
+}
+ 
+
+.drop-Down-menu .dropDown{
+ font-size: 30px;
+ margin-top: -2px;
+  }
+
+
+  .right-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .right-content .login-btn{
+    font-size: 20px;
+    color: #2C7575;
+    font-weight: 400;
+    border: none;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+
+
+  .right-content .reg-button{
+    font-size: 20px;
+    color: #2C7575;
+    font-weight: 400;
+    color: #ffffff;
+    background-color:#0E8585;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+  }
+
+
+  .right-content .cart{
+    cursor: pointer;
+    position: relative;
+   
+
+  }
+
+  .right-content .red-dot{
+    position: absolute;
+    width:20px;
+    height: 20px;
+    background-color: #C5331E;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 17px;
+    right: 29px;
+    top: 19px;
+    text-align: center;
+  }
+
+
+  .greenLine{
+    text-decoration: underline;
+    text-decoration-color: #178C8C;
+     text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
+
+  }
+
+  /*user loggedIn display*/
+  .userLoggedIn{
+      border: 8px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      padding:5px;
+      border-radius: 50%;
+      background-color: #023047;
+      position: absolute;
+      right: 200px;
+      top: 25px;
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+  }
+  .logout{
+    border: 1px solid rgba(0, 0, 0, 0.228);
+    border-radius: 8px;
+    padding :5px;
+    position: absolute;
+    right:100px;
+    display:flex;
+    align-items: center;
+    gap: 5px;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .logoutHidden{
+    display: none;
+  }
+
+  .logout-icon{
+    color: #780000;
+    font-size: 19px;
+  }
+
+  /*Mobile device menu bar*/
+
+  /* .menu-content{ // menu-icon-div
+    
+  } */
+
+    .menu-icon{
+    font-size: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+
+  .menu{
+   width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.274);
+    backdrop-filter: blur(50px);
+    padding: 20px;
+    position: absolute;
+    z-index: 3;
+    right: 0px;
+    top: 0px;
+    border-radius: 8px;
+    display: block;
+
+  } 
+
+  .hide{
+    display: none;
+  } 
+
+  /*cross-icon*/
+
+   .cross-icon{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+
+  .cross-icon .cross{
+    font-size: 30px;
+    color:white;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  
+  .login-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    
+  }
+
+  .login-button{
+    color:#2C7575;
+    border: none;
+    font-size: 20px;
+    backdrop-filter: blur(50px);
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .register-button{
+    color: #ffffff;
+    background-color:#2C7575;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+
+  }
+
+  .cart-icon-menu{
+    font-size: 30px;
+    position: relative;
+    color:gold;
+    cursor: pointer;
+  }
+
+  .overlay-1{
+    width: 20px;
+    height: 20px;
+    background-color: #C5331E;
+    color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 4px;
+    top: 90px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }  
+
+  /*menu-list*/
+
+  
+  .menu-list ul{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+  }
+  
+  .white-line{
+    height: 1px ;
+    background-color: #ffffff8f;
+    margin-bottom: 25px;
+    margin-top: 10px;
+
+  }
+
+  .white-line-2{
+    height: 1px ;
+    background-color: #ffffff48;
+    margin-top: 40px;
+
+  }
+
+  .menu-list{
+    padding: 10px;
+  }
+
+  .list-content .List{
+    background-color:rgba(0, 0, 0, 0.452);
+    color: #ffffff;
+    padding: 13px 2px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .list-content a{
+    text-decoration:none;
+    color: #444444;
+  }
+
+  .list-content .List:hover{
+    background-color:rgba(0, 0, 0, 0.801);
+    color: white;
+  } 
+
+  .course-head{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .course-head h1{
+    font-size: 40px;
+    font-weight: 700;
+    cursor: pointer;
+    background-image:linear-gradient(#17ACAC,#17ACAC,#000000) ;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* .course-head h1:hover{
+    
+  } */
+
+  /*Media-Query*/
+
+  /*media-320px -up*/
+  @media(min-width:320px){
+    .Nav-content{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 15px;
+  }
+  
+  .Nav-content h1{
+      font-size: 25px;
+  }
+  
+  .Nav-content ul{
+      display: none;
+  }
+  
+    .right-content{
+      display: none;
+    }
+/*Mobile device menu bar*/
+
+  /* .menu-content{ // menu-icon-div
+    
+  } */
+
+   .menu-icon{
+    font-size: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+
+  .menu{
+   width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.274);
+    backdrop-filter: blur(50px);
+    padding: 10px;
+    position: absolute;
+    z-index: 3;
+    right: 0px;
+    top: 0px;
+    border-radius: 8px;
+    display: block;
+    
+  } 
+
+  .hide{
+    display: none;
+  } 
+
+  /*cross-icon*/
+
+   .cross-icon{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+
+  .cross-icon .cross{
+    font-size: 26px;
+    color:white;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  
+  .login-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    
+  }
+
+  .login-button{
+    color:#2C7575;
+    border: none;
+    font-size: 20px;
+    backdrop-filter: blur(50px);
+    background-color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .register-button{
+    color: #ffffff;
+    background-color:#2C7575;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+
+  }
+
+  .cart-icon-menu{
+    font-size: 25px;
+    position: relative;
+    margin-left: 10px;
+    color:gold;
+    cursor: pointer;
+  }
+
+  .overlay-1{
+    width: 8px;
+    height: 8px;
+    padding: 7px;
+    background-color: #C5331E;
+    color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 4px;
+    top: 89px;
+    right: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
+
+  /*menu-list*/
+
+  
+  .menu-list ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    
+  }
+  
+  .white-line{
+    height: 1px ;
+    background-color: #ffffff8f;
+    margin-bottom: 25px;
+    margin-top: 10px;
+
+  }
+
+  .white-line-2{
+    height: 1px ;
+    background-color: #ffffff48;
+    margin-top: 40px;
+
+  }
+
+  .menu-list{
+    padding: 10px;
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  .list-content .List{
+    background-color:rgba(0, 0, 0, 0.452);
+    color: #ffffff;
+    padding: 13px 2px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .list-content .List:hover{
+    background-color:rgba(0, 0, 0, 0.801);
+    color: white;
+  }  
+  
+  /*user loggedIn display*/
+  .userLoggedIn{
+    border: 2px solid #8ecae6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding:5px;
+    border-radius: 50%;
+    background-color: #023047;
+    position: absolute;
+    right: 250px;
+    top: 15px;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+.logout{
+  border: 1px solid rgba(255, 255, 255, 0.554);
+  border-radius: 8px;
+  padding :5px 8px;
+  position: absolute;
+  right:140px;
+  top: 20px;
+  display:flex;
+  align-items: center;
+  gap: 5px;
+  color: #b50202;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.logout:hover{
+  background-color: #fff8f8;
+}
+
+.logoutHidden{
+  display: none;
+}
+
+.logout-icon{
+  color: #b50202;
+  font-size: 19px;
+}
+  
+  }
+
+   @media(min-width:425px){
+    .menu-icon{
+      font-size: 30px;
+      cursor: pointer;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+  
+    .menu{
+     width: 300px;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.274);
+      backdrop-filter: blur(50px);
+      padding: 10px;
+      position: absolute;
+      z-index: 3;
+      right: 0px;
+      top: 0px;
+      border-radius: 8px;
+      display: block;
+    } 
+  
+    .hide{
+      display: none;
+    } 
+  
+    /*cross-icon*/
+  
+     .cross-icon{
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+      
+    }
+  
+    .cross-icon .cross{
+      font-size: 35px;
+      color:white;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+  
+    
+    .login-content{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      padding: 0px ; 
+    }
+  
+    .login-button{
+      color:#2C7575;
+      border: none;
+      font-size: 20px;
+      backdrop-filter: blur(50px);
+      background-color: #ffffff;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    .register-button{
+      color: #ffffff;
+      background-color:#2C7575;
+      border: none;
+      padding: 8px 10px;
+      border-radius: 4px;
+      font-size: 20px;
+      cursor: pointer;
+  
+    }
+  
+    .cart-icon-menu{
+      margin-right: 15px;
+      font-size: 25px;
+      position: relative;
+      color:gold;
+      cursor: pointer;
+    }
+  
+    .overlay-1{
+      width: 8px;
+      height: 8px;
+      padding: 7px;
+      background-color: #C5331E;
+      color: #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 4px;
+      top: 101px;
+      right: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } 
+  
+    /*menu-list*/
+  
+    
+    .menu-list ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      width:100%;
+      
+    }
+    
+    .white-line{
+      height: 1px ;
+      background-color: #ffffff8f;
+      margin-bottom: 25px;
+      margin-top: 10px;
+  
+    }
+  
+    .white-line-2{
+      height: 1px ;
+      background-color: #ffffff48;
+      margin-top: 40px;
+  
+    }
+  
+    .menu-list{
+      padding: 10px;
+      width: 100%;
+      margin-left: 0px;
+    }
+  
+    .list-content .List{
+      background-color:rgba(0, 0, 0, 0.452);
+      color: #ffffff;
+      padding: 13px 2px;
+      border-radius: 5px;
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  
+    .list-content .List:hover{
+      background-color:rgba(0, 0, 0, 0.801);
+      color: white;
+    }  
+    /*user loggedIn display*/
+  .userLoggedIn{
+    border: 2px solid #8ecae6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding:5px;
+    border-radius: 50%;
+    background-color: #023047;
+    position: absolute;
+    right: 250px;
+    top: 15px;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+.logout{
+  border: 1px solid rgba(255, 255, 255, 0.554);
+  border-radius: 8px;
+  padding :5px 8px;
+  position: absolute;
+  right:140px;
+  top: 18px;
+  display:flex;
+  align-items: center;
+  gap: 5px;
+  color: #b50202;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.logout:hover{
+  background-color: #fff8f8;
+}
+
+.logoutHidden{
+  display: none;
+}
+
+.logout-icon{
+  color: #b50202;
+  font-size: 19px;
+}
+  
+  } 
+/*media -481px-up*/
+
+@media(min-width:481px){
+  .Nav-content{
+    padding: 23px 20px;
+}
+
+.Nav-content h1{
+    font-size: 29px;
+}
+
+.Nav-content ul{
+    display: none;
+}
+
+  .right-content{
+    display: none;
+  }
+  .greenLine{
+    text-decoration: underline;
+    text-decoration-color: #178C8C;
+     text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
+
+  }
+
+}
+
+
+  /*media- 768-up*/
+
+  @media(min-width:768px){
+    .Nav-content{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 20px;
+      position: relative;
+      z-index: 3;
+  }
+
+  
+  .Nav-content h1{
+      font-size: 23px;
+      font-weight: 500;
+      cursor: pointer;
+      background-image:linear-gradient(#17ACAC,#17ACAC,#000000) ;
+      background-clip: text;
+      color: transparent;
+  }
+  
+  .Nav-content ul{
+      gap: 18px;
+     align-items: center;
+     display: flex;
+    font-size:18px ;
+    font-weight: 700;
+  }
+  
+  .Nav-content li{
+     font-size:15px ;
+     list-style-type: none;
+     cursor: pointer;
+  }
+  
+  
+  .drop-Down-menu{
+    gap:0px;
+    margin-right: -20px;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+ 
+  }
+   
+  
+  .drop-Down-menu .dropDown{
+   font-size: 34px;
+    padding-top: 6px;
+
+    /* font-size: 30px;
+    margin-top: -2px; */
+    }
+
+    .menu-content .menu-icon{
+      display: none;
+    }
+  
+  
+    .right-content{
+      gap: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+  
+    .right-content .login-btn{
+      font-size:15px;
+      color: #2C7575;
+      font-weight: 800;
+      font-weight: 400;
+      border: none;
+      background-color: #ffffff;
+      cursor: pointer;
+      padding: 10px 20px;
+    }
+
+    .login-btn:hover{
+      background-color: rgba(192, 189, 189, 0.371);
+      border-radius: 10px;
+      box-shadow: 2px 2px 2px ;
+     
+    }
+  
+  
+  
+    .right-content .reg-button{
+      font-size:15px;
+      padding: 8px 15px;
+      color: #2C7575;
+      font-weight: 400;
+      color: #ffffff;
+      background-color:#0E8585;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .reg-button:hover{
+      background-color: #155a5a;
+    }
+
+    .right-content .red-dot{
+      right: 13px;
+      top: 22px;
+    }
+
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
+      width: 25px;
+    }
+
+    .right-content .red-dot{
+      position: absolute;
+      width:15px;
+      height: 15px;
+      background-color: #C5331E;
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 17px;
+      right: 40px;
+      top: 17px;
+      text-align: center;
+    }
+
+
+    .greenLine{
+      text-decoration: underline;
+      text-decoration-color: #178C8C;
+       text-decoration-thickness: 3px;
+      text-underline-offset: 10px;
+  
+    }
+    /*user loggedIn display*/
+  .userLoggedIn{
+    border: 3px solid #8ecae6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    padding:5px;
+    border-radius: 50%;
+    background-color: #023047;
+    position: absolute;
+    right: 35px;
+    top: 19px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.logout{
+  border: 1px solid rgba(0, 0, 0, 0.228);
+  border-radius: 8px;
+  padding :5px;
+  position: absolute;
+  right:16px;
+  top: 60px;
+  display:flex;
+  align-items: center;
+  gap: 3px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.logout:hover{
+  background-color: #e16357;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.logoutHidden{
+  display: none;
+}
+
+.logout-icon{
+  color: #660808;
+  font-size: 19px;
+}
+
+  }
+
+  
+  /*media- 1024-up*/
+
+  @media(min-width:1024px){
+    .Nav-content{
+      padding: 30px 40px;
+      position: relative;
+      z-index: 3;
+      
+  }
+
+  .Nav-content h1{
+      font-size: 29px;
+  }
+  
+  .Nav-content ul{
+      gap: 30px;
+     align-items: center;
+  }
+  
+  .Nav-content li{
+     font-size:19px ;
+     height: 100%;
+  }
+  
+  
+  .drop-Down-menu{
+    gap: 0px;
+    margin-right: -20px;
+    align-items: center;
+  }
+   
+  
+  .drop-Down-menu .dropDown{
+   font-size: 40px;
+    padding-top: 3px;
+    }
+  
+  
+    .right-content{
+      gap: 20px;
+    }
+  
+    .right-content .login-btn{
+      font-size:18px;
+    }
+  
+  
+    .right-content .reg-button{
+      font-size:18px;
+      padding: 12px 24px;
+    }
+
+    .right-content .red-dot{
+      right: 68px;
+      top: 30px;
+      width: 15px;
+      height: 15px;
+    }
+    .greenLine{
+      text-decoration: underline;
+      text-decoration-color: #178C8C;
+       text-decoration-thickness: 3px;
+      text-underline-offset: 10px;
+  
+    }
+      /*user loggedIn display*/
+  .userLoggedIn{
+    border: 2px solid #8ecae6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding:5px;
+    border-radius: 50%;
+    background-color: #023047;
+    position: absolute;
+    right: 50px;
+    top: 30px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.logout{
+  border: 1px solid rgba(0, 0, 0, 0.228);
+  border-radius: 8px;
+  padding :5px;
+  position: absolute;
+  right:25px;
+  top: 75px;
+  display:flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.logoutHidden{
+  display: none;
+}
+
+.logout-icon{
+  color: #780000;
+  font-size: 19px;
+}
+  }
+
+  /* media- 1280-up*/
+
+
+  @media(min-width:1280px){
+    .Nav-content{
+      padding: 30px 30px;
+      position: relative;
+      z-index: 3;
+      
+  }
+
+  .Nav-content h1{
+      font-size: 38px;
+  }
+  
+  .Nav-content ul{
+      gap: 35px;
+  }
+  
+  .Nav-content li{
+    list-style-type: none;
+    cursor: pointer;
+ }
+  .Nav-content li{
+     font-size:22px ;
+  }
+  
+  
+  .drop-Down-menu{
+    gap: 5px;
+    margin-right: -20px;
+  }
+   
+  
+  .drop-Down-menu .dropDown{
+   font-size: 30px;
+   margin-top: 3px;
+    }
+  
+  
+    .right-content{
+      gap: 28px;
+      /* margin-left: 30px;*/
+    }
+    
+  
+    .right-content .login-btn{
+      font-size: 23px;
+    }
+  
+  
+    .right-content .reg-button{
+      font-size: 20px;
+      padding: 12px 24px;
+    }
+
+    .right-content .red-dot{
+      right: 100px;
+      top: 32px;
+      width: 15px;
+      height: 15px;
+    }
+          /*user loggedIn display*/
+  .userLoggedIn{
+    border: 3px solid #8ecae6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding:5px;
+    border-radius: 50%;
+    background-color: #023047;
+    position: absolute;
+    right: 100px;
+    top: 33px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.logout{
+  border: 1px solid rgba(0, 0, 0, 0.228);
+  border-radius: 8px;
+  padding :5px;
+  position: absolute;
+  right:70px;
+  top: 80px;
+  display:flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.logoutHidden{
+  display: none;
+}
+
+.logout-icon{
+  color: #780000;
+  font-size: 19px;
+}
+    
+  }
+
+  @media(min-width:1440px){
+  
+    .Nav-content{
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 40px;
+      position: relative;
+      z-index: 3;
+      
+  }
+
+  .Nav-content h1{
+      font-size: 40px;
+  }
+  
+  .Nav-content ul{
+      gap: 60px;
+  }
+  .Nav-content li{
+    list-style-type: none;
+    cursor: pointer;
+ }
+  
+  .Nav-content li{
+     font-size:22px ;
+  }
+  
+  
+  .drop-Down-menu{
+    gap: 5px;
+    margin-right: -20px;
+  }
+   
+  
+  .drop-Down-menu .dropDown{
+   font-size: 30px;
+   margin-top: 3px;
+    }
+  
+  
+    .right-content{
+      gap: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    
+  
+    .right-content .login-btn{
+      font-size: 23px;
+    }
+  
+  
+    .right-content .reg-button{
+      font-size: 20px;
+      padding: 12px 24px;
+    }
+
+    .right-content .red-dot{
+      right: 120px;
+      top: 35px;
+    }
+    .greenLine{
+      text-decoration: underline;
+      text-decoration-color: #178C8C;
+       text-decoration-thickness: 3px;
+      text-underline-offset: 10px;
+  
+    }
+            /*user loggedIn display*/
+  .userLoggedIn{
+    border: 3px solid #8ecae6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding:5px;
+    border-radius: 50%;
+    background-color: #023047;
+    position: absolute;
+    right: 130px;
+    top: 35px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.logout{
+  border: 1px solid rgba(0, 0, 0, 0.228);
+  border-radius: 8px;
+  padding :5px;
+  position: absolute;
+  right:80px;
+  top: 80px;
+  display:flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.logoutHidden{
+  display: none;
+}
+
+.logout-icon{
+  color: #780000;
+  font-size: 19px;
+}
+  }
+
+  @media(min-width:1480px){
+
+    .Nav-content{
+      padding: 20px 40px;
+      justify-content: space-between;
+      position: relative;
+      z-index: 3;
+      
+  }
+
+  .Nav-content h1{
+      font-size: 40px;
+  }
+  
+  .Nav-content ul{
+      gap: 60px;
+      margin-left: 70px;
+  
+  }
+  .Nav-content li{
+    list-style-type: none;
+    cursor: pointer;
+ }
+  
+  .Nav-content li{
+     font-size:22px ;
+  }
+  
+  
+  .drop-Down-menu{
+    gap: 5px;
+    margin-right: -20px;
+  }
+   
+  
+  .drop-Down-menu .dropDown{
+   font-size: 30px;
+   margin-top: 3px;
+    }
+  
+  
+     .right-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    /* margin-left: 40px; */
+    margin-right: -100px;
+  }
+  
+    .right-content .login-btn{
+      font-size: 23px;
+    }
+  
+  
+    .right-content .reg-button{
+      font-size: 20px;
+      padding: 12px 24px;
+    }
+
+    .right-content .red-dot{
+      right: 165px;
+      top: 23px;
+
+    }
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
+    }
+
+    .greenLine{
+      text-decoration: underline;
+      text-decoration-color: #178C8C;
+       text-decoration-thickness: 3px;
+      text-underline-offset: 10px;
+  
+    }
+            /*user loggedIn display*/
+  .userLoggedIn{
+    border: 3px solid #8ecae6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding:5px;
+    border-radius: 50%;
+    background-color: #023047;
+    position: absolute;
+    right: 190px;
+    top: 24px;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.logout{
+  border: 1px solid rgba(0, 0, 0, 0.228);
+  border-radius: 8px;
+  padding :5px;
+  position: absolute;
+  right:90px;
+  top: 30px;
+  display:flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.logoutHidden{
+  display: none;
+}
+
+.logout-icon{
+  color: #780000;
+  font-size: 19px;
+}
+  }

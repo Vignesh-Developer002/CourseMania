@@ -1,0 +1,1522 @@
+.parent-content{
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
+}
+
+
+
+.card-content{
+    width: 300px;
+    background-color:#F8F5F5;
+    margin: 60px  0px  20px 200px ;
+    box-shadow: 1px 1px 10px 1px grey;
+   
+}
+
+.card-main{
+    padding: 20px;
+   
+}
+
+.card-img{
+    width: 100%;
+    position: relative;
+    
+}
+.card-img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.overlay{
+    position: absolute;
+    width: auto;
+    background-color:#CC0000;
+    color: #ffffff;
+    text-align: center;
+    padding: 8px 15px;
+}
+ /*cart-body*/
+ .card-body{
+    display: flex;
+    /* gap: 88px; */
+    justify-content: space-between;
+
+ }
+
+ .left-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+ }
+
+ .tick{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    
+ }
+ .red-tick{
+    width: 30px;
+    cursor: pointer;
+ }
+
+ .left-content .para-head{
+    color: #0A4A4A;
+    font-size: 18px;
+    font-weight: 500;
+ }
+
+ .add{
+  font-size:13px;
+  color:#BFBFBF;
+  text-align: center;
+ }
+
+ .duration{
+    font-weight: 600;
+ }
+
+
+ /*rate-content*/
+ .rate-content{
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+   
+ }
+.rating-count{
+  color:#868686;
+}
+    
+ /*course-logo*/
+
+ .course-logo{
+    display: flex;
+    flex-direction: column;
+ }
+
+ .course-icon{
+    width: 99px;
+    height: 40px;
+ }
+
+ /*star-ratings*/
+
+ .star-ratings{
+    display: flex;
+    margin-top: -4px;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+ }
+ 
+ .star_icon{
+    width: 99px;
+ }
+
+ /*enroll-btn*/
+ .enroll-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0px;
+ }
+
+ .enroll-btn{
+    padding: 13px 25px;
+    color: white;
+    background-color:#178C8C;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    position: relative;
+ }
+
+ .white-btn{
+    color: #178C8C;
+    font-size: 17px;
+    border: 1px solid #178C8C;
+    background-color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 13px 25px;
+ }
+
+
+ /*bottom-link*/
+ .read-more-1{
+   /* margin-left: 88px; */
+   color: #178C8C;
+   font-weight: 500;
+   font-size: 18px;
+
+   
+
+ }
+
+ .bottom-link{
+   display: flex;
+   justify-content: center;
+   width: 300px;
+   margin-left: 170px;
+ }
+ 
+
+ .bottom-link button {
+   border: none;
+   background-color: white;
+   cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #178C8C;
+  
+ }
+ 
+
+ /*media queries*/
+ @media(min-width:320px){
+   .parent-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 350px;
+      margin-left: 15px;
+
+   }
+   
+   
+   
+   .card-content{
+       width: 260px;
+       background-color:#F8F5F5;
+       margin: 10px  0px  10px -60px ;
+       box-shadow: 1px 1px 10px 1px grey;
+       height: 320px;
+      
+   }
+   
+   .card-main{
+       padding: 10px;
+      
+   }
+   
+   .card-img{
+       width: 1;
+       position: relative;
+       height: 125px;
+   }
+   .card-img img{
+       width: 100%;
+       height: 125px;
+       object-fit: cover;
+   }
+   
+   .overlay{
+       position: absolute;
+       width: auto;
+       background-color:#CC0000;
+       color: #ffffff;
+       text-align: center;
+       padding: 4px;
+   }
+    /*cart-body*/
+    .card-body{
+       display: flex;
+       justify-content: space-between;
+   
+    }
+   
+    .left-content{
+       display: flex;
+       flex-direction: column;
+       gap: 8px;
+    }
+   
+    .tick{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       gap: 8px;
+       
+    }
+    .red-tick{
+       width: 25px;
+       cursor: pointer;
+    }
+   
+    .left-content .para-head{
+       color: #0A4A4A;
+       font-size: 15px;
+       font-weight: 500;
+    }
+   
+    .add{
+     font-size:13px;
+     color:#BFBFBF;
+     text-align: center;
+    }
+   
+    .duration{
+       font-weight: 600;
+       font-size: 14px;
+    }
+   
+   
+    /*rate-content*/
+    .rate-content{
+       display: flex;
+       gap: 6px;
+       margin-top: 3px;
+       align-items:center;
+    }
+
+    .rate-content .rate{
+      font-size: 15px;
+    }
+
+    .rate-content .combo{
+      font-size: 13px;
+    }
+    
+   .rating-count{
+     color:#868686;
+     font-size: 12px;
+   }
+       
+    /*course-logo*/
+   
+    .course-logo{
+       display: flex;
+       flex-direction: column;
+    }
+   
+    .course-icon{
+       width: 99px;
+       height: 35px;
+    }
+   
+    /*star-ratings*/
+   
+    .star-ratings{
+       display: flex;
+       margin-top: -4px;
+       align-items: baseline;
+       gap: 12px;
+       margin-bottom: 10px;
+    }
+    
+    .star_icon{
+       width: 80px;
+    }
+   
+    /*enroll-btn*/
+    .enroll-container{
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: -5px 0px;
+    }
+   
+    .enroll-btn{
+       padding: 8px 30px;
+       color: white;
+       background-color:#178C8C;
+       border: none;
+       border-radius: 8px;
+       cursor: pointer;
+       font-size: 17px;
+       position: relative;
+    }
+   
+    .white-btn{
+       color: #178C8C;
+       font-size: 17px;
+       border: 1px solid #178C8C;
+       background-color: #fff;
+       border-radius: 8px;
+       cursor: pointer;
+       padding: 8px 20px;
+    }
+   
+   
+    /*bottom-link*/
+    .read-more-1{
+      /* margin-left: 88px; */
+      color: #178C8C;
+      font-weight: 500;
+      font-size: 15px;
+   
+    }
+   
+    .bottom-link{ /* this one*/
+      display: flex;
+      justify-content: flex-start;
+      width: 300px;
+      margin-left: 130px;
+    }
+    
+   
+    .bottom-link button {
+      border: none;
+      background-color: white;
+      cursor: pointer;
+     text-decoration: underline;
+     text-underline-offset: 3px;
+     text-decoration-color: #178C8C;
+     
+    }
+    
+ }
+
+@media(min-width:375px){
+   .parent-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 350px;
+      margin-left: 35px;
+
+   }
+   
+   
+   
+   .card-content{
+       width: 260px;
+       background-color:#F8F5F5;
+       margin: 10px  0px  10px -60px ;
+       box-shadow: 1px 1px 10px 1px grey;
+       height: 320px;
+      
+   }
+   
+   .card-main{
+       padding: 10px;
+      
+   }
+   
+   .card-img{
+       width: 1;
+       position: relative;
+       height: 125px;
+   }
+   .card-img img{
+       width: 100%;
+       height: 125px;
+       object-fit: cover;
+   }
+   
+   .overlay{
+       position: absolute;
+       width: auto;
+       background-color:#CC0000;
+       color: #ffffff;
+       text-align: center;
+       padding: 4px;
+   }
+    /*cart-body*/
+    .card-body{
+       display: flex;
+       justify-content: space-between;
+   
+    }
+   
+    .left-content{
+       display: flex;
+       flex-direction: column;
+       gap: 8px;
+    }
+   
+    .tick{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       gap: 8px;
+       
+    }
+    .red-tick{
+       width: 25px;
+       cursor: pointer;
+    }
+   
+    .left-content .para-head{
+       color: #0A4A4A;
+       font-size: 15px;
+       font-weight: 500;
+    }
+   
+    .add{
+     font-size:13px;
+     color:#BFBFBF;
+     text-align: center;
+    }
+   
+    .duration{
+       font-weight: 600;
+       font-size: 14px;
+    }
+   
+   
+    /*rate-content*/
+    .rate-content{
+       display: flex;
+       gap: 6px;
+       margin-top: 3px;
+       align-items:center;
+    }
+
+    .rate-content .rate{
+      font-size: 15px;
+    }
+
+    .rate-content .combo{
+      font-size: 13px;
+    }
+    
+   .rating-count{
+     color:#868686;
+     font-size: 12px;
+   }
+       
+    /*course-logo*/
+   
+    .course-logo{
+       display: flex;
+       flex-direction: column;
+    }
+   
+    .course-icon{
+       width: 99px;
+       height: 35px;
+    }
+   
+    /*star-ratings*/
+   
+    .star-ratings{
+       display: flex;
+       margin-top: -4px;
+       align-items: baseline;
+       gap: 12px;
+       margin-bottom: 10px;
+    }
+    
+    .star_icon{
+       width: 80px;
+    }
+   
+    /*enroll-btn*/
+    .enroll-container{
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 2px 0px;
+    }
+   
+    .enroll-btn{
+       padding: 8px 30px;
+       color: white;
+       background-color:#178C8C;
+       border: none;
+       border-radius: 8px;
+       cursor: pointer;
+       font-size: 17px;
+       position: relative;
+    }
+   
+    .white-btn{
+       color: #178C8C;
+       font-size: 17px;
+       border: 1px solid #178C8C;
+       background-color: #fff;
+       border-radius: 8px;
+       cursor: pointer;
+       padding: 8px 20px;
+    }
+   
+   
+    /*bottom-link*/
+    .read-more-1{
+      /* margin-left: 88px; */
+      color: #178C8C;
+      font-weight: 500;
+      font-size: 15px;
+   
+    }
+   
+    .bottom-link{ /* this one*/
+      display: flex;
+      justify-content: flex-start;
+      width: 300px;
+      margin-left: 130px;
+    }
+    
+   
+    .bottom-link button {
+      border: none;
+      background-color: white;
+      cursor: pointer;
+     text-decoration: underline;
+     text-underline-offset: 3px;
+     text-decoration-color: #178C8C;
+     
+    }
+}
+
+ @media(min-width:425px){
+   .parent-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      margin-left: 20px;
+   }
+   
+   
+   
+   .card-content{
+       width: 240px;
+       background-color:#F8F5F5;
+       margin: 40px  0px  10px -50px ;
+       box-shadow: 1px 1px 10px 1px grey;
+       height: 320px;
+      
+   }
+   
+   .card-main{
+       padding: 10px;
+      
+   }
+   
+   .card-img{
+       width: 1;
+       position: relative;
+       height: 125px;
+   }
+   .card-img img{
+       width: 100%;
+       height: 125px;
+       object-fit: cover;
+   }
+   
+   .overlay{
+       position: absolute;
+       width: auto;
+       background-color:#CC0000;
+       color: #ffffff;
+       text-align: center;
+       padding: 4px;
+   }
+    /*cart-body*/
+    .card-body{
+       display: flex;
+       justify-content: space-between;
+   
+    }
+   
+    .left-content{
+       display: flex;
+       flex-direction: column;
+       gap: 8px;
+    }
+   
+    .tick{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       gap: 8px;
+       
+    }
+    .red-tick{
+       width: 25px;
+       cursor: pointer;
+    }
+   
+    .left-content .para-head{
+       color: #0A4A4A;
+       font-size: 15px;
+       font-weight: 500;
+    }
+   
+    .add{
+     font-size:13px;
+     color:#BFBFBF;
+     text-align: center;
+    }
+   
+    .duration{
+       font-weight: 600;
+       font-size: 14px;
+    }
+   
+   
+    /*rate-content*/
+    .rate-content{
+       display: flex;
+       gap: 6px;
+       margin-top: 3px;
+       align-items:center;
+    }
+
+    .rate-content .rate{
+      font-size: 15px;
+    }
+
+    .rate-content .combo{
+      font-size: 13px;
+    }
+    
+   .rating-count{
+     color:#868686;
+     font-size: 12px;
+   }
+       
+    /*course-logo*/
+   
+    .course-logo{
+       display: flex;
+       flex-direction: column;
+    }
+   
+    .course-icon{
+       width: 99px;
+       height: 35px;
+    }
+   
+    /*star-ratings*/
+   
+    .star-ratings{
+       display: flex;
+       margin-top: -4px;
+       align-items: baseline;
+       gap: 12px;
+       margin-bottom: 10px;
+    }
+    
+    .star_icon{
+       width: 80px;
+    }
+   
+    /*enroll-btn*/
+    .enroll-container{
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: -3px 0px;
+    }
+   
+    .enroll-btn{
+       padding: 7px 30px;
+       color: white;
+       background-color:#178C8C;
+       border: none;
+       border-radius: 8px;
+       cursor: pointer;
+       font-size: 17px;
+       position: relative;
+    }
+   
+    .white-btn{
+       color: #178C8C;
+       font-size: 17px;
+       border: 1px solid #178C8C;
+       background-color: #fff;
+       border-radius: 8px;
+       cursor: pointer;
+       padding: 8px 20px;
+    }
+   
+   
+    /*bottom-link*/
+    .read-more-1{
+      /* margin-left: 88px; */
+      color: #178C8C;
+      font-weight: 500;
+      font-size: 14px;
+   
+    }
+   
+    .bottom-link{ /* this one*/
+      display: flex;
+      justify-content: flex-start;
+      width: 300px;
+      margin-left: 130px;
+    }
+    
+   
+    .bottom-link button {
+      border: none;
+      background-color: white;
+      cursor: pointer;
+     text-decoration: underline;
+     text-underline-offset: 3px;
+     text-decoration-color: #178C8C;
+     
+    }
+    
+ }
+
+ @media(min-width:768px){
+   .parent-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 350px;
+   }
+   
+   .card-content{
+       width: 280px;
+       background-color:#F8F5F5;
+       margin: 40px  0px  20px -50px ;
+       box-shadow: 1px 1px 10px 1px grey;
+       height: 400px;
+      
+   }
+   
+   .card-main{
+       padding: 10px;
+      
+   }
+   
+   .card-img{
+       width: 100%;
+       position: relative;
+       height: 170px;
+   }
+   .card-img img{
+       width: 100%;
+       height: 170px;
+       object-fit: cover;
+   }
+   
+   .overlay{
+       position: absolute;
+       width: auto;
+       background-color:#CC0000;
+       color: #ffffff;
+       text-align: center;
+       padding: 8px 15px;
+   }
+    /*cart-body*/
+    .card-body{
+       display: flex;
+       /* gap: 88px; */
+       justify-content: space-between;
+   
+    }
+   
+    .left-content{
+       display: flex;
+       flex-direction: column;
+       gap:10px;
+    }
+   
+    .tick{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       gap: 8px;
+       
+    }
+    .red-tick{
+       width: 30px;
+       cursor: pointer;
+    }
+   
+    .left-content .para-head{
+       color: #0A4A4A;
+       font-size: 18px;
+       font-weight: 500;
+    }
+   
+    .add{
+     font-size:13px;
+     color:#BFBFBF;
+     text-align: center;
+    }
+   
+    .duration{
+       font-weight: 600;
+    }
+   
+   
+    /*rate-content*/
+    .rate-content{
+       display: flex;
+       gap: 7px;
+       margin-top: 8px;
+      
+    }
+   .rating-count{
+     color:#868686;
+   }
+       
+    /*course-logo*/
+   
+    .course-logo{
+       display: flex;
+       flex-direction: column;
+    }
+   
+    .course-icon{
+       width: 99px;
+       height: 40px;
+    }
+   
+    /*star-ratings*/
+   
+    .star-ratings{
+       display: flex;
+       margin-top: -4px;
+       align-items: baseline;
+       gap: 7px;
+       margin-bottom: 10px;
+    }
+    
+    .star_icon{
+       width: 99px;
+    }
+   
+    /*enroll-btn*/
+    .enroll-container{
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 4px 0px;
+    }
+   
+    .enroll-btn{
+       padding: 10px 25px;
+       color: white;
+       background-color:#178C8C;
+       border: none;
+       border-radius: 8px;
+       cursor: pointer;
+       font-size: 17px;
+       position: relative;
+    }
+   
+    .white-btn{
+       color: #178C8C;
+       font-size: 17px;
+       border: 1px solid #178C8C;
+       background-color: #fff;
+       border-radius: 8px;
+       cursor: pointer;
+       padding: 13px 25px;
+    }
+   
+   
+    /*bottom-link*/
+    .read-more-1{
+      /* margin-left: 88px; */
+      color: #178C8C;
+      font-weight: 500;
+      font-size: 18px;
+   
+    }
+   
+    .bottom-link{ /* this one*/
+      display: flex;
+      justify-content: flex-start;
+      width: 300px;
+      margin-left: 150px;
+    }
+    
+   
+    .bottom-link button {
+      border: none;
+      background-color: white;
+      cursor: pointer;
+     text-decoration: underline;
+     text-underline-offset: 3px;
+     text-decoration-color: #178C8C;
+     
+    }
+    
+ }
+
+ @media(min-width:1024px){
+   .parent-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 450px;
+   }
+   
+   
+   
+   .card-content{
+       width: 300px;
+       background-color:#F8F5F5;
+       margin: 40px  30px  20px 40px ;
+       box-shadow: 1px 1px 10px 1px grey;
+      
+   }
+   
+   .card-main{
+       padding: 13px 8px;
+      
+   }
+   
+   .card-img{
+       width: 100%;
+       position: relative;
+       
+   }
+   .card-img img{
+       width: 100%;
+       object-fit: cover;
+   }
+   
+   .overlay{
+       position: absolute;
+       width: auto;
+       background-color:#CC0000;
+       color: #ffffff;
+       text-align: center;
+       padding: 8px 15px;
+   }
+    /*cart-body*/
+    .card-body{
+       display: flex;
+       /* gap: 88px; */
+       justify-content: space-between;
+   
+    }
+   
+    .left-content{
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+    }
+   
+    .tick{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       gap: 8px;
+       
+    }
+    .red-tick{
+       width: 30px;
+       cursor: pointer;
+    }
+   
+    .left-content .para-head{
+       color: #0A4A4A;
+       font-size: 18px;
+       font-weight: 500;
+    }
+   
+    .add{
+     font-size:13px;
+     color:#BFBFBF;
+     text-align: center;
+    }
+   
+    .duration{
+       font-weight: 600;
+    }
+   
+   
+    /*rate-content*/
+    .rate-content{
+       display: flex;
+       gap: 6px;
+       margin-top: 0px;
+      
+    }
+   .rating-count{
+     color:#868686;
+   }
+       
+    /*course-logo*/
+   
+    .course-logo{
+       display: flex;
+       flex-direction: column;
+    }
+   
+    .course-icon{
+       width: 99px;
+       height: 40px;
+    }
+   
+    /*star-ratings*/
+   
+    .star-ratings{
+       display: flex;
+       margin-top: -4px;
+       align-items: baseline;
+       gap: 10px;
+       margin-bottom: 10px;
+    }
+    
+    .star_icon{
+       width: 99px;
+    }
+   
+    /*enroll-btn*/
+    .enroll-container{
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 15px 0px;
+    }
+   
+    .enroll-btn{
+       padding: 13px 25px;
+       color: white;
+       background-color:#178C8C;
+       border: none;
+       border-radius: 8px;
+       cursor: pointer;
+       font-size: 17px;
+       position: relative;
+    }
+   
+    .white-btn{
+       color: #178C8C;
+       font-size: 17px;
+       border: 1px solid #178C8C;
+       background-color: #fff;
+       border-radius: 8px;
+       cursor: pointer;
+       padding: 13px 25px;
+    }
+   
+   
+    /*bottom-link*/
+    .read-more-1{
+      /* margin-left: 88px; */
+      color: #178C8C;
+      font-weight: 500;
+      font-size: 18px;
+   
+    }
+   
+    .bottom-link{ /* this one*/
+      display: flex;
+      justify-content: flex-start;
+      width: 300px;
+      margin-left: 170px;
+    }
+    
+   
+    .bottom-link button {
+      border: none;
+      background-color: white;
+      cursor: pointer;
+     text-decoration: underline;
+     text-underline-offset: 3px;
+     text-decoration-color: #178C8C;
+     
+    }
+    
+ }
+
+ @media(min-width:1440px){
+   .parent-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+   }
+   
+   
+   
+   .card-content{
+       width: 300px;
+       background-color:#F8F5F5;
+       margin: 60px  0px  20px 40px ;
+       box-shadow: 1px 1px 10px 1px grey;
+       height: 430px;
+      
+   }
+   
+   .card-main{
+       padding: 5px 10px;
+      
+   }
+   
+   .card-img{
+       width: 100%;
+       position: relative;
+       height: 180px;
+       
+   }
+   .card-img img{
+       width: 100%;
+       object-fit: cover;
+       height: 100%;
+   }
+   
+   .overlay{
+       position: absolute;
+       width: auto;
+       background-color:#CC0000;
+       color: #ffffff;
+       text-align: center;
+       padding: 8px 15px;
+   }
+    /*cart-body*/
+    .card-body{
+       display: flex;
+       /* gap: 88px; */
+       justify-content: space-between;
+   
+    }
+   
+    .left-content{
+       display: flex;
+       flex-direction: column;
+       gap: 0px;
+      
+    }
+   
+    .tick{
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       gap: 8px;
+       
+    }
+    .red-tick{
+       width: 30px;
+       cursor: pointer;
+    }
+   
+    .left-content .para-head{
+       color: #0A4A4A;
+       font-size: 19px;
+       font-weight: 500;
+    }
+   
+    .add{
+     font-size:13px;
+     color:#BFBFBF;
+     text-align: center;
+    }
+   
+    .duration{
+       font-weight: 600;
+       font-size: 18px;
+    }
+   
+   
+    /*rate-content*/
+    .rate-content{
+       display: flex;
+       gap: 6px;
+       margin-top: 8px;
+      
+    }
+
+    .rate-content .rate{
+      font-size: 18px;
+    }
+
+    .rate-content .combo{
+      font-size: 17px;
+    }
+
+   .rating-count{
+     color:#868686;
+     font-size: 17px;
+   }
+       
+    /*course-logo*/
+   
+    .course-logo{
+       display: flex;
+       flex-direction: column;
+      margin-top: -8px;
+     
+
+
+    }
+   
+    .course-icon{
+       width: 120px;
+       height: 40px;
+    }
+   
+    /*star-ratings*/
+   
+    .star-ratings{
+       display: flex;
+       margin-top: -4px;
+       align-items: baseline;
+       gap: 6px;
+       margin-bottom: 10px;
+    }
+    
+    .star_icon{
+       width: 99px;
+    }
+   
+    /*enroll-btn*/
+    .enroll-container{
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 0px 0px;
+    }
+   
+    .enroll-btn{
+       padding: 13px 25px;
+       color: white;
+       background-color:#178C8C;
+       border: none;
+       border-radius: 8px;
+       cursor: pointer;
+       font-size: 17px;
+       position: relative;
+    }
+   
+    .white-btn{
+       color: #178C8C;
+       font-size: 17px;
+       border: 1px solid #178C8C;
+       background-color: #fff;
+       border-radius: 8px;
+       cursor: pointer;
+       padding: 13px 25px;
+    }
+   
+   
+    /*bottom-link*/
+    .read-more-1{
+      /* margin-left: 88px; */
+      color: #178C8C;
+      font-weight: 500;
+      font-size: 18px;
+   
+    }
+   
+    .bottom-link{ /* this one*/
+      display: flex;
+      justify-content: flex-start;
+      width: 300px;
+      margin-left: 170px;
+    }
+    
+   
+    .bottom-link button {
+      border: none;
+      background-color: white;
+      cursor: pointer;
+     text-decoration: underline;
+     text-underline-offset: 3px;
+     text-decoration-color: #178C8C;
+     
+    }
+    
+ }
+
+ @media(min-width:1480px){
+   .parent-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   
+   
+   
+   .card-content{
+       width: 300px;
+       background-color:#F8F5F5;
+       margin: 60px  0px  20px 200px ;
+       box-shadow: 1px 1px 10px 1px grey;
+      
+   }
+   
+   .card-main{
+       padding: 10px;
+      
+   }
+   
+   .card-img{
+       width: 100%;
+       position: relative;
+       
+   }
+   .card-img img{
+       width: 100%;
+       object-fit: cover;
+   }
+   
+   .overlay{
+       position: absolute;
+       width: auto;
+       background-color:#CC0000;
+       color: #ffffff;
+       text-align: center;
+       padding: 8px 15px;
+   }
+    /*cart-body*/
+    .card-body{
+       display: flex;
+       /* gap: 88px; */
+       justify-content: space-between;
+   
+    }
+   
+    .left-content{
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+    }
+   
+    .tick{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       gap: 8px;
+       
+    }
+    .red-tick{
+       width: 30px;
+       cursor: pointer;
+    }
+   
+    .left-content .para-head{
+       color: #0A4A4A;
+       font-size: 18px;
+       font-weight: 500;
+    }
+   
+    .add{
+     font-size:13px;
+     color:#BFBFBF;
+     text-align: center;
+    }
+   
+    .duration{
+       font-weight: 600;
+    }
+   
+   
+    /*rate-content*/
+    .rate-content{
+       display: flex;
+       gap: 6px;
+       margin-top: 8px;
+      
+    }
+   .rating-count{
+     color:#868686;
+   }
+       
+    /*course-logo*/
+   
+    .course-logo{
+       display: flex;
+       flex-direction: column;
+    }
+   
+    .course-icon{
+       width: 99px;
+       height: 40px;
+    }
+   
+    /*star-ratings*/
+   
+    .star-ratings{
+       display: flex;
+       margin-top: -4px;
+       align-items: baseline;
+       gap: 10px;
+       margin-bottom: 10px;
+    }
+    
+    .star_icon{
+       width: 99px;
+    }
+   
+    /*enroll-btn*/
+    .enroll-container{
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 15px 0px;
+    }
+   
+    .enroll-btn{
+       padding: 13px 25px;
+       color: white;
+       background-color:#178C8C;
+       border: none;
+       border-radius: 8px;
+       cursor: pointer;
+       font-size: 17px;
+       position: relative;
+    }
+   
+    .white-btn{
+       color: #178C8C;
+       font-size: 17px;
+       border: 1px solid #178C8C;
+       background-color: #fff;
+       border-radius: 8px;
+       cursor: pointer;
+       padding: 13px 25px;
+    }
+   
+   
+    /*bottom-link*/
+    .read-more-1{
+      /* margin-left: 88px; */
+      color: #178C8C;
+      font-weight: 500;
+      font-size: 18px;
+   
+      
+   
+    }
+   
+    .bottom-link{
+      display: flex;
+      justify-content: center;
+      width: 300px;
+      margin-left: 170px;
+    }
+    
+   
+    .bottom-link button {
+      border: none;
+      background-color: white;
+      cursor: pointer;
+     text-decoration: underline;
+     text-underline-offset: 3px;
+     text-decoration-color: #178C8C;
+     
+    }
+    
+ }
