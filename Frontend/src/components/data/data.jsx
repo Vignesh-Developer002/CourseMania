@@ -20,7 +20,9 @@ export function fetchUserData(url) {
             setCertificateData(data);
           }
           setUserData(data);
-          setIsLoading(false);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 3000);
         }
       } catch (error) {
         setError(error.message);

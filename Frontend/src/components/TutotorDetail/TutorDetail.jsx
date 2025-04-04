@@ -17,7 +17,7 @@ const TutorDetail = ({name,img,design,courseCount}) => {
     <div className="tutor-body">
         <h3>{name}</h3>
          <p className='tutor-designation'>{design}</p>
-          <a href="" className="course-count"> {courseCount}</a>
+          <a href="#" className="course-count"> {courseCount}</a>
 
           {/* flex */}
           <div className="tutor-rating-group">

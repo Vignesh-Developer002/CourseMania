@@ -12,8 +12,8 @@ const Course = () => {
   const { courseData, error, isLoading } = fetchUserData(
     "http://192.168.1.82:4000/courses"
   );
-
   const { courseFilterData } = useContext(globalStore);
+
   return (
     <>
       <div className="view-course">
