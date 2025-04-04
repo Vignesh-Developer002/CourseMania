@@ -39,6 +39,7 @@ import foot_lap_img from '../assets/foot_lap_img.svg'
 import foot_cat_img from '../assets/foot_cat_img.svg'
 import teaching_icon from '../assets/teaching_icon.svg'
 import video_controller from "../assets/video_controller.svg"
+import admin_user_icon from "../assets/admin_user_icon.svg"
 
 
 

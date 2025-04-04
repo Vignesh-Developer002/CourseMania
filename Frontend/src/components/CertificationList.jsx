@@ -29,9 +29,8 @@ const CertificationList = () => {
 
       <div className="certification-list-container">
         {isLoading ? (
-         <SkeletonAnimation count={3} />
-        ) : 
-        error ? (
+          <SkeletonAnimation count={3} />
+        ) : error ? (
           <p style={{ color: "red", fontSize: "20px" }}>
             {error} {":("}
           </p>
