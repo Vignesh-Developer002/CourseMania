@@ -39,8 +39,16 @@ import foot_lap_img from '../assets/foot_lap_img.svg'
 import foot_cat_img from '../assets/foot_cat_img.svg'
 import teaching_icon from '../assets/teaching_icon.svg'
 import video_controller from "../assets/video_controller.svg"
-import admin_user_icon from "../assets/admin_user_icon.svg"
-
+import admin_icon from "../assets/admin_icon.svg"
+import lock_icon from "../assets/lock_icon.svg"
+import admin_book_icon from "../assets/admin_book_icon.svg"
+import admin_bright_icon from "../assets/admin_bright_icon.svg"
+import eye_hide_solid from "../assets/eye_hide_solid.svg"
+import admin_small_book_icon from "../assets/admin_small_book_icon.svg"
+import rightSide_bg from "../assets/rightSide_bg.svg"
+import right_side_center_logo from "../assets/right_side_center_logo.svg"
+import admin_login_icon from "../assets/admin_login_icon.svg"
+import eye_open_icon from "../assets/eye_open_icon.png"
 
 
 const assets = {
@@ -81,6 +89,17 @@ const assets = {
     video_controller,   
     certification_img_2,
     course_img_2, 
+    admin_icon,
+    lock_icon,
+    admin_book_icon,
+    admin_bright_icon,
+    eye_hide_solid,
+    admin_small_book_icon,
+    rightSide_bg,
+    right_side_center_logo,
+    admin_login_icon,
+    eye_open_icon,
+
 }
 
 export const courses = [

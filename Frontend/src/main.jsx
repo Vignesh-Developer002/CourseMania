@@ -25,6 +25,7 @@ createRoot(document.getElementById("root")).render(
       pauseOnHover
       theme="colored"
       transition={Flip}
+      limit={1}
     />
   </StoreContext>
 );

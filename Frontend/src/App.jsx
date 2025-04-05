@@ -6,6 +6,8 @@ import HomeContent from "./components/HomeContent/HomeContent.jsx";
 import CoursePage from "./components/CoursePage/CoursePage.jsx";
 import CartPage from "./components/CartPage/CartPage.jsx";
 import CheckOutPage from "./components/CheckoutPage/CheckOutPage.jsx";
+import AdminLogin from "./components/AdminLoginPage/AdminLogin.jsx";
+import Gallery from "./components/AdminGallery/Gallery.jsx";
 
 const App = () => {
   const [login, setLogin] = useState(false); //register page input field setup
@@ -66,6 +68,8 @@ const App = () => {
           element={<CartPage userLoggedIn={userLoggedIn} />}
         />
         <Route path="/CheckOutPage" element={<CheckOutPage />} />
+        <Route path="/AdminLogin" element={<AdminLogin />} />
+        <Route path="/Gallery" element={<Gallery/>}/>
       </Routes>
     </div>
   );

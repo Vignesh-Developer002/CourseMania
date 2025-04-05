@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../Footer/Footer.css";
 import { ImInstagram } from "react-icons/im";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 import assets from "../../assets/asset";
+import { Link } from "react-router-dom";
+import { globalStore } from "../context/StoreContext";
 
 const Footer = () => {
+  const {setIsBackBtnClick} = useContext(globalStore);
+
+  function handleAdminData(){
+    setIsBackBtnClick(true)
+  }
+  
   return (
     <>
       <div className="footer-main-content" id="footer">
@@ -47,6 +55,10 @@ const Footer = () => {
               <a href="">Privacy Policy</a>
             </li>
           </ul>
+        </div>
+
+        <div className="Admin-foot">
+          <Link onClick={()=> handleAdminData()} to="AdminLogin">Admin Login</Link>
         </div>
 
         <div className="social-icon-container">

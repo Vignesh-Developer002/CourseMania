@@ -1,0 +1,2514 @@
+.adminLogin-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 44, 44, 0.788);
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.admin-main-content{
+    width: 70%;
+    background-color: #ffffff;
+    display: flex;
+    
+
+}
+
+.admin-left-side{
+    width: 50%;
+    background-color: #ffffff;
+    padding:50px 90px;
+    border:1px solid white;
+    
+}
+
+.admin-left-side h1{
+    cursor:pointer;
+}
+
+.head{
+    margin-bottom: 100px;
+    color:transparent;
+    background-clip: text;
+    text-decoration: underline;
+    text-decoration-color:#17ACAC ;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+    background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+}
+
+.admin-head{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+.admin-head h1{
+     font-size: 30px;
+     font-weight: 700px;
+    
+}
+.admin-head p{
+    color: #525252;
+    font-size: 16px;
+    font-weight: 400;
+
+}
+.horizontal_line{
+    margin-top: 35px;
+    margin-bottom: 35px;
+   background-color: rgba(206, 203, 203, 0.889);
+   border: none;
+   height: 1px;
+}
+
+/*input content*/
+.input-container-1{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.user-input{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    gap: 10px;
+    background-color:#0000000D;
+    padding: 23px 25px ;
+    border-radius: 20px;
+}
+.user-input .user_logo{
+    width: 30px;
+    height: 30px;
+}
+
+.user-input .user-admin{
+    flex-grow: 1;
+    border: none;
+    background-color: #00000000;
+    outline: none;
+    font-size: 18px;
+    
+
+}
+
+.user-input .user-admin::placeholder{
+    color: #1C1C1C;
+    font-weight: 400;
+    font-size: 19px;
+}
+
+
+/*password-content*/
+.password-content{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    gap: 10px;
+    background-color:#0000000D;
+    padding: 23px 25px ;
+    border-radius: 20px;
+}
+.password-content .lock_log{
+    width: 30px;
+    height: 30px;
+} 
+.password-content .user-admin{
+    flex-grow: 1;
+    border: none;
+    background-color: #00000000;
+    outline: none;
+    font-size: 18px;
+}
+
+.password-content .user-admin::placeholder{
+    color: #1C1C1C;
+    font-weight: 400;
+    font-size: 19px;
+}
+
+.password-content .password-hide_logo, .password_show_logo{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+.admin-right-side{
+    width: 50%;
+    position: relative;
+}
+
+/*admin-btn*/
+.admin-btn{
+    width: 100%;
+    border: none;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+    border-radius: 20px;
+    cursor: pointer;
+    
+}
+
+.btn-center{
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+}
+.admin-btn .btn-center{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.btn-center h4{
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;;
+}
+.btn-center .logout_logo{
+    width: 30px;
+    color: #ffffff;
+}
+
+.right-side-bg{
+ object-fit:cover;
+ width: 100%;
+ height: 100%;
+
+}
+
+.right-side-center-content{
+    position: absolute;
+    top: 100px;
+    right: 120px;
+}
+
+.green-color{
+    color: green;
+    margin-top: -20px;
+    margin-left: 15px;
+}
+.red-color{
+    color:red;
+    margin-top: -20px;
+    margin-left: 15px;
+}
+
+@media(min-width:320px){
+
+    .admin-main-content{
+        width: 94%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 100%;
+        background-color: #ffffff;
+        padding:25px 20px;
+        border:1px solid white;
+    }
+    
+    .head{
+        font-size: 23px;
+        margin-bottom: 45px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+    .admin-head h1{
+         font-size: 18px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 11px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 23px;
+        margin-bottom: 25px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 10px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 18px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 14px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 10px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 18px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 0;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 14px;
+        width: 160px;
+    }
+    
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 0%;
+        position: relative;
+        display: none;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 24px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 50px;
+        right: 40px;
+    }
+
+    .right-side-center-content img{
+        width: 300px;
+        height: 400px;
+    }
+    
+}
+
+@media(min-width:350px){
+    .password-content .user-admin{
+        flex-grow: 0;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 14px;
+        width: 190px;
+    }
+    
+}
+
+@media(min-width:375px){
+
+    .admin-main-content{
+        width: 94%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 100%;
+        background-color: #ffffff;
+        padding:30px 20px;
+        border:1px solid white;
+    }
+    
+    .head{
+        font-size: 30px;
+        margin-bottom: 40px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+    .admin-head h1{
+         font-size: 22px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 13px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 23px;
+        margin-bottom: 25px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 10px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 20px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 16px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 15px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 10px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 20px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 0;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 16px;
+        width: 200px;
+    }
+    
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 15px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 0%;
+        position: relative;
+        display: none;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 24px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 50px;
+        right: 40px;
+    }
+
+    .right-side-center-content img{
+        width: 300px;
+        height: 400px;
+    }
+    
+}
+@media(min-width:400px){
+
+    .password-content .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 14px;
+        width: 200px;
+    }
+    
+}
+@media(min-width:425px){
+
+    .admin-main-content{
+        width: 95%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 100%;
+        background-color: #ffffff;
+        padding:50px 30px;
+        border:1px solid white;
+    }
+    
+    .head{
+        margin-bottom: 60px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+    .admin-head h1{
+         font-size: 23px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 13px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 23px;
+        margin-bottom: 25px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 15px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 25px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 16px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 15px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 25px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 0;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 16px;
+        width: 230px;
+    }
+    
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 0%;
+        position: relative;
+        display: none;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 27px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 50px;
+        right: 40px;
+    }
+
+    .right-side-center-content img{
+        width: 300px;
+        height: 400px;
+    }
+    
+}
+@media(min-width:460px){
+
+    .password-content .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 14px;
+        width: 220px;
+    }
+    
+}
+
+@media(min-width:700px){
+
+    .admin-main-content{
+        width: 86%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 100%;
+        background-color: #ffffff;
+        padding:50px 30px;
+        border:1px solid white;
+    }
+    
+    .head{
+        margin-bottom: 60px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+    .admin-head h1{
+         font-size: 23px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 13px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 30px;
+        margin-bottom: 30px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 15px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 25px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 16px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 15px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 25px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 0;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 16px;
+        width: 400px;
+    }
+    
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 0%;
+        position: relative;
+        display: none;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 27px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 50px;
+        right: 40px;
+    }
+
+    .right-side-center-content img{
+        width: 300px;
+        height: 400px;
+    }
+    
+}
+@media(min-width:768px){
+
+    .admin-main-content{
+        width: 95%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 50%;
+        background-color: #ffffff;
+        padding:40px 30px;
+        border:1px solid white;
+    }
+    
+    .head{
+        margin-bottom: 40px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+    .admin-head h1{
+         font-size: 20px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 13px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 23px;
+        margin-bottom: 23px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 25px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 25px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 0;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+        width: 190px;
+    }
+    
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 50%;
+        position: relative;
+        display: inline-block;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 27px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 50px;
+        right: 40px;
+    }
+
+    .right-side-center-content img{
+        width: 300px;
+        height: 400px;
+    }
+    
+}
+
+@media(min-width:850px){
+
+    .admin-main-content{
+        width: 95%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 50%;
+        background-color: #ffffff;
+        padding:40px 30px;
+        border:1px solid white;
+    }
+    
+    .head{
+        margin-bottom: 40px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+    .admin-head h1{
+         font-size: 20px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 13px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 23px;
+        margin-bottom: 23px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 25px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 25px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 0;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+        width: 230px;
+    }
+    
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 50%;
+        position: relative;
+        display: inline-block;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 27px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 50px;
+        right: 70px;
+    }
+
+    .right-side-center-content img{
+        width: 300px;
+        height: 400px;
+    }
+    
+}
+
+@media(min-width:940px){
+
+    .admin-main-content{
+        width: 95%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 50%;
+        background-color: #ffffff;
+        padding:40px 30px;
+        border:1px solid white;
+    }
+    
+    .head{
+        margin-bottom: 40px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+    .admin-head h1{
+         font-size: 20px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 13px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 23px;
+        margin-bottom: 23px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 25px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 25px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 0;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+        width: 270px;
+    }
+    
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 50%;
+        position: relative;
+        display: inline-block;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 27px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 50px;
+        right: 65px;
+    }
+
+    .right-side-center-content img{
+        width: 350px;
+        height: 400px;
+    }
+    
+}
+@media(min-width:1024px){
+
+    .admin-main-content{
+        width: 80%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 50%;
+        background-color: #ffffff;
+        padding:40px 40px;
+        border:1px solid white;
+    }
+    
+    .head{
+        margin-bottom: 40px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+    .admin-head h1{
+         font-size: 20px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 14px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 35px;
+        margin-bottom: 35px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 19px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 30px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 0;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+        width: 200px;
+    }
+    
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 19px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 50%;
+        position: relative;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 30px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 78px;
+        right: 55px;
+    }
+
+    .right-side-center-content img{
+        width: 330px;
+    }
+    
+}
+@media(min-width:1150px){
+
+    .admin-main-content{
+        width: 80%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 50%;
+        background-color: #ffffff;
+        padding:40px 40px;
+        border:1px solid white;
+    }
+    
+    .head{
+        margin-bottom: 40px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+    .admin-head h1{
+         font-size: 20px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 14px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 35px;
+        margin-bottom: 35px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 19px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 30px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 0;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+        width: 260px;
+    }
+    
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 19px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 50%;
+        position: relative;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 30px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 78px;
+        right: 80px;
+    }
+
+    .right-side-center-content img{
+        width: 330px;
+    }
+    
+}
+
+@media(min-width:1250px){
+
+    .admin-main-content{
+        width: 80%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 50%;
+        background-color: #ffffff;
+        padding:40px 40px;
+        border:1px solid white;
+    }
+    
+    .head{
+        margin-bottom: 40px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+    .admin-head h1{
+         font-size: 20px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 14px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 35px;
+        margin-bottom: 35px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 19px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 30px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 0;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+        width: 280px;
+    }
+    
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 19px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 50%;
+        position: relative;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 30px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 78px;
+        right: 100px;
+    }
+
+    .right-side-center-content img{
+        width: 330px;
+    }
+    
+}
+
+@media(min-width:1350px){
+
+    .admin-main-content{
+        width: 80%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 50%;
+        background-color: #ffffff;
+        padding:40px 40px;
+        border:1px solid white;
+    }
+    
+    .head{
+        margin-bottom: 40px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+    .admin-head h1{
+         font-size: 20px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 14px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 35px;
+        margin-bottom: 35px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 19px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 19px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 30px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 0;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+        width: 340px;
+    }
+    
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 19px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 50%;
+        position: relative;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 30px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 0px;
+        right: 120px;
+    }
+
+    .right-side-center-content img{
+        width: 350px;
+        height: 600px;
+    }
+    
+}
+@media(min-width:1440px){
+
+    .admin-main-content{
+        width: 80%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 50%;
+        background-color: #ffffff;
+        padding:40px 60px;
+        border:1px solid white;
+    }
+    
+    .head{
+        margin-bottom: 60px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .admin-head h1{
+         font-size: 30px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 16px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 35px;
+        margin-bottom: 35px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 23px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 19px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 23px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 30px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+        width: 0px;
+    }
+    
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 19px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 50%;
+        position: relative;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 30px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 10px;
+        right: 110px;
+    }
+
+    .right-side-center-content img{
+        width: 400px;
+        height: 600px;
+    }
+    
+}
+
+@media(min-width:1480px){
+
+    .admin-main-content{
+        width: 70%;
+        background-color: #ffffff;
+        display: flex;
+    
+    }
+    
+    .admin-left-side{
+        width: 50%;
+        background-color: #ffffff;
+        padding:40px 60px;
+        border:1px solid white;
+    }
+    
+    .head{
+        margin-bottom: 100px;
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        text-decoration-color:#17ACAC ;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 8px;
+        background-image: linear-gradient(#17ACAC,#17ACAC,#000000);
+    }
+    
+    .admin-head{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .admin-head h1{
+         font-size: 30px;
+         font-weight: 700px;
+        
+    }
+    .admin-head p{
+        color: #525252;
+        font-size: 17px;
+        font-weight: 400;
+    
+    }
+    .horizontal_line{
+        margin-top: 40px;
+        margin-bottom: 40px;
+       background-color: rgba(206, 203, 203, 0.889);
+       border: none;
+       height: 1px;
+    }
+    
+    /*input content*/
+    .input-container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .user-input{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 23px 25px ;
+        border-radius: 20px;
+    }
+    .user-input .user_logo{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .user-input .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+    }
+    
+    .user-input .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 19px;
+    }
+    
+    
+    /*password-content*/
+    .password-content{
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        background-color:#0000000D;
+        padding: 23px 25px ;
+        border-radius: 20px;
+    }
+    .password-content .lock_log{
+        width: 30px;
+        height: 30px;
+    } 
+    .password-content .user-admin{
+        flex-grow: 1;
+        border: none;
+        background-color: #00000000;
+        outline: none;
+        font-size: 18px;
+        width: 0px;
+        height: 100%;
+    }
+    .password-content .user-admin::placeholder{
+        color: #1C1C1C;
+        font-weight: 400;
+        font-size: 19px;
+    }
+    
+    .password-content .password-hide_logo, .password_show_logo{
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    .admin-right-side{
+        width: 50%;
+        position: relative;
+    }
+    
+    /*admin-btn*/
+    .admin-btn{
+        width: 100%;
+        border: none;
+        padding: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#17A5A5,#17A5A5,#184b4bf0);
+        border-radius: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .admin-btn .btn-center{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-center h4{
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;;
+    }
+    .btn-center .logout_logo{
+        width: 30px;
+        color: #ffffff;
+    }
+    
+    .right-side-bg{
+     object-fit:cover;
+     width: 100%;
+     height: 100%;
+    
+    }
+    
+    .right-side-center-content{
+        position: absolute;
+        top: 50px;
+        right: 110px;
+    }
+
+    .right-side-center-content img{
+        width: 500px;
+        height: 600px;
+    }
+    
+}
+
+
+ 

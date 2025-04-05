@@ -4,6 +4,7 @@ import React from "react";
 export const globalStore = createContext(null);
 
 const StoreContext = ({ children }) => {
+  const [isBackBtnClick, setIsBackBtnClick] = useState(false); //for managing the admin login data
   const [cartItems, setCartItems] = useState({}); // course adding object
   const [certiItem, setCertiItem] = useState({}); // certificate adding object
   const { courseData } = fetchUserData("http://192.168.1.82:4000/courses"); // length ===20 (course)
@@ -19,9 +20,9 @@ const StoreContext = ({ children }) => {
 
   //combing api data for showing in coursePage
   const [apiData, setApiData] = useState([]);
-  const [isClicked, setIsClicked] = useState(false);// setting api data to the state
-  const [searchClick,setSearchClick]=useState(false)
-  console.log(searchClick)
+  const [isClicked, setIsClicked] = useState(false); // setting api data to the state
+  const [searchClick, setSearchClick] = useState(false);
+
   useEffect(() => {
     let entireApiData = courseData.concat(certificateData);
     setApiData(entireApiData);
@@ -29,7 +30,7 @@ const StoreContext = ({ children }) => {
 
   //search result storing state for display in header.jsx component
   const [filterSearchResult, setFilterSearchResult] = useState([]);
-  console.log(filterSearchResult.length);
+
   useEffect(() => {
     let res = courseCertiData.map((data) => data.name.toLowerCase());
     for (let value of res) {
@@ -285,7 +286,9 @@ const StoreContext = ({ children }) => {
     apiData,
     setIsClicked,
     setSearchClick,
-    searchClick
+    searchClick,
+    isBackBtnClick,
+    setIsBackBtnClick,
   };
 
   return (
