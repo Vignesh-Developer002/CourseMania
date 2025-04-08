@@ -49,9 +49,36 @@ import rightSide_bg from "../assets/rightSide_bg.svg"
 import right_side_center_logo from "../assets/right_side_center_logo.svg"
 import admin_login_icon from "../assets/admin_login_icon.svg"
 import eye_open_icon from "../assets/eye_open_icon.png"
+import admin_logo from "../assets/admin_logo.svg"
+import brightness_logo from "../assets/brightness_logo.svg"
+import delete_logo from "../assets/delete_logo.svg"
+import edit_logo from "../assets/edit_logo.svg"
+import edit2_logo from "../assets/edit2_logo.svg"
+import filter_logo from "../assets/filter_logo.svg"
+import flag_logo from "../assets/flag_logo.svg"
+import message_logo from "../assets/message_logo.svg"
+import search_logo from "../assets/search_logo.svg"
+import search_logo2 from "../assets/search_logo2.svg"
+import home_logo from "../assets/home_logo.svg"
+import  Adminarrow_logo from  "../assets/Adminarrow_logo.svg"
+import storeimage_logo from "../assets/storeimage_logo.svg"
+
 
 
 const assets = {
+    storeimage_logo,
+    Adminarrow_logo,
+    home_logo,
+    admin_logo,
+    brightness_logo,
+    delete_logo,
+    edit_logo,
+    edit2_logo,
+    filter_logo,
+    flag_logo,
+    message_logo,
+    search_logo,
+    search_logo2,
     bg_icon,
     doll_icon,
     light_flower_icon,

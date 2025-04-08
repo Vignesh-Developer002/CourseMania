@@ -7,9 +7,7 @@ import SkeletonAnimation from "./SkeletonAnim/SkeletonAnimation.jsx";
 import { globalStore } from "./context/StoreContext.jsx";
 
 const CertificationList = () => {
-  {
-    /*API_URL :"http://localhost:4000/CertificationCourse" */
-  }
+  // let certificateURL = "http://localhost:4000/Certification";
 
   const { error, isLoading } = fetchUserData(
     "http://192.168.1.82:4000/Certification"

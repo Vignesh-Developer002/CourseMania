@@ -3,26 +3,19 @@ import "../AdminLoginPage/Adminlogin.css";
 import assets from "../../assets/asset.js";
 import { useNavigate } from "react-router-dom";
 import { globalStore } from "../context/StoreContext.jsx";
-import { toast, Flip } from "react-toastify";
+import { Bounce, toast, Flip } from "react-toastify";
+import axios from "axios";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
-  const { isBackBtnClick, setIsBackBtnClick } = useContext(globalStore);
+  // const { isBackBtnClick, setIsBackBtnClick } = useContext(globalStore);
   const [passwordShow, setPasswordShow] = useState(false);
   const [adminDetails, setAdminDetails] = useState({
     name: "",
     password: "",
   });
 
-  //clearing local storage
-  useEffect(() => {
-    if (!isBackBtnClick) {
-      localStorage.removeItem("Admin");
-    }
-  }, [!isBackBtnClick]);
-
   const [error, setError] = useState({});
-  console.log(error);
 
   function handleNavigate() {
     navigate("/");
@@ -37,15 +30,41 @@ const AdminLogin = () => {
     setPasswordShow((prev) => !prev);
   }
 
-  function handleAdminData() {
-    if (isBackBtnClick) {
-      if (adminDetails.name.length > 6 && adminDetails.password.length > 6) {
-        localStorage.setItem("Admin", [
-          adminDetails.name,
-          adminDetails.password,
-        ]);
-        toast.success("Welcome Admin!", {
-          position: "top-center",
+  async function handleAdminData() {
+    try {
+      if (adminDetails.name && adminDetails.password) {
+        let adminData = await axios.post(
+          "http://192.168.1.82:4000/admins",
+          adminDetails
+        );
+
+        if (
+          adminData.status === 200 &&
+          Object.keys(adminData.data.results[0])
+        ) {
+          toast.success("Welcome Admin!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Flip,
+          });
+          navigate("/Gallery");
+          setAdminDetails({
+            name: "",
+            password: "",
+          });
+        }
+      }
+    } catch (err) {
+      console.log(err.results);
+      if (err.results === undefined) {
+        toast.error("User not found !", {
+          position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: false,
@@ -53,15 +72,11 @@ const AdminLogin = () => {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          transition: Flip,
+          transition: Bounce,
         });
-        navigate("/Gallery");
       }
     }
   }
-  // localStorage.clear();
-
-  // let res = localStorage.getItem("Admin");
 
   function handleAdminDataValidation(e) {
     e.preventDefault();
@@ -85,6 +100,7 @@ const AdminLogin = () => {
         transition: Flip,
       });
     }
+
     if (!value.name) {
       err.name = "Name is required";
     } else if (value.name.length <= 5) {
@@ -189,9 +205,13 @@ const AdminLogin = () => {
               {error.password ? "*" : <></>}
             </span>
             {/* flex */}
-            <button className="admin-btn" type="submit">
+            <button
+              className="admin-btn"
+              type="submit"
+              onClick={() => handleAdminData()}
+            >
               <div className="btn-center">
-                <h4 onClick={() => handleAdminData()}>Login Now</h4>
+                <h4>Login Now</h4>
                 <img
                   className="logout_logo"
                   src={assets.admin_login_icon}

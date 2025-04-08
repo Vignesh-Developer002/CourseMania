@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../Register-login-Page/RegisterLogin.css";
 import { CiSearch } from "react-icons/ci";
 import { ImInstagram } from "react-icons/im";
@@ -6,7 +6,9 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 import assets from "../../assets/asset.js";
+import axios from "axios";
 import { toast, Flip, Bounce } from "react-toastify";
+import { globalStore } from "../context/StoreContext.jsx";
 
 const RegisterLogin = ({
   userName,
@@ -19,9 +21,36 @@ const RegisterLogin = ({
   setLogin,
   setIslogged,
 }) => {
+  const {
+    loginEmail,
+    setLoginEmail,
+    loginPassword,
+    setLoginPassword,
+    displayUserName,
+    setDispalyUserName,
+    setIsSubmit,
+  } = useContext(globalStore);
+  const [databaseLoginData, setDatabaseLoginData] = useState(null); //assigning the matched login data email and password from data base
   const [formError, setFormError] = useState({}); // register form error handling
-  const [isSubmit, setIsSubmit] = useState(false);
+  const [registerDuplicateData, setregisterDuplicateRecord] = useState(""); // assigning duplicate data stored in local storage
+
+  //getting duplicate data to local storage
+  let dupData;
+  useEffect(() => {
+    if (localStorage.getItem("DuplicateData")) {
+      dupData = localStorage.getItem("DuplicateData");
+      setregisterDuplicateRecord(dupData);
+      console.log(registerDuplicateData);
+    }
+  }, [localStorage.getItem("DuplicateData")]);
+
   const [loginFormErr, setLoginFormErr] = useState({});
+  useEffect(() => {
+    if (databaseLoginData !== null) {
+      setLoginEmail(databaseLoginData["Email"]);
+      setLoginPassword(databaseLoginData["password"]);
+    }
+  }, [databaseLoginData]);
 
   // setting value to the state variables for register form
   function handelValues(e) {
@@ -29,117 +58,171 @@ const RegisterLogin = ({
     setUserName({ ...userName, [name]: value });
   }
 
-  //preventing the default behaviour
+  // preventing default behaviour of thr form
   function handleSubmit(e) {
     e.preventDefault();
+  }
+
+  //adding register form data to the data base
+  async function handleAdd() {
     if (login) {
+      // setLoginFormErr(validateData(userName)); // login form data validation
       setFormError(validate(userName)); //this for register form
-      setIsSubmit(true);
       //Account  created successfully alert message
-      if (Object.keys(formError).length === 0 && isSubmit) {
-        toast.success("Your account has been created successfully", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-          transition: Flip,
-        });
-        setLogin(false);
-        setIslogged(true);
-        setLoginPage(true);
-        setIsSubmit(false);
-      }
-    } else {
-      setLoginFormErr(validateData(userName));
-      if (!userName.name && !userName.email) {
-        toast.error("You are not register", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-          transition: Bounce,
-        });
-      }
-      if (
-        loginFormErr.email === "Email Match" &&
-        loginFormErr.password === "password Match"
-      ) {
-        toast.success("Log in successfully!", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          transition: Bounce,
-        });
-        setLogin(false);
-        setIslogged(false);
-        setLoginPage(false);
-        setUserLoggedIn(true);
-        localStorage.setItem("Name", userName.name);
+      try {
+        if (
+          userName.name &&
+          userName.email &&
+          userName.password &&
+          Object.keys(formError).length === 0
+        ) {
+          const res = await axios.post(
+            "http://192.168.1.82:4000/users",
+            userName
+          );
+          if (res.status == 200 && Object.keys(formError).length === 0) {
+            toast.success("Your account has been created successfully", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              transition: Flip,
+            });
+            setLogin(false);
+            setIslogged(true);
+            setLoginPage(true);
+            setIsSubmit(false);
+            setUserName({
+              name: "",
+              email: "",
+              password: "",
+            });
+          }
+        }
+      } catch (err) {
+        console.log(err);
+        if (err.response.data) {
+          localStorage.setItem("DuplicateData", err.response.data);
+          toast.error("User is already register Login now to continue.", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Flip,
+          });
+          setUserName({
+            name: "",
+            email: "",
+            password: "",
+          });
+        }
       }
     }
   }
 
+  // login form logic
   // setting value to the state variables for login form
   function handleLoginValues(e) {
     const { value, name } = e.target;
     setLoginData({ ...loginData, [name]: value });
   }
+  // getting data from data base based on the login data
+  async function validateData() {
+    setLoginFormErr(handleValidateLogin(loginData));
+    try {
+      // checking the login data and the database register data are same for login
+      if (loginData.email && loginData.password) {
+        const loginUser = await axios.post(
+          "http://192.168.1.82:4000/login",
+          loginData
+        );
 
-  // validate the register form data with login form data
-  function validateData(values) {
+        // getting the user name from database for display the profile in navbar
+        const getUserData = await axios.post(
+          "http://192.168.1.82:4000/userData",
+          loginData
+        );
+
+        if (getUserData.data?.results.length !== 0) {
+          setDispalyUserName(getUserData.data?.results[0].Name);
+        } else {
+          setDispalyUserName("");
+        }
+
+        if (loginUser.data?.results.length !== 0) {
+          setUserLoggedIn(true);
+          setLogin(false);
+          setIslogged(false);
+          setLoginPage(false);
+          setIsSubmit(true);
+
+          toast.success("Login Success!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Flip,
+          });
+        } else {
+          setLogin(false);
+          setIslogged(false);
+          setLoginPage(false);
+          setIsSubmit(false);
+          toast.error("User not found please register to continue.", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Flip,
+          });
+        }
+        setDatabaseLoginData(loginUser.data.results[0]);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  //validate the login data
+  function handleValidateLogin(values) {
     let err = {};
     if (!values.email && !values.password) {
-      err.email = "Not match";
+      err.email = "Email is required";
+      err.password = "password is required";
     }
-    if (
-      values.email.length > 0 &&
-      loginData?.email?.length > 0 &&
-      values.email === loginData.email
-    ) {
-      err.email = "Email Match";
-    } else if (!loginData.email) {
-      err.email = "Email required*";
-    } else if (values.email !== loginData.email) {
-      err.email = "Email Mismatch";
+    if (!values.email) {
+      err.email = "Email is required";
     }
-
-    if (!values.password && !values.email) {
-      err.password = "Not match";
-    }
-    if (
-      values.password.length > 0 &&
-      loginData.password.length > 0 &&
-      values.password === loginData.password
-    ) {
-      err.password = "password Match";
-    } else if (!loginData.password) {
-      err.password = "password required*";
-    } else if (values.password !== loginData.password) {
-      err.password = "password Mismatch";
+    if (!values.password) {
+      err.password = "password is required";
     }
     return err;
   }
 
+  // login form data validataion
   function validate(values) {
     const errors = {};
     let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!values.name) {
       errors.name = "User name is required *";
     } else if (values.name.length < 5) {
-      errors.name = "User name must contain 5 characters";
+      errors.name = "User name must contain 5 characters"; ///////////////////////////////
     }
     if (!values.email) {
       errors.email = "Email is required *";
@@ -150,7 +233,7 @@ const RegisterLogin = ({
     }
     if (!values.password) {
       errors.password = "password is required *";
-    } else if (values.password.length < 5) {
+    } else if (values.password.length <= 5) {
       errors.password = "Choose strong password";
     }
     return errors;
@@ -313,7 +396,9 @@ const RegisterLogin = ({
             {login ? (
               <>
                 <div className="form-btn">
-                  <button>Create Account</button>
+                  <button type="submit" onClick={() => handleAdd()}>
+                    Create Account
+                  </button>
                   {/* flex */}
                   <div className="google-btn">
                     <img src={assets.google_icon} alt="" />
@@ -325,8 +410,8 @@ const RegisterLogin = ({
               <>
                 <div className="loginButton">
                   <button
-                    onClick={()=>validateData()}
-                    type="submit"
+                    type="button"
+                    onClick={() => validateData()}
                     className="loginbtn"
                   >
                     Log in

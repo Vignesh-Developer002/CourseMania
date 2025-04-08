@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { use, useContext, useState } from "react";
 import "../components/NavBar.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -19,6 +19,8 @@ const NavBar = ({
   setLogin,
   setIslogged,
 }) => {
+  const { displayUserName, setDispalyUserName, isSubmit, setIsSubmit } =
+    useContext(globalStore);
   const { cartItems, certiItem } = useContext(globalStore);
 
   let cartCount;
@@ -37,12 +39,13 @@ const NavBar = ({
 
   //Getting user name from local storage for display in home page
   let userName;
-  if (localStorage.getItem("Name")) {
-    const userNameFromLocalStorage = localStorage.getItem("Name");
-    userName = userNameFromLocalStorage.slice(0, 1).toUpperCase();
-    setUserLoggedIn(true);
+  if (displayUserName) {
+    userName = displayUserName.slice(0, 1).toUpperCase();
+    // setUserLoggedIn(true);<---------------------------->
+    console.log(displayUserName);
   } else {
-    localStorage.setItem("Name", "");
+    // setDispalyUserName("")
+    // localStorage.setItem("Name", "");
   }
 
   const navigate = useNavigate();
@@ -65,6 +68,8 @@ const NavBar = ({
   function logoutHandler() {
     setShowLogout(false); // showing and hide the logout overlay or button
     setUserLoggedIn(false); // checking and changing the profile of the user based on login is true or false
+    setIsSubmit(false);
+    setDispalyUserName(""); // reset the username to empty string
     setUserName({
       // clearing the user logout data  while clicking the logout btn
       name: "",
@@ -75,8 +80,6 @@ const NavBar = ({
       email: "",
       password: "",
     }); // clearing the user login data  while clicking the logout btn
-
-    localStorage.removeItem("Name");
   }
   return (
     <>
@@ -129,7 +132,7 @@ const NavBar = ({
         </ul>
         <div className="right-content">
           {/* showing the user profile in home page */}
-          {userLoggedIn ? (
+          {isSubmit ? (
             <>
               <span
                 className="userLoggedIn"
@@ -182,7 +185,7 @@ const NavBar = ({
         </div>
         <hr className="white-line" />
         <div className="login-content">
-          {userLoggedIn ? (
+          {displayUserName && userLoggedIn ? (
             <>
               <span
                 className="userLoggedIn"

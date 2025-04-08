@@ -1,0 +1,14 @@
+.admin-nav{
+    border: 1px solid #00000026;
+    padding: 20px;
+    position: fixed;
+    left: 30px;
+    height: 90vh;
+    border-radius: 10px;
+}
+
+.nav-title{
+    color:transparent;
+    background: linear-gradient(#17ACAC,#17ACAC,#000000);
+    background-clip: text;
+}

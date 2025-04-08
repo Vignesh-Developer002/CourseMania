@@ -1,0 +1,86 @@
+.adminNavTop{
+    border: 1px solid #0000001A;
+    border-radius: 20px;
+    width: 1600px;
+    position: fixed;
+    right: 30px;
+    padding: 20px 50px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+/*left side*/
+.left-side-admin{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width:700px ;
+    padding: 0px;
+}
+
+.left_log{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.left_log img{
+    width: 50px;
+    cursor: pointer;
+}
+
+/*search bar*/
+.search_bar{
+width: 400px;
+border: 1px solid #0000001C;
+padding: 13px 15px;
+display: flex;
+align-items: center;
+gap: 10px;
+border-radius: 30px;
+}
+
+.search_bar input{
+    flex: 1;
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+.search_bar input::placeholder{
+    color: #89868D;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/*right-side*/
+.right-side-admin{
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.right_log{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.right_log img{
+    cursor: pointer;
+}
+
+.right-side-profile{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-content{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+}
+
+.profile-content .profilEmail{
+ font-size: 14px;
+ color:#000000A6 ;
+} 

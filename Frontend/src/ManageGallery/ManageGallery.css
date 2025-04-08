@@ -1,0 +1,52 @@
+.manage-gallery-head{
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.manage-gallery-head h1{
+  font-size: 25px;
+   font-weight: 500;;
+} 
+
+.manage-gallery-head p{
+    color: #89868D;
+    font-size: 14px;
+}
+
+/*dashboard*/
+.dashboard{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 13px;
+}
+
+.dashboard .A-arrow{
+   width: 8px;
+}
+
+.dashboard .manage-gallery{
+    color: transparent;
+    background:linear-gradient(#184B4B,#184B4B,#39B1B1);
+    background-clip: text;
+}
+
+.dash-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dash-left p{
+    color: #667085;
+    font-size: 15px;
+}
+
+.admin-line{
+    margin-top: 20px;
+    border: none;
+    background-color: #0000000e;
+    height: 2px;
+}

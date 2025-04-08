@@ -4,7 +4,13 @@ import React from "react";
 export const globalStore = createContext(null);
 
 const StoreContext = ({ children }) => {
+  // let courseUrl = "http://localhost:4000/courses";
+  // let certificateUrl = "http://localhost:4000/Certification";
+  const [isSubmit, setIsSubmit] = useState(false);
   const [isBackBtnClick, setIsBackBtnClick] = useState(false); //for managing the admin login data
+  const [displayUserName, setDispalyUserName] = useState("");
+  const [loginEmail, setLoginEmail] = useState(""); //assigning the email from database for validation
+  const [loginPassword, setLoginPassword] = useState(""); ////assigning the password from database for validation
   const [cartItems, setCartItems] = useState({}); // course adding object
   const [certiItem, setCertiItem] = useState({}); // certificate adding object
   const { courseData } = fetchUserData("http://192.168.1.82:4000/courses"); // length ===20 (course)
@@ -289,6 +295,14 @@ const StoreContext = ({ children }) => {
     searchClick,
     isBackBtnClick,
     setIsBackBtnClick,
+    loginEmail,
+    setLoginEmail,
+    loginPassword,
+    setLoginPassword,
+    displayUserName,
+    setDispalyUserName,
+    isSubmit,
+    setIsSubmit,
   };
 
   return (
