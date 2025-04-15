@@ -1,9 +1,10 @@
+
 .adminNavTop{
     border: 1px solid #0000001A;
     border-radius: 20px;
-    width: 1600px;
+    width:1600px;
     position: fixed;
-    right: 30px;
+    left: 280px;
     padding: 20px 50px 20px 20px;
     display: flex;
     justify-content: space-between;
@@ -84,3 +85,883 @@ border-radius: 30px;
  font-size: 14px;
  color:#000000A6 ;
 } 
+
+@media(min-width:320px){
+    .adminNavTop{
+        border: 1px solid #0000001A;
+        border-radius: 20px;
+        position: fixed;
+        right: 10px;
+        padding: 20px 8px 20px 8px;
+        display: flex;
+        justify-content: space-between;
+        display: none;
+      
+    }
+    .AdminBurger{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 30px;
+    }
+    /*left side*/
+    .left-side-admin{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width:400px ;
+        /* border: 1px solid; */
+        padding: 0px;
+        gap: 15px;
+    }
+    
+    .left_log{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .left_log img{
+        width: 40px;
+        cursor: pointer;
+    }
+    
+    /*search bar*/
+    .search_bar{
+    width: 300px;
+    border: 1px solid #0000001C;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    }
+    
+    .search_bar input{
+        flex: 1;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+    .search_bar input::placeholder{
+        color: #89868D;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    /*right-side*/
+    .right-side-admin{
+        display: flex;
+        justify-content: space-around;
+        gap: 15px;
+    }
+    
+    .right_log{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .right_log img{
+        cursor: pointer;
+        width: 35px;
+    }
+    
+    .right-side-profile{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .right-side-profile img{
+        width: 35px;
+    }
+    
+    .profile-content{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    
+    }
+
+    .profile-content p{
+        font-size: 15px;
+    }
+    
+    .profile-content .profilEmail{
+     font-size: 14px;
+     color:#000000A6 ;
+    } 
+}
+
+@media(min-width:375px){
+    .adminNavTop{
+        border: 1px solid #0000001A;
+        border-radius: 20px;
+        position: fixed;
+        right: 10px;
+        padding: 20px 8px 20px 8px;
+        display: flex;
+        justify-content: space-between;
+        display: none;
+      
+    }
+    .AdminBurger{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 30px;
+    }
+    /*left side*/
+    .left-side-admin{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width:400px ;
+        /* border: 1px solid; */
+        padding: 0px;
+        gap: 15px;
+    }
+    
+    .left_log{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .left_log img{
+        width: 40px;
+        cursor: pointer;
+    }
+    
+    /*search bar*/
+    .search_bar{
+    width: 300px;
+    border: 1px solid #0000001C;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    }
+    
+    .search_bar input{
+        flex: 1;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+    .search_bar input::placeholder{
+        color: #89868D;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    /*right-side*/
+    .right-side-admin{
+        display: flex;
+        justify-content: space-around;
+        gap: 15px;
+    }
+    
+    .right_log{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .right_log img{
+        cursor: pointer;
+        width: 35px;
+    }
+    
+    .right-side-profile{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .right-side-profile img{
+        width: 35px;
+    }
+    
+    .profile-content{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    
+    }
+
+    .profile-content p{
+        font-size: 15px;
+    }
+    
+    .profile-content .profilEmail{
+     font-size: 14px;
+     color:#000000A6 ;
+    } 
+}
+
+@media(min-width:425px){
+    .adminNavTop{
+        border: 1px solid #0000001A;
+        border-radius: 20px;
+        position: fixed;
+        right: 10px;
+        padding: 20px 8px 20px 8px;
+        display: flex;
+        justify-content: space-between;
+        display: none;
+      
+    }
+    .AdminBurger{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 30px;
+    }
+    /*left side*/
+    .left-side-admin{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width:400px ;
+        /* border: 1px solid; */
+        padding: 0px;
+        gap: 15px;
+    }
+    
+    .left_log{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .left_log img{
+        width: 40px;
+        cursor: pointer;
+    }
+    
+    /*search bar*/
+    .search_bar{
+    width: 300px;
+    border: 1px solid #0000001C;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    }
+    
+    .search_bar input{
+        flex: 1;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+    .search_bar input::placeholder{
+        color: #89868D;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    /*right-side*/
+    .right-side-admin{
+        display: flex;
+        justify-content: space-around;
+        gap: 15px;
+    }
+    
+    .right_log{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .right_log img{
+        cursor: pointer;
+        width: 35px;
+    }
+    
+    .right-side-profile{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .right-side-profile img{
+        width: 35px;
+    }
+    
+    .profile-content{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    
+    }
+
+    .profile-content p{
+        font-size: 15px;
+    }
+    
+    .profile-content .profilEmail{
+     font-size: 14px;
+     color:#000000A6 ;
+    } 
+}
+
+@media(min-width:768px){
+    .adminNavTop{
+        border: 1px solid #0000001A;
+        border-radius: 20px;
+        position: fixed;
+        right: 10px;
+        padding: 20px 8px 20px 8px;
+        display: flex;
+        justify-content: space-between;
+        display: none;
+    }
+    /*left side*/
+    .left-side-admin{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width:400px ;
+        /* border: 1px solid; */
+        padding: 0px;
+        gap: 15px;
+    }
+    
+    .left_log{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .left_log img{
+        width: 40px;
+        cursor: pointer;
+    }
+    
+    /*search bar*/
+    .search_bar{
+    width: 300px;
+    border: 1px solid #0000001C;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    }
+    
+    .search_bar input{
+        flex: 1;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+    .search_bar input::placeholder{
+        color: #89868D;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    /*right-side*/
+    .right-side-admin{
+        display: flex;
+        justify-content: space-around;
+        gap: 15px;
+    }
+    
+    .right_log{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .right_log img{
+        cursor: pointer;
+        width: 35px;
+    }
+    
+    .right-side-profile{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .right-side-profile img{
+        width: 35px;
+    }
+    
+    .profile-content{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    
+    }
+
+    .profile-content p{
+        font-size: 15px;
+    }
+    
+    .profile-content .profilEmail{
+     font-size: 14px;
+     color:#000000A6 ;
+    } 
+}
+
+@media(min-width:1024px){
+    .adminNavTop{
+        border: 1px solid #0000001A;
+        border-radius: 20px;
+        position: fixed;
+        /* right: 30px; */
+        width:auto;
+        left:260px ;
+        gap: 30px;
+        padding: 20px 50px 20px 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .AdminBurger{
+        position: absolute;
+        right: 40px;
+        top: 35px;
+        font-size: 30px;
+        display: none;
+    }
+    /*left side*/
+    .left-side-admin{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width:400px ;
+        padding: 0px;
+    }
+    
+    .left_log{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .left_log img{
+        width: 40px;
+        cursor: pointer;
+    }
+    
+    /*search bar*/
+    .search_bar{
+    width: 400px;
+    border: 1px solid #0000001C;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    }
+    
+    .search_bar input{
+        flex: 1;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+    .search_bar input::placeholder{
+        color: #89868D;
+        font-weight: 400;
+        font-size: 15px;
+    }
+    
+    /*right-side*/
+    .right-side-admin{
+        display: flex;
+        justify-content: space-around;
+        gap:20px;
+    }
+    
+    .right_log{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .right_log img{
+        cursor: pointer;
+    }
+    
+    .right-side-profile{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .profile-content{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    
+    }
+    
+    .profile-content .profilEmail{
+     font-size: 14px;
+     color:#000000A6 ;
+    } 
+}
+
+@media(min-width:1400px){
+    .adminNavTop{
+        border: 1px solid #0000001A;
+        border-radius: 20px;
+        position: fixed;
+        /* right: 30px; */
+        width:auto;
+        left:270px ;
+        padding: 20px 50px 20px 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    /*left side*/
+    .left-side-admin{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width:500px ;
+        padding: 0px;
+    }
+    
+    .left_log{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .left_log img{
+        width: 50px;
+        cursor: pointer;
+    }
+    
+    /*search bar*/
+    .search_bar{
+    width: 500px;
+    border: 1px solid #0000001C;
+    padding: 13px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    }
+    
+    .search_bar input{
+        flex: 1;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+    .search_bar input::placeholder{
+        color: #89868D;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    /*right-side*/
+    .right-side-admin{
+        display: flex;
+        justify-content: space-around;
+        gap:40px;
+    }
+    
+    .right_log{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .right_log img{
+        cursor: pointer;
+    }
+    
+    .right-side-profile{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .profile-content{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    
+    }
+    
+    .profile-content .profilEmail{
+     font-size: 14px;
+     color:#000000A6 ;
+    } 
+}
+
+@media(min-width:1700px){
+    .adminNavTop{
+        border: 1px solid #0000001A;
+        border-radius: 20px;
+        position: fixed;
+        /* right: 30px; */
+        width:auto;
+        left:270px ;
+        padding: 20px 50px 20px 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    /*left side*/
+    .left-side-admin{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width:700px ;
+        padding: 0px;
+    }
+    
+    .left_log{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .left_log img{
+        width: 50px;
+        cursor: pointer;
+    }
+    
+    /*search bar*/
+    .search_bar{
+    width: 500px;
+    border: 1px solid #0000001C;
+    padding: 13px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    }
+    
+    .search_bar input{
+        flex: 1;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+    .search_bar input::placeholder{
+        color: #89868D;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    /*right-side*/
+    .right-side-admin{
+        display: flex;
+        justify-content: space-around;
+        gap:80px;
+    }
+    
+    .right_log{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .right_log img{
+        cursor: pointer;
+    }
+    
+    .right-side-profile{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .profile-content{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    
+    }
+    
+    .profile-content .profilEmail{
+     font-size: 14px;
+     color:#000000A6 ;
+    } 
+}
+
+@media(min-width:2000px){
+    .adminNavTop{
+        border: 1px solid #0000001A;
+        border-radius: 20px;
+        position: fixed;
+        /* right: 30px; */
+        width:auto;
+        left:270px ;
+        padding: 20px 50px 20px 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    /*left side*/
+    .left-side-admin{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width:700px ;
+        padding: 0px;
+    }
+    
+    .left_log{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .left_log img{
+        width: 50px;
+        cursor: pointer;
+    }
+    
+    /*search bar*/
+    .search_bar{
+    width: 500px;
+    border: 1px solid #0000001C;
+    padding: 13px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    }
+    
+    .search_bar input{
+        flex: 1;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+    .search_bar input::placeholder{
+        color: #89868D;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    /*right-side*/
+    .right-side-admin{
+        display: flex;
+        justify-content: space-around;
+        gap:80px;
+    }
+    
+    .right_log{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .right_log img{
+        cursor: pointer;
+    }
+    
+    .right-side-profile{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .profile-content{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    
+    }
+    
+    .profile-content .profilEmail{
+     font-size: 14px;
+     color:#000000A6 ;
+    } 
+}
+
+@media(min-width:2560px){
+    .adminNavTop{
+        border: 1px solid #0000001A;
+        border-radius: 20px;
+        position: fixed;
+        /* right: 30px; */
+        width:auto;
+        left:270px ;
+        padding: 20px 50px 20px 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    /*left side*/
+    .left-side-admin{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width:700px ;
+        padding: 0px;
+    }
+    
+    .left_log{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .left_log img{
+        width: 50px;
+        cursor: pointer;
+    }
+    
+    /*search bar*/
+    .search_bar{
+    width: 500px;
+    border: 1px solid #0000001C;
+    padding: 13px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    }
+    
+    .search_bar input{
+        flex: 1;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+    .search_bar input::placeholder{
+        color: #89868D;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    /*right-side*/
+    .right-side-admin{
+        display: flex;
+        justify-content: space-around;
+        gap:80px;
+    }
+    
+    .right_log{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .right_log img{
+        cursor: pointer;
+    }
+    
+    .right-side-profile{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .profile-content{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    
+    }
+    
+    .profile-content .profilEmail{
+     font-size: 14px;
+     color:#000000A6 ;
+    } 
+}

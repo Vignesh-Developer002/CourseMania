@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "../header/Header.css";
 import { FaSearch } from "react-icons/fa";
 import assets from "../../assets/asset.js";
@@ -21,6 +21,13 @@ const Header = () => {
     setIsClicked(true);
     navigate("CoursePage");
   }
+  // useEffect(()=>{
+  //   document.getElementById("demo").innerHTML = 
+  //   "Screen width is " + screen.width;
+  
+
+  // },[])
+   
 
   return (
     <>
@@ -53,6 +60,10 @@ const Header = () => {
           <p className="para-1">Explore What Perfessionals Like You Are </p>
           <p className="para-2"> Learning The Most</p>
         </div>
+
+         {/* <div className="background-Image">
+          <img src={assets.background_img} alt="" />
+        </div> */}
 
         <div className="btn-img1">
           <button>

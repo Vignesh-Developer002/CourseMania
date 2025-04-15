@@ -366,9 +366,9 @@
     padding: 10px;
     position: absolute;
     z-index: 3;
-    right: 0px;
-    top: 0px;
-    border-radius: 8px;
+    right: -1px;
+    top: 1px;
+    /* border-radius: 8px; */
     display: block;
     
   } 
@@ -450,13 +450,14 @@
   } 
 
   /*menu-list*/
-
   
   .menu-list ul{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
+    
+   
     
   }
   
@@ -481,6 +482,10 @@
     margin-left: 10px;
   }
 
+  .list-content {
+    /* border: 1px solid #ffffff; */
+    margin-right: 20px;
+  }
   .list-content .List{
     background-color:rgba(0, 0, 0, 0.452);
     color: #ffffff;
@@ -1287,6 +1292,377 @@
       justify-content: space-between;
       position: relative;
       z-index: 3;
+      
+  }
+
+  .Nav-content h1{
+      font-size: 40px;
+  }
+  
+  .Nav-content ul{
+      gap: 60px;
+      margin-left: 70px;
+  
+  }
+  .Nav-content li{
+    list-style-type: none;
+    cursor: pointer;
+ }
+  
+  .Nav-content li{
+     font-size:22px ;
+  }
+  
+  
+  .drop-Down-menu{
+    gap: 5px;
+    margin-right: -20px;
+  }
+   
+  
+  .drop-Down-menu .dropDown{
+   font-size: 30px;
+   margin-top: 3px;
+    }
+  
+  
+     .right-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    /* margin-left: 40px; */
+    margin-right: -100px;
+  }
+  
+    .right-content .login-btn{
+      font-size: 23px;
+    }
+  
+  
+    .right-content .reg-button{
+      font-size: 20px;
+      padding: 12px 24px;
+    }
+
+    .right-content .red-dot{
+      right: 165px;
+      top: 23px;
+
+    }
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
+    }
+
+    .greenLine{
+      text-decoration: underline;
+      text-decoration-color: #178C8C;
+       text-decoration-thickness: 3px;
+      text-underline-offset: 10px;
+  
+    }
+            /*user loggedIn display*/
+  .userLoggedIn{
+    border: 3px solid #8ecae6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding:5px;
+    border-radius: 50%;
+    background-color: #023047;
+    position: absolute;
+    right: 190px;
+    top: 24px;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.logout{
+  border: 1px solid rgba(0, 0, 0, 0.228);
+  border-radius: 8px;
+  padding :5px;
+  position: absolute;
+  right:90px;
+  top: 30px;
+  display:flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.logoutHidden{
+  display: none;
+}
+
+.logout-icon{
+  color: #780000;
+  font-size: 19px;
+}
+  }
+
+
+  @media(min-width:2200px){
+
+    .Nav-content{
+      padding: 20px 90px;
+      justify-content: space-between;
+      position: relative;
+      z-index: 3;
+      margin-left: 50px;
+      
+  }
+
+  .Nav-content h1{
+      font-size: 40px;
+  }
+  
+  .Nav-content ul{
+      gap: 60px;
+      margin-left: 70px;
+  
+  }
+  .Nav-content li{
+    list-style-type: none;
+    cursor: pointer;
+ }
+  
+  .Nav-content li{
+     font-size:22px ;
+  }
+  
+  
+  .drop-Down-menu{
+    gap: 5px;
+    margin-right: -20px;
+  }
+   
+  
+  .drop-Down-menu .dropDown{
+   font-size: 30px;
+   margin-top: 3px;
+    }
+  
+  
+     .right-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    /* margin-left: 40px; */
+    margin-right: -100px;
+  }
+  
+    .right-content .login-btn{
+      font-size: 23px;
+    }
+  
+  
+    .right-content .reg-button{
+      font-size: 20px;
+      padding: 12px 24px;
+    }
+
+    .right-content .red-dot{
+      right: 165px;
+      top: 23px;
+
+    }
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
+    }
+
+    .greenLine{
+      text-decoration: underline;
+      text-decoration-color: #178C8C;
+       text-decoration-thickness: 3px;
+      text-underline-offset: 10px;
+  
+    }
+            /*user loggedIn display*/
+  .userLoggedIn{
+    border: 3px solid #8ecae6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding:5px;
+    border-radius: 50%;
+    background-color: #023047;
+    position: absolute;
+    right: 190px;
+    top: 24px;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.logout{
+  border: 1px solid rgba(0, 0, 0, 0.228);
+  border-radius: 8px;
+  padding :5px;
+  position: absolute;
+  right:90px;
+  top: 30px;
+  display:flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.logoutHidden{
+  display: none;
+}
+
+.logout-icon{
+  color: #780000;
+  font-size: 19px;
+}
+  }
+
+  
+  @media(min-width:2400px){
+
+    .Nav-content{
+      padding: 20px 100px;
+      justify-content: space-between;
+      position: relative;
+      z-index: 3;
+      margin-left: 70px;
+      
+  }
+
+  .Nav-content h1{
+      font-size: 40px;
+  }
+  
+  .Nav-content ul{
+      gap: 60px;
+      margin-left: 70px;
+  
+  }
+  .Nav-content li{
+    list-style-type: none;
+    cursor: pointer;
+ }
+  
+  .Nav-content li{
+     font-size:22px ;
+  }
+  
+  
+  .drop-Down-menu{
+    gap: 5px;
+    margin-right: -20px;
+  }
+   
+  
+  .drop-Down-menu .dropDown{
+   font-size: 30px;
+   margin-top: 3px;
+    }
+  
+  
+     .right-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    /* margin-left: 40px; */
+    margin-right: -100px;
+  }
+  
+    .right-content .login-btn{
+      font-size: 23px;
+    }
+  
+  
+    .right-content .reg-button{
+      font-size: 20px;
+      padding: 12px 24px;
+    }
+
+    .right-content .red-dot{
+      right: 165px;
+      top: 23px;
+
+    }
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
+    }
+
+    .greenLine{
+      text-decoration: underline;
+      text-decoration-color: #178C8C;
+       text-decoration-thickness: 3px;
+      text-underline-offset: 10px;
+  
+    }
+            /*user loggedIn display*/
+  .userLoggedIn{
+    border: 3px solid #8ecae6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding:5px;
+    border-radius: 50%;
+    background-color: #023047;
+    position: absolute;
+    right: 190px;
+    top: 24px;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.logout{
+  border: 1px solid rgba(0, 0, 0, 0.228);
+  border-radius: 8px;
+  padding :5px;
+  position: absolute;
+  right:90px;
+  top: 30px;
+  display:flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.logoutHidden{
+  display: none;
+}
+
+.logout-icon{
+  color: #780000;
+  font-size: 19px;
+}
+  }
+
+  @media(min-width:2560px){
+
+    .Nav-content{
+      padding: 20px 180px;
+      justify-content: space-between;
+      position: relative;
+      z-index: 3;
+      margin-left: 70px;
       
   }
 

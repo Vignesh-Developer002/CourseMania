@@ -14,9 +14,11 @@ const Cart = ({
   price,
   totalPurchase,
   course_type,
+  course,
 }) => {
   const navigate = useNavigate();
-  const { addToCart, selectCourse } = useContext(globalStore);
+  const { addToCart, selectCourse, removeFromCart, cartItems } =
+    useContext(globalStore);
   const [btnColor, setBtnColor] = useState(false);
   const [addPlus, setPlus] = useState("plus");
 
@@ -50,15 +52,44 @@ const Cart = ({
                 <p className="duration">Duration : {duration}</p>
               </div>
               <div className="tick">
-                <img
+                {cartItems[id] > 0 ? (
+                  <div className="item-count-content">
+                    <img
+                      className="red-tick"
+                      src={assets.plus_icon}
+                      alt=""
+                      onClick={() => addCourseHandler(id)}
+                    />
+                    <div className="cartCount">
+                      <span>{cartItems[id]}</span>
+                    </div>
+                    <img
+                      className="red-tick"
+                      src={assets.minus_logo}
+                      onClick={() => removeFromCart(id)}
+                      alt=""
+                    />
+                  </div>
+                ) : (
+                  <img
+                    className="red-tick"
+                    src={assets.plus_icon}
+                    alt=""
+                    onClick={() => addCourseHandler(id)}
+                  />
+                )}
+
+                {/* <img
                   onClick={() => addCourseHandler(id)}
                   className="red-tick"
-                  src={addPlus === "plus" ? assets.plus_icon : assets.red_tick}
+                  src={
+                    addPlus === "plus" ? assets.plus_icon : assets.minus_logo
+                  }
                   alt=""
                 />
                 <span className="add">
-                  {addPlus === "plus" ? "Add" : "Added"}
-                </span>
+                  {addPlus === "plus" ? "Add" : "Remove"}
+                </span> */}
               </div>
             </div>
 

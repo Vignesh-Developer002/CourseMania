@@ -4,6 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import assets from "../../assets/asset.js";
 import { useNavigate } from "react-router-dom";
 import { globalStore } from "../context/StoreContext.jsx";
+import { Rating } from "react-simple-star-rating";
 
 const CoursePage = () => {
   const {
@@ -23,6 +24,12 @@ const CoursePage = () => {
     navigate("/");
     setSearchClick(false);
   }
+
+  const [ratingValue, setRatingValue] = useState(0);
+
+  const handleRating = (rate) => {
+    setRatingValue(rate);
+  };
 
   return (
     // width-70%
@@ -46,7 +53,7 @@ const CoursePage = () => {
             className="shop-cart"
             onClick={() => navigate("/CartPage")}
           />
-          <span className="cart-overlay">1</span>
+          {/* <span className="cart-overlay">1</span> */}
         </div>
       </div>
       {/* ----------------------------------------------------------- */}
@@ -239,7 +246,13 @@ const CoursePage = () => {
               <div className="left-side-review">
                 <input type="text" placeholder="Type Something..." />
                 <div className="colorless-star">
-                  <img
+                  <Rating
+                    className="ratings"
+                    fillColor="yellow"
+                    onClick={handleRating}
+                  />
+
+                  {/* <img
                     onClick={() => setGoldStar("gold-1")}
                     src={
                       goldStar === "gold-1"
@@ -283,7 +296,7 @@ const CoursePage = () => {
                         : assets.colorless_star
                     }
                     alt=""
-                  />
+                  // /> */}
                 </div>
               </div>
 

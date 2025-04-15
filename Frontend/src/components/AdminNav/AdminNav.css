@@ -1,3 +1,4 @@
+
 .admin-nav{
     border: 1px solid #00000026;
     padding: 20px;
@@ -11,4 +12,113 @@
     color:transparent;
     background: linear-gradient(#17ACAC,#17ACAC,#000000);
     background-clip: text;
+    cursor: pointer;
 }
+@media(min-width:320px){
+    .admin-nav{
+        border: 1px solid #00000026;
+        padding: 20px 2px;
+        position: fixed;
+        left:2px;
+        top:5px;
+        height: 90vh;
+        border-radius: 10px;
+        display: none;
+    }
+    .nav-title{
+        color:transparent;
+        background: linear-gradient(#17ACAC,#17ACAC,#000000);
+        background-clip: text;
+        font-size: 15px;
+    }
+}
+
+@media(min-width:375px){
+    .admin-nav{
+        border: 1px solid #00000026;
+        padding: 20px 7px;
+        position: fixed;
+        left:2px;
+        top:10px;
+        height: 90vh;
+        border-radius: 10px;
+        display: none;
+    }
+    .nav-title{
+        color:transparent;
+        background: linear-gradient(#17ACAC,#17ACAC,#000000);
+        background-clip: text;
+        font-size: 15px;
+    }
+}
+
+@media(min-width:425px){
+    .admin-nav{
+        border: 1px solid #00000026;
+        padding: 20px 10px;
+        position: fixed;
+        left: 6px;
+        top:20px;
+        height: 90vh;
+        border-radius: 10px;
+        display: none;
+    }
+    .nav-title{
+        color:transparent;
+        background: linear-gradient(#17ACAC,#17ACAC,#000000);
+        background-clip: text;
+        font-size: 18px;
+    }
+}
+
+@media(min-width:768px){
+    .admin-nav{
+        border: 1px solid #00000026;
+        padding: 20px;
+        position: fixed;
+        left: 10px;
+        top:20px;
+        height: 90vh;
+        border-radius: 10px;
+        display: none;
+    }
+    .nav-title{
+        color:transparent;
+        background: linear-gradient(#17ACAC,#17ACAC,#000000);
+        background-clip: text;
+        font-size: 20px;
+    }
+}
+
+@media(min-width:1024px){
+    .admin-nav{
+        border: 1px solid #00000026;
+        padding: 20px;
+        position: fixed;
+        left: 20px;
+        top:20px;
+        height: 90vh;
+        border-radius: 10px;
+        display: block;
+    }
+    .nav-title{
+        color:transparent;
+        background: linear-gradient(#17ACAC,#17ACAC,#000000);
+        background-clip: text;
+        font-size: 30px;
+    }
+}
+
+@media(min-width:1440px){
+    .admin-nav{
+        border: 1px solid #00000026;
+        padding: 20px;
+        position: fixed;
+        left: 30px;
+        top:20px;
+        height: 90vh;
+        border-radius: 10px;
+    }
+}
+
+

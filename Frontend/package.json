@@ -19,6 +19,7 @@
     "react-loading-skeleton": "^3.5.0",
     "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^7.3.0",
+    "react-simple-star-rating": "^5.1.7",
     "react-slick": "^0.30.3",
     "react-toastify": "^11.0.5",
     "slick-carousel": "^1.8.1",

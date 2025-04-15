@@ -1,9 +1,12 @@
 import React from "react";
 import "../AdminNav-top/AdminNavTop.css";
 import assets from "../../assets/asset";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const AdminNavTop = () => {
   return (
+    <>
+    <RxHamburgerMenu className="AdminBurger"/>
     <div className="adminNavTop">
         {/* flex-between */}
       <div className="left-side-admin">
@@ -30,7 +33,7 @@ const AdminNavTop = () => {
             </div>
            </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

@@ -7,7 +7,6 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross2 } from "react-icons/rx";
 import { CiLogout } from "react-icons/ci";
 import { globalStore } from "./context/StoreContext.jsx";
-import { fetchUserData } from "./data/data.jsx";
 import { Link } from "react-router-dom";
 
 const NavBar = ({
@@ -19,8 +18,14 @@ const NavBar = ({
   setLogin,
   setIslogged,
 }) => {
-  const { displayUserName, setDispalyUserName, isSubmit, setIsSubmit } =
-    useContext(globalStore);
+  const {
+    displayUserName,
+    setDispalyUserName,
+    isSubmit,
+    setIsSubmit,
+    show,
+    setShow,
+  } = useContext(globalStore);
   const { cartItems, certiItem } = useContext(globalStore);
 
   let cartCount;
@@ -55,12 +60,14 @@ const NavBar = ({
 
   function OnclickHandler() {
     // register form  setup
+    setShow('show')// for showing the register page
     setLoginPage(true); // for showing the register page
     setLogin(true); //  for conditionally render the register page input field
   }
 
   function OnclickLoginHandler() {
     // login page setup
+    setShow('show')// for showing the login page
     setLoginPage(true); // for showing the register page
     setIslogged(true); //  for conditionally render the login page input field
   }

@@ -5,7 +5,17 @@
    align-items: center;
 }
 
-
+.item-count-content{
+   display: flex;
+   gap: 8px;
+   align-items: center;
+   background-color:rgba(128, 128, 128, 0.461);
+   padding: 4px;
+   border-radius: 20px;
+   color: #ffffff;
+   font-weight: 700;
+   margin-left: -10px;
+}
 
 .card-content{
     width: 300px;
@@ -192,8 +202,6 @@
 
    }
    
-   
-   
    .card-content{
        width: 260px;
        background-color:#F8F5F5;
@@ -229,29 +237,40 @@
    }
     /*cart-body*/
     .card-body{
-       display: flex;
-       justify-content: space-between;
-   
-    }
-   
-    .left-content{
-       display: flex;
-       flex-direction: column;
-       gap: 8px;
-    }
-   
+      display: flex;
+      justify-content: space-between;
+  
+   }
+  
+   .left-content{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+  
+   /* .tick{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+   } */
+
     .tick{
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       justify-content: center;
-       gap: 8px;
-       
-    }
-    .red-tick{
-       width: 25px;
-       cursor: pointer;
-    }
+     /* border: 1px solid; */
+     display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; 
+      gap: 7px; 
+      margin-left: -28px;
+    }  
+
+   .red-tick{
+      /* width: 30px; */
+      width: 25px;
+      cursor: pointer;
+   }
    
     .left-content .para-head{
        color: #0A4A4A;
@@ -359,9 +378,9 @@
     }
    
     .bottom-link{ /* this one*/
-      display: flex;
+      /* display: flex; */
       justify-content: flex-start;
-      width: 300px;
+      /* width: 300px; */
       margin-left: 130px;
     }
     
@@ -425,30 +444,44 @@
        padding: 4px;
    }
     /*cart-body*/
+    /*----------------------------------------*/
+    /*cart-body*/
     .card-body{
-       display: flex;
-       justify-content: space-between;
-   
-    }
-   
-    .left-content{
-       display: flex;
-       flex-direction: column;
-       gap: 8px;
-    }
-   
+      display: flex;
+      justify-content: space-between;
+  
+   }
+  
+   .left-content{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+  
+   /* .tick{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+   } */
+
     .tick{
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       justify-content: center;
-       gap: 8px;
-       
-    }
-    .red-tick{
-       width: 25px;
-       cursor: pointer;
-    }
+     /* border: 1px solid; */
+     display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; 
+      gap: 7px; 
+      margin-left: -28px;
+    }  
+
+   .red-tick{
+      /* width: 30px; */
+      width: 25px;
+      cursor: pointer;
+   }
+    
    
     .left-content .para-head{
        color: #0A4A4A;
@@ -572,7 +605,8 @@
      text-decoration-color: #178C8C;
      
     }
-}
+   }
+
 
  @media(min-width:425px){
    .parent-content{
@@ -620,30 +654,43 @@
        padding: 4px;
    }
     /*cart-body*/
+     /*----------------------------------------*/
+    /*cart-body*/
     .card-body{
-       display: flex;
-       justify-content: space-between;
-   
-    }
-   
-    .left-content{
-       display: flex;
-       flex-direction: column;
-       gap: 8px;
-    }
-   
+      display: flex;
+      justify-content: space-between;
+  
+   }
+  
+   .left-content{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+  
+   /* .tick{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+   } */
+
     .tick{
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       justify-content: center;
-       gap: 8px;
-       
-    }
-    .red-tick{
-       width: 25px;
-       cursor: pointer;
-    }
+     /* border: 1px solid; */
+     display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; 
+      gap: 7px; 
+      margin-left: -28px;
+    }  
+
+   .red-tick{
+      /* width: 30px; */
+      width: 25px;
+      cursor: pointer;
+   }
    
     .left-content .para-head{
        color: #0A4A4A;
@@ -813,31 +860,43 @@
        padding: 8px 15px;
    }
     /*cart-body*/
+     /*----------------------------------------*/
+    /*cart-body*/
     .card-body{
-       display: flex;
-       /* gap: 88px; */
-       justify-content: space-between;
-   
-    }
-   
-    .left-content{
-       display: flex;
-       flex-direction: column;
-       gap:10px;
-    }
-   
+      display: flex;
+      justify-content: space-between;
+  
+   }
+  
+   .left-content{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+  
+   /* .tick{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+   } */
+
     .tick{
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       justify-content: center;
-       gap: 8px;
-       
-    }
-    .red-tick{
-       width: 30px;
-       cursor: pointer;
-    }
+     /* border: 1px solid; */
+     display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; 
+      gap: 7px; 
+      margin-left: -28px;
+    }  
+
+   .red-tick{
+      /* width: 30px; */
+      width: 27px;
+      cursor: pointer;
+   }
    
     .left-content .para-head{
        color: #0A4A4A;
@@ -995,32 +1054,43 @@
        text-align: center;
        padding: 8px 15px;
    }
+  /*----------------------------------------*/
     /*cart-body*/
     .card-body{
-       display: flex;
-       /* gap: 88px; */
-       justify-content: space-between;
-   
-    }
-   
-    .left-content{
-       display: flex;
-       flex-direction: column;
-       gap: 10px;
-    }
-   
+      display: flex;
+      justify-content: space-between;
+  
+   }
+  
+   .left-content{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+  
+   /* .tick{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+   } */
+
     .tick{
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       justify-content: center;
-       gap: 8px;
-       
-    }
-    .red-tick{
-       width: 30px;
-       cursor: pointer;
-    }
+     /* border: 1px solid; */
+     display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; 
+      gap: 7px; 
+      margin-left: -28px;
+    }  
+
+   .red-tick{
+      /* width: 30px; */
+      width: 30px;
+      cursor: pointer;
+   }
    
     .left-content .para-head{
        color: #0A4A4A;
@@ -1181,33 +1251,48 @@
        text-align: center;
        padding: 8px 15px;
    }
+
+   /*------------------------------------------*/
+    /*----------------------------------------*/
     /*cart-body*/
     .card-body{
-       display: flex;
-       /* gap: 88px; */
-       justify-content: space-between;
-   
-    }
-   
-    .left-content{
-       display: flex;
-       flex-direction: column;
-       gap: 0px;
-      
-    }
-   
+      display: flex;
+      justify-content: space-between;
+  
+   }
+  
+   .left-content{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+  
+   /* .tick{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+   } */
+
     .tick{
-       display: flex;
-       flex-direction: column;
-       justify-content: flex-start;
-       gap: 8px;
-       
-    }
-    .red-tick{
-       width: 30px;
-       cursor: pointer;
-    }
-   
+     /* border: 1px solid; */
+     display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; 
+      gap: 7px; 
+      margin-left: -28px;
+    }  
+
+   .red-tick{
+      /* width: 30px; */
+      width: 30px;
+      cursor: pointer;
+   }
+    
+
+   /*---------------------------------------*/
     .left-content .para-head{
        color: #0A4A4A;
        font-size: 19px;
@@ -1378,10 +1463,10 @@
        text-align: center;
        padding: 8px 15px;
    }
+   /*----------------------------------------*/
     /*cart-body*/
     .card-body{
        display: flex;
-       /* gap: 88px; */
        justify-content: space-between;
    
     }
@@ -1392,19 +1477,30 @@
        gap: 10px;
     }
    
-    .tick{
+    /* .tick{
        display: flex;
        flex-direction: column;
        align-items: center;
        justify-content: center;
        gap: 8px;
-       
-    }
+    } */
+
+     .tick{
+      /* border: 1px solid; */
+      display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content: center; 
+       gap: 7px; 
+       margin-left: -40px;
+     }  
+
     .red-tick{
+       /* width: 30px; */
        width: 30px;
        cursor: pointer;
     }
-   
+   /*----------------------------------*/
     .left-content .para-head{
        color: #0A4A4A;
        font-size: 18px;

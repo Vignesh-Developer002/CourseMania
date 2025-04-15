@@ -17,7 +17,13 @@ const Certificate = ({
 }) => {
   const [btnColor, setBtnColor] = useState(false);
   const [addPlus, setPlus] = useState("plus");
-  const { addToCartCerti, selectCertificate } = useContext(globalStore);
+  const {
+    addToCartCerti,
+    selectCertificate,
+    cartItems,
+    removeFromCerti,
+    certiItem,
+  } = useContext(globalStore);
   const navigate = useNavigate();
 
   function handleCertificate(id) {
@@ -26,7 +32,7 @@ const Certificate = ({
   }
 
   function handleAdd(id) {
-    setPlus("plus-icon-2");
+    // setPlus("plus-icon-2");
     addToCartCerti(id);
   }
   return (
@@ -44,7 +50,7 @@ const Certificate = ({
             {/* flex-column */}
             <div className="card-left-side">
               <p className="Card-heading">
-                {certificationName.slice(0, 16)} ...
+                {certificationName.slice(0, 12)} ...
               </p>
               <p className="duration-2">
                 <span className="green-span">Duration</span> :{" "}
@@ -53,15 +59,42 @@ const Certificate = ({
             </div>
             {/* flex-column */}
             <div className="card-right-side">
-              <img
+              {certiItem[id] > 0 ? (
+                <div className="item-count-content">
+                  <img
+                    className="plus-icon-2"
+                    onClick={() => handleAdd(id)}
+                    src={assets.plus_icon}
+                    alt=""
+                  />
+                  <div className="cartCount">
+                    <span>{certiItem[id]}</span>
+                  </div>
+                  <img
+                    className="plus-icon-2"
+                    onClick={() => removeFromCerti(id)}
+                    src={assets.minus_logo}
+                    alt=""
+                  />
+                </div>
+              ) : (
+                <img
+                  onClick={() => handleAdd(id)}
+                  className="plus-icon-2"
+                  src={assets.plus_icon}
+                  alt=""
+                />
+              )}
+
+              {/* <img
                 onClick={() => handleAdd(id)}
-                src={addPlus === "plus" ? assets.plus_icon : assets.red_tick}
+                src={addPlus === "plus" ? assets.plus_icon : assets.minus_logo}
                 className="plus-icon-2"
                 alt=""
               />
               <span className="Add-2">
-                {addPlus === "plus" ? "Add" : "Added"}
-              </span>
+                {addPlus === "plus" ? "Add" : "Remove"}
+              </span> */}
             </div>
           </div>
           {/* flex-column*/}

@@ -8,8 +8,7 @@ import CartPage from "./components/CartPage/CartPage.jsx";
 import CheckOutPage from "./components/CheckoutPage/CheckOutPage.jsx";
 import AdminLogin from "./components/AdminLoginPage/AdminLogin.jsx";
 import Gallery from "./components/AdminGallery/Gallery.jsx";
-import AdminNav from "./components/AdminNav/AdminNav.jsx";
-import AdminNavTop from "./components/AdminNav-top/AdminNavTop.jsx";
+import ManageContact from "./ManageContact/ManageContact.jsx";
 
 const App = () => {
   const [login, setLogin] = useState(false); //register page input field setup
@@ -72,8 +71,7 @@ const App = () => {
         <Route path="/CheckOutPage" element={<CheckOutPage />} />
         <Route path="/AdminLogin" element={<AdminLogin />} />
         <Route path="/Gallery" element={<Gallery />} />
-        <Route path="/AdminNav" element={<AdminNav/>}/>
-        <Route path="/AdminNavTop" element={<AdminNavTop/>}/>
+        <Route path="/ManageContact" element={<ManageContact/>}/>
       </Routes>
     </div>
   );

@@ -6,7 +6,8 @@ export const globalStore = createContext(null);
 const StoreContext = ({ children }) => {
   // let courseUrl = "http://localhost:4000/courses";
   // let certificateUrl = "http://localhost:4000/Certification";
-  const [isSubmit, setIsSubmit] = useState(false);
+  const [galleryName,setGalleryName]=useState(false) // for dynamically change the manage gallery heading based on condition
+  const [isSubmit, setIsSubmit] = useState(false); 
   const [isBackBtnClick, setIsBackBtnClick] = useState(false); //for managing the admin login data
   const [displayUserName, setDispalyUserName] = useState("");
   const [loginEmail, setLoginEmail] = useState(""); //assigning the email from database for validation
@@ -18,6 +19,7 @@ const StoreContext = ({ children }) => {
     "http://192.168.1.82:4000/Certification"
   ); // length ===30 (Certificate)
 
+  const [show,setShow]=useState('')// show and hide of login register form
   //search for course
   const [searchCourse, setSearchCourse] = useState("");
   //entire course and certificate api data
@@ -303,6 +305,10 @@ const StoreContext = ({ children }) => {
     setDispalyUserName,
     isSubmit,
     setIsSubmit,
+    show,
+    setShow,
+    galleryName,
+    setGalleryName
   };
 
   return (

@@ -22,17 +22,17 @@ const RegisterLogin = ({
   setIslogged,
 }) => {
   const {
-    loginEmail,
     setLoginEmail,
-    loginPassword,
     setLoginPassword,
-    displayUserName,
     setDispalyUserName,
     setIsSubmit,
+    show,
+    setShow,
   } = useContext(globalStore);
   const [databaseLoginData, setDatabaseLoginData] = useState(null); //assigning the matched login data email and password from data base
   const [formError, setFormError] = useState({}); // register form error handling
   const [registerDuplicateData, setregisterDuplicateRecord] = useState(""); // assigning duplicate data stored in local storage
+  const [loginFormErrMsg, setLoginFormErrMsg] = useState({EmailErr:"",passwordErr:""}); //for showing the extra error msg in login form while the data is not found in database
 
   //getting duplicate data to local storage
   let dupData;
@@ -46,7 +46,7 @@ const RegisterLogin = ({
 
   const [loginFormErr, setLoginFormErr] = useState({});
   useEffect(() => {
-    if (databaseLoginData !== null) {
+    if (databaseLoginData && databaseLoginData !== null) {
       setLoginEmail(databaseLoginData["Email"]);
       setLoginPassword(databaseLoginData["password"]);
     }
@@ -175,10 +175,14 @@ const RegisterLogin = ({
             theme: "colored",
             transition: Flip,
           });
-        } else {
+        } 
+        else if(loginUser.data?.results.length===0){
+          setLoginFormErrMsg((prev)=>({...prev,EmailErr:"Email Mismatch",passwordErr:"password mismatch"}))
           setLogin(false);
-          setIslogged(false);
-          setLoginPage(false);
+          setIslogged(
+            true
+          ); /*----------login page input field setup---------- changed--- */
+          setLoginPage(true); // for showing the register page-- changed
           setIsSubmit(false);
           toast.error("User not found please register to continue.", {
             position: "top-right",
@@ -191,13 +195,17 @@ const RegisterLogin = ({
             theme: "colored",
             transition: Flip,
           });
+         
         }
         setDatabaseLoginData(loginUser.data.results[0]);
       }
     } catch (err) {
-      console.log(err);
+      console.log(err.results.length);
+    
     }
   }
+
+  // console.log(loginFormErrMsg["EmailErr"]);
 
   //validate the login data
   function handleValidateLogin(values) {
@@ -253,15 +261,19 @@ const RegisterLogin = ({
     setLoginPage(true);
   }
 
+  // function handlePopup() {
+  //   setShow("hidden");
+  // }
+
   return (
-    // <bg-transpernt>
-    <div className="register-content-main">
+    // <bg-transpernt> className="register-content-main" onClick={() => loginHandler()}
+    <div className="center">
       {/* center */}
       <div className="register-content">
         {/* flex */}
         <div className="reg-head">
           <h2 onClick={() => loginHandler()}>CourseMania</h2>
-
+          {/*  */}
           <div className="nav">
             <ul>
               <li>Home</li>
@@ -326,7 +338,7 @@ const RegisterLogin = ({
                     type="email"
                     name="email"
                     autoComplete="off"
-                    placeholder=" Email or Phone Number"
+                    placeholder=" Email"
                   />
                   <span
                     style={{ color: "red", marginTop: "0px", fontSize: "13px" }}
@@ -368,7 +380,7 @@ const RegisterLogin = ({
                         : "redColor"
                     }
                   >
-                    {loginFormErr.email}
+                    {loginFormErr.email || loginFormErrMsg.EmailErr}
                   </span>
                   <input
                     className="borderLess"
@@ -386,7 +398,7 @@ const RegisterLogin = ({
                         : "redColor"
                     }
                   >
-                    {loginFormErr.password}
+                    {loginFormErr.password || loginFormErrMsg.passwordErr}
                   </span>
                 </>
               )}
@@ -474,6 +486,10 @@ const RegisterLogin = ({
           </div>
         </div>
       </div>
+      <div
+        className="register-content-main"
+        onClick={() => loginHandler()}
+      ></div>
     </div>
   );
 };

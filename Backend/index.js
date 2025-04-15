@@ -17,13 +17,13 @@ const PORT = process.env.PORT ||4000;
 app.use(cors());
 app.use(express.json());
 
-app.use((req,res,next)=>{
-   console.log("request url =", req.url);
-   console.log("request method =",  req.method);
-   console.log("request url =", req.body);
-   console.log("request PARARMAS =", req.params);
-   next()
-});
+// app.use((req,res,next)=>{
+//    console.log("request url =", req.url);
+//    console.log("request method =",  req.method);
+//    console.log("request url =", req.body);
+//    console.log("request PARARMAS =", req.params);
+//    next()
+// });
 
 // server running message
  app.listen( PORT,()=>{console.log(`server is running on port ${PORT}`)});
@@ -58,10 +58,11 @@ app.use((req,res,next)=>{
  //getting perticular user data by login form data match with data stored in db 
  app.post('/login', (req, res) => {
    const {email,password } = req.body;
+   console.log(email,password)
    pool.query('SELECT Email, password from user Where Email =? and password =?',[email,password] , (error, results) => {
        if (error) {
            console.error(error);
-           res.status(500).send('Error creating user');
+           res.status(500).send('Email mismatch');
        } else {
          console.log('results', results)
         res.status(200).json({results});

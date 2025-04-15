@@ -21,7 +21,7 @@ const CartPage = () => {
   // let certificateUrl = "http://localhost:4000/Certification"
   const { courseData } = fetchUserData("http://192.168.1.82:4000/courses");
   const { certificateData } = fetchUserData(
-   "http://192.168.1.82:4000/Certification"
+    "http://192.168.1.82:4000/Certification"
   );
 
   const {
@@ -54,6 +54,7 @@ const CartPage = () => {
 
   return (
     // width-80%
+    <>
     <div className="cartpage-container">
       {/* flex */}
       <div className="cartpage-nav">
@@ -118,7 +119,7 @@ const CartPage = () => {
         </div>
         {/* flex-column */}
         <div className="cart-list-content">
-          {/* flex */}
+          {/* grid */}
           <div className="card-head">
             <p>Product</p>
             <p>Price</p>
@@ -130,14 +131,15 @@ const CartPage = () => {
           {courseData.map((course, i) => {
             if (cartItems[course.id] > 0) {
               return (
-                <div className="cart-details" key={i}>
+                // grid
+                <div className="cart-details grid" key={i}>
                   <div className="img-heading">
                     {/* object */}
                     <img src={assets.course_img_2} alt="" />
                     <p>
-                      {course.name.length < 14
-                        ? course.name + "...."
-                        : course.name.slice(0, 14) + "..."}
+                      {course.name.length > 10
+                        ? course.name.slice(0, 8) + "..."
+                        : course.name.slice(0, 8) + "..."}
                     </p>
                   </div>
                   <p className="price">${Math.trunc(course.old_price)}</p>
@@ -173,7 +175,7 @@ const CartPage = () => {
           {certificateData.map((certi, i) => {
             if (certiItem[certi.id] > 0) {
               return (
-                <div className="cart-details" key={i}>
+                <div className="cart-details grid" key={i}>
                   <div className="img-heading">
                     <img src={assets.certification_img_2} alt="" />
                     <p>
@@ -213,9 +215,9 @@ const CartPage = () => {
           {/* flex */}
           <div className="shop-btns">
             <button onClick={() => navigate("/")}>Return To shop</button>
-            <button onClick={() => navigate("/CheckoutPage")}>
+            {/* <button onClick={() => navigate("/CheckoutPage")}>
               Update Cart
-            </button>
+            </button> */}
           </div>
         </div>
         {/* flex */}
@@ -258,8 +260,11 @@ const CartPage = () => {
           </div>
         </div>
       </div>
+{/* -------------------------------------- */}
 
-      <div className="cart-footer">
+    {/* -------------------------- */}
+    </div>
+    <div className="cart-footer">
         {/* flex */}
         <div className="footer-sub">
           <div className="about-us">
@@ -297,7 +302,7 @@ const CartPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

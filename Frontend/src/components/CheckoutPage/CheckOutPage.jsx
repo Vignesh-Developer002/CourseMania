@@ -39,6 +39,7 @@ const CheckOutPage = () => {
   }
 
   return (
+    <>
     <div className="checkout-container">
       {/* flex */}
       <div className="checkout-nav">
@@ -271,6 +272,7 @@ const CheckOutPage = () => {
         </div>
       </div>
 
+{/* -----------------footer------------------------ */}
       {/* bg-green */}
       <div className="education-footer">
         {/* flex */}
@@ -305,7 +307,10 @@ const CheckOutPage = () => {
           </div>
         </div>
       </div>
+      {/* ----------------------------------------- */}
     </div>
+    
+    </>
   );
 };
 

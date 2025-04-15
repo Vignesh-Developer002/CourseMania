@@ -62,10 +62,15 @@ import search_logo2 from "../assets/search_logo2.svg"
 import home_logo from "../assets/home_logo.svg"
 import  Adminarrow_logo from  "../assets/Adminarrow_logo.svg"
 import storeimage_logo from "../assets/storeimage_logo.svg"
-
+import minus_logo from "../assets/minus_logo.svg"
+import background_img from "../assets/background_img.svg"
+import image_upload from "../assets/image_upload.svg"
+import prev_img from "../assets/prev-img.svg"
 
 
 const assets = {
+    prev_img,
+    background_img,
     storeimage_logo,
     Adminarrow_logo,
     home_logo,
@@ -126,6 +131,8 @@ const assets = {
     right_side_center_logo,
     admin_login_icon,
     eye_open_icon,
+    minus_logo,
+    image_upload
 
 }
 

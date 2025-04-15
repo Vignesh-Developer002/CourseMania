@@ -6,6 +6,17 @@
     margin-left: 140px;
 }
 
+.item-count-content{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background-color:rgba(128, 128, 128, 0.461);
+    padding: 4px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-left: -10px;
+ }
 /*card-top*/
 .card-top{
     width: 300px;
@@ -242,13 +253,14 @@
     /*right-side-content*/
     .card-right-side{
         display: flex;
-        flex-direction: column;
-        gap: 6px;
+        flex-direction: row;
+        gap: 7px;
         align-items: center;
+    
     }
     
     .plus-icon-2{
-        width: 26px;
+        width: 25px;
         cursor: pointer;
     }
     
@@ -411,13 +423,14 @@
     /*right-side-content*/
     .card-right-side{
         display: flex;
-        flex-direction: column;
-        gap: 6px;
+        flex-direction: row;
+        gap: 7px;
         align-items: center;
+
     }
     
     .plus-icon-2{
-        width: 26px;
+        width: 25px;
         cursor: pointer;
     }
     
@@ -580,13 +593,13 @@
     /*right-side-content*/
     .card-right-side{
         display: flex;
-        flex-direction: column;
-        gap: 6px;
+        flex-direction: row;
+        gap: 7px;
         align-items: center;
     }
     
     .plus-icon-2{
-        width: 26px;
+        width: 25px;
         cursor: pointer;
     }
     
@@ -744,13 +757,14 @@
     /*right-side-content*/
     .card-right-side{
         display: flex;
-        flex-direction: column;
-        gap: 6px;
+        flex-direction: row;
+        gap: 7px;
         align-items: center;
+      
     }
     
     .plus-icon-2{
-        width: 32px;
+        width: 30px;
         cursor: pointer;
     }
     
@@ -910,13 +924,13 @@
     /*right-side-content*/
     .card-right-side{
         display: flex;
-        flex-direction: column;
-        gap: 6px;
+        flex-direction: row;
+        gap: 7px;
         align-items: center;
     }
     
     .plus-icon-2{
-        width: 32px;
+        width: 30px;
         cursor: pointer;
     }
     
@@ -1071,13 +1085,13 @@
     /*right-side-content*/
     .card-right-side{
         display: flex;
-        flex-direction: column;
-        gap: 6px;
+        flex-direction: row;
+        gap: 7px;
         align-items: center;
     }
     
     .plus-icon-2{
-        width: 32px;
+        width: 30px;
         cursor: pointer;
     }
     
@@ -1231,13 +1245,13 @@
     /*right-side-content*/
     .card-right-side{
         display: flex;
-        flex-direction: column;
-        gap: 6px;
+        flex-direction: row;
+        gap: 7px;
         align-items: center;
     }
     
     .plus-icon-2{
-        width: 32px;
+        width: 30px;
         cursor: pointer;
     }
     

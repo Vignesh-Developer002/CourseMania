@@ -75,7 +75,7 @@
     .view-course {
         position: absolute;
         right: 10px;
-        top: 380px;
+        top: 390px;
         z-index: 1;
     }
     
@@ -120,7 +120,7 @@
     .view-course {
         position: absolute;
         right: 40px;
-        top: 380px;
+        top: 390px;
         z-index: 1;
     }
     
@@ -190,7 +190,7 @@
     .view-course {
         position: absolute;
         right: 20px;
-        top: 538px;
+        top: 520px;
         z-index: 1;
     }
 }
@@ -198,7 +198,7 @@
     .view-course {
         position: absolute;
         right: 20px;
-        top: 558px;
+        top: 540px;
         z-index: 1;
     }
 }
@@ -206,10 +206,20 @@
     .view-course {
         position: absolute;
         right: 30px;
-        top: 570px;
+        top: 560px;
         z-index: 1;
     }
 }
+
+@media(min-width:700px){
+    .view-course {
+        position: absolute;
+        right: 30px;
+        top: 590px;
+        z-index: 1;
+    }
+}
+
 
 @media(min-width:768px){
     .courses-content{
@@ -239,7 +249,7 @@
     
     .view-course {
         position: absolute;
-        right: 10px;
+        right: 20px;
         top: 680px;
         z-index: 1;
     }
@@ -328,6 +338,49 @@
         position: absolute;
         right: 80px;
         top: 800px;
+        z-index: 1;
+    }
+    
+    /*right-side-arrow*/
+    .right-arrow{
+        position: absolute;
+        z-index: 2;
+        top: 1010px;
+        right:10px;
+        cursor: pointer;
+    }
+}
+
+@media(min-width:1100px){
+    .courses-content{
+        width: 100%;
+        background-color:#ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 10px;
+        gap: 2px;
+        margin-top: 40px;
+        overflow-x: scroll;
+    
+        
+    }
+    
+    .courses-content::-webkit-scrollbar{
+       display: none;
+    }
+    
+    .view-course a{
+        color: #2C7575;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    .view-course {
+        position: absolute;
+        right: 80px;
+        top: 840px;
         z-index: 1;
     }
     

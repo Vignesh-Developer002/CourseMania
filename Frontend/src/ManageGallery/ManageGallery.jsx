@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../ManageGallery/ManageGallery.css";
 import assets from "../assets/asset";
+import AdminNav from "../components/AdminNav/AdminNav";
+import AdminNavTop from "../components/AdminNav-top/AdminNavTop";
+import { globalStore } from "../components/context/StoreContext";
 
 const ManageGallery = () => {
+   const {galleryName,setGalleryName} = useContext(globalStore)
   return (
     <>
       <div className="manage-gallery-content">
         <div className="manage-gallery-head">
-          <h1>Manage Gallery</h1>
+          <h1>{galleryName?"Manage Contact Details":"Manage Gallery "}</h1>
           <p>Set measurable learning goals for each subject and grade level</p>
         </div>
 
@@ -17,11 +21,11 @@ const ManageGallery = () => {
             <p>Dashboard</p>
           </div>
           <img className="A-arrow" src={assets.Adminarrow_logo} alt="" />
-          <p className="manage-gallery">Manage Gallery</p>
+          <p className="manage-gallery">{galleryName?"Manage Contact Details":"Manage Gallery"}</p>
         </div>
         <hr className="admin-line" />
       </div>
-    </>
+      </>
   );
 };
 
