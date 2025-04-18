@@ -1,36 +1,118 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../AdminGallery/Gallery.css";
 import AdminNav from "../AdminNav/AdminNav";
 import AdminNavTop from "../AdminNav-top/AdminNavTop";
 import ManageGallery from "../../ManageGallery/ManageGallery";
-import assets from "../../assets/asset";
+import assets, { courses } from "../../assets/asset";
 import { FaAngleDown } from "react-icons/fa";
 import { FaAngleUp } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { globalStore } from "../context/StoreContext";
+import axios from "axios";
+import { toast, Bounce } from "react-toastify";
 
 const Gallery = () => {
-  const { setGalleryName } = useContext(globalStore);
-  const [bgColor, setBgColor] = useState(""); // for pagination number bg color changing state
-  const [indexNumber, setIndexNumber] = useState(null); // for assigning the index number of clicked pagination number
-  const [count, setCount] = useState(0);
+  const {
+    setGalleryName,
+    contactsecData,
+    setContactSecData,
+    storeImgToDisplay,
+    editData,
+    setEditData,
+    callUseEffect,
+    setCallUseEffect,
+    saveId,
+    setSaveId,
+  } = useContext(globalStore);
 
+  // console.log(storeImgToDisplay);
+  const [count, setCount] = useState(0);
+  const[deletBtn, setDeleteBtn]=useState(false)
   const navigate = useNavigate();
   // function for handling the manage gallery name
   function handleGalleryName() {
+    setSaveId(null)
     setGalleryName(true);
     navigate("/ManageContact");
   }
 
-  function handleBgColor(num, index) {
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    let res = arr.map((n, i) => n === num);
-    let idx = res.indexOf(true);
-    setIndexNumber(idx);
-    setBgColor("greenBg");
+  //function for delete the perticular data in db
+  async function handleDelete(num) {
+    setDeleteBtn((prev)=>(!prev))
+    const response = await axios.post(
+      `http://192.168.1.82:4000/deleteContact/${num}`
+    );
+    if (response.data) {
+      toast.success(`${response.data.message}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    } else {
+      toast.success(`${response.data.message}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
   }
+
+  //function for edit the selected data
+  async function handleEdit(num) {
+    setSaveId(num);
+    setCallUseEffect(true);
+    navigate("/ManageContact");
+    const response = await axios.post(
+      `http://192.168.1.82:4000/contactdetail/${num}`
+    );
+    if (response.data.result) {
+      setEditData(response.data.result);
+      // console.log(response.data.result);
+    } else {
+      console.log("no data found");
+    }
+  }
+  // setInterval(()=>{
+  useEffect(() => {
+    async function getContactSectionDetails() {
+      const response = await axios.get(
+        "http://192.168.1.82:4000/contactdetail"
+      );
+
+      if (response?.data?.result && Array.isArray(response?.data?.result)) {
+        setContactSecData(response?.data?.result);
+      } else {
+        toast.error("no data available", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+    }
+    // setInterval(() => {
+    getContactSectionDetails();
+    // }, 1000);
+  }, [deletBtn]);
 
   return (
     <div className="gallery-container">
@@ -42,7 +124,7 @@ const Gallery = () => {
         <div className="dynamic-content">
           <div className="filter_content">
             <div className="filter-left">
-              <img src={assets.filter_logo} alt="" />
+              <img src={assets.filter_logo} alt=""/>
               <div className="filetr-search-content">
                 <input type="text" placeholder="Search objective code" />
                 <img src={assets.search_logo2} alt="" />
@@ -65,42 +147,31 @@ const Gallery = () => {
             <p className="head-1">Actions</p>
           </div>
           {/*dynamic update-start */}
-          <div className="inner-content inner-sub">
-            <p className="serialNumber">01</p>
-            <img className="thumbnail" src={assets.storeimage_logo} alt="" />
-            <p>Meet Our Instructors</p>
-            <p>Group Photo of our Teaching Staff...</p>
-            <p className="upload-date">28-Mar-2025</p>
-            <div className="edit-Delete">
-              <img src={assets.edit2_logo} alt="" />
-              <img src={assets.delete_logo} alt="" />
-            </div>
-          </div>
 
-          <div className="inner-content inner-sub">
-            <p className="serialNumber">02</p>
-            <img className="thumbnail" src={assets.storeimage_logo} alt="" />
-            <p>Meet Our Instructors</p>
-            <p>Group Photo of our Teaching Staff...</p>
-            <p className="upload-date">28-Mar-2025</p>
-            <div className="edit-Delete">
-              <img src={assets.edit2_logo} alt="" />
-              <img src={assets.delete_logo} alt="" />
-            </div>
-          </div>
+          {contactsecData.map((dt, idx) => (
+            <div key={dt.id} className="inner-content inner-sub">
+              <p className="serialNumber">{dt.id || ""}</p>
+              <img className="thumbnail" src={assets.teaching_icon} alt="" />
 
-          <div className="inner-content inner-sub">
-            <p className="serialNumber">01</p>
-            <img className="thumbnail" src={assets.storeimage_logo} alt="" />
-            <p>Meet Our Instructors</p>
-            <p>Group Photo of our Teaching Staff...</p>
-            <p className="upload-date">28-Mar-2025</p>
-            <div className="edit-Delete">
-              <img src={assets.edit2_logo} alt="" />
-              <img src={assets.delete_logo} alt="" />
+              <p>{dt.name || ""}</p>
+              <p>{dt.description || ""}</p>
+              <p className="upload-date">{dt.stored_date || ""}</p>
+              <div className="edit-Delete">
+                <img
+                  onClick={() => handleEdit(dt.id)}
+                  src={assets.edit2_logo}
+                  alt=""
+                />
+                <img
+                  onClick={() => handleDelete(dt.id)}
+                  src={assets.delete_logo}
+                  alt=""
+                />
+              </div>
             </div>
-          </div>
-          {/*dynamic update-start */}
+          ))}
+
+          {/*dynamic update-end */}
           {/* pagination */}
           <div className="pagnation-content">
             {/* flex */}
@@ -125,11 +196,7 @@ const Gallery = () => {
               {/* need to map */}
               {[1, 2, 3, 4, 5].map((n, i) => {
                 return (
-                  <div
-                    className={bgColor === "greenBg" ? "greenBg" : "pages"}
-                    key={i}
-                    onClick={() => handleBgColor(n, i)}
-                  >
+                  <div className="pages" key={i}>
                     {n}
                   </div>
                 );

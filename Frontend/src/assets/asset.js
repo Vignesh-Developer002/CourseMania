@@ -66,9 +66,11 @@ import minus_logo from "../assets/minus_logo.svg"
 import background_img from "../assets/background_img.svg"
 import image_upload from "../assets/image_upload.svg"
 import prev_img from "../assets/prev-img.svg"
+import no_prev_image from "../assets/no_image.png"
 
 
 const assets = {
+    no_prev_image,
     prev_img,
     background_img,
     storeimage_logo,

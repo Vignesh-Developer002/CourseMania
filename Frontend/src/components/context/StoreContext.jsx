@@ -6,8 +6,14 @@ export const globalStore = createContext(null);
 const StoreContext = ({ children }) => {
   // let courseUrl = "http://localhost:4000/courses";
   // let certificateUrl = "http://localhost:4000/Certification";
-  const [galleryName,setGalleryName]=useState(false) // for dynamically change the manage gallery heading based on condition
-  const [isSubmit, setIsSubmit] = useState(false); 
+  const [saveId, setSaveId]=useState(null)// for save the edit data id for same replace 
+  const [callUseEffect, setCallUseEffect]=useState(false)// for handle the useEffect to run  
+  const [editData, setEditData]=useState([])// for assigning the edit data retrived from the data base
+  const [storeImgToDisplay,setStoreImgToDisplay]=useState([])// for storing the image to display in gallery 
+  const [contactsecData, setContactSecData] = useState([]);
+  const [image, setIamge] = useState(false); // for upload the image
+  const [galleryName, setGalleryName] = useState(false); // for dynamically change the manage gallery heading based on condition
+  const [isSubmit, setIsSubmit] = useState(false);
   const [isBackBtnClick, setIsBackBtnClick] = useState(false); //for managing the admin login data
   const [displayUserName, setDispalyUserName] = useState("");
   const [loginEmail, setLoginEmail] = useState(""); //assigning the email from database for validation
@@ -19,7 +25,7 @@ const StoreContext = ({ children }) => {
     "http://192.168.1.82:4000/Certification"
   ); // length ===30 (Certificate)
 
-  const [show,setShow]=useState('')// show and hide of login register form
+  const [show, setShow] = useState(""); // show and hide of login register form
   //search for course
   const [searchCourse, setSearchCourse] = useState("");
   //entire course and certificate api data
@@ -176,7 +182,6 @@ const StoreContext = ({ children }) => {
         (certi) => certi.status === "Best Seller"
       );
       setCertificateFilterData(certiTrend);
-      console.log(certiTrend);
     } else if (certificateValue === "Trending") {
       certiTrend = certificateData.filter(
         (certi) => certi.status === "Trending"
@@ -261,8 +266,13 @@ const StoreContext = ({ children }) => {
     }
     return total1;
   }
-
+// console.log(JSON.parse(localStorage.getItem('storedImg')))
   const contextValue = {
+    saveId, setSaveId,
+    callUseEffect, setCallUseEffect,
+    editData, setEditData,
+    storeImgToDisplay,setStoreImgToDisplay,
+    image, setIamge,
     cartItems,
     certiItem,
     addToCart,
@@ -308,7 +318,9 @@ const StoreContext = ({ children }) => {
     show,
     setShow,
     galleryName,
-    setGalleryName
+    setGalleryName,
+    contactsecData,
+    setContactSecData,
   };
 
   return (

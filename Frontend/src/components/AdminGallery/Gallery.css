@@ -192,6 +192,10 @@
     cursor: pointer;
 }
 
+.left-angle:hover ,.right-angle:hover{
+    border: 1px solid #184B4B;
+}
+
 .pages{
     background-color: #EEEEEE;
     width:30px;
@@ -204,8 +208,16 @@
     cursor: pointer;
 }
 
+.pages:hover{
+    color: #ffffff;
+    background:linear-gradient(#39B1B1,#184B4B);
+}
+
 .leftRight{
     color: #00000066;
+}
+.leftRight:hover{
+    color: #184B4B;
 }
 
 
@@ -758,6 +770,7 @@
         margin-top: 25px;
         border: 1px solid #00000030;
         border-radius: 20px;
+        /* overflow-x: scroll; */
     }
     
     .inner-content{
@@ -785,6 +798,7 @@
     .inner-content .head-1{
       color:#00000080;
       font-weight: 400;
+      /* font-size: 14px; ----------------- */
     }
     .inner-content p{
         font-size: 10px;
@@ -2670,7 +2684,7 @@
     }
 
     .serialNumber{
-        padding-left: 13px !important;
+        padding-left: 15px !important;
     }
 
     .thumbnail{
@@ -2697,6 +2711,10 @@
     .inner-sub{
         background-color: #ffffff;
         padding: 10px 30px;
+    }
+    .inner-sub p{
+        font-size: 12px;
+        padding-left: 10px;
     }
     
     /*pagination*/
