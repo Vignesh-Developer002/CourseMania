@@ -39,6 +39,32 @@
     cursor: pointer;  
 }
 
+.animated-arrow-bg{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    /* width: 30px; */
+    padding: 20px;
+    right: 15px;
+    top: 950px;
+    /* background-color: rgba(0, 0, 0, 0.872); */
+    /* border: 1px solid; */
+
+}
+.animated-arrow-1{
+    cursor: pointer;
+    /* width: 17px; */
+    font-size: 50px;
+    color:#33bfbf;
+    font-weight: 700;
+    animation-name: moveForword;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+
 
 /*media-queries*/
 
@@ -85,6 +111,35 @@
         height: 48px;
         display: none;
     }
+    .animated-arrow-bg{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        /* width: 30px; */
+        padding: 20px;
+        right: 15px;
+        top: 950px;
+        /* background-color: rgba(0, 0, 0, 0.872); */
+        /* border: 1px solid; */
+    
+    }
+    .animated-arrow-1{
+        cursor: pointer;
+        /* width: 17px; */
+        font-size: 50px;
+        color:#33bfbf;
+        text-shadow: 15px 15px 15px #ffffff;
+        font-weight: 700;
+        animation-name: moveForword;
+        animation-duration: 2s;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+    }
+    
+
+   
 }
 
 @media(min-width:375px){
@@ -128,6 +183,31 @@
         width: 30px; 
         height: 48px;
         display: none;
+    }
+    .animated-arrow-bg{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        /* width: 30px; */
+        padding: 20px;
+        right: 0px;
+        top: 1020px;
+        /* background-color: rgba(0, 0, 0, 0.872); */
+        /* border: 1px solid; */
+    
+    }
+    .animated-arrow-1{
+        cursor: pointer;
+        /* width: 17px; */
+        font-size: 50px;
+        color:#00000094;
+        font-weight: 700;
+        animation-name: moveForword;
+        animation-duration: 2s;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
     }
 }
 
@@ -173,6 +253,32 @@
         height: 48px;
         display: none;
     }
+    .animated-arrow-bg{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        /* width: 30px; */
+        padding: 20px;
+        right: 15px;
+        top: 1080px;
+        /* background-color: rgba(0, 0, 0, 0.872); */
+        /* border: 1px solid; */
+    
+    }
+    .animated-arrow-1{
+        cursor: pointer;
+        /* width: 17px; */
+        font-size: 50px;
+        color:#33bfbf;
+        font-weight: 700;
+        animation-name: moveForword;
+        animation-duration: 2s;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+    }
+    
 }
 
 @media(min-width:480px){
@@ -202,6 +308,31 @@
         width: 30px; 
         height: 48px;
         display: none;
+    }
+    .animated-arrow-bg{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        /* width: 30px; */
+        padding: 20px;
+        right: 15px;
+        top: 1200px;
+        /* background-color: rgba(0, 0, 0, 0.872); */
+        /* border: 1px solid; */
+    
+    }
+    .animated-arrow-1{
+        cursor: pointer;
+        /* width: 17px; */
+        font-size: 50px;
+        color:#33bfbf;
+        font-weight: 700;
+        animation-name: moveForword;
+        animation-duration: 2s;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
     }
 }
 
@@ -260,6 +391,31 @@
         height: 48px;
         display: none;
     }
+    .animated-arrow-bg{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        /* width: 30px; */
+        padding: 20px;
+        right: 15px;
+        top: 1190px;
+        /* background-color: rgba(0, 0, 0, 0.872); */
+        /* border: 1px solid; */
+    
+    }
+    .animated-arrow-1{
+        cursor: pointer;
+        /* width: 17px; */
+        font-size: 50px;
+        color:#33bfbf;
+        font-weight: 700;
+        animation-name: moveForword;
+        animation-duration: 2s;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+    }
 }
 
 @media(min-width:700px){
@@ -287,6 +443,31 @@
         width: 30px; 
         height: 48px;
         display: none;
+    }
+    .animated-arrow-bg{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        /* width: 30px; */
+        padding: 20px;
+        right: 15px;
+        top: 1230px;
+        /* background-color: rgba(0, 0, 0, 0.872); */
+        /* border: 1px solid; */
+    
+    }
+    .animated-arrow-1{
+        cursor: pointer;
+        /* width: 17px; */
+        font-size: 50px;
+        color:#33bfbf;
+        font-weight: 700;
+        animation-name: moveForword;
+        animation-duration: 2s;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
     }
 }
 @media(min-width:768px){
@@ -330,6 +511,37 @@
         width: 30px; 
         height: 48px;
         display: block;
+       
+    }
+
+    .animated-arrow-bg{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        /* width: 30px; */
+        padding: 20px;
+        right: 15px;
+        top: 1130px;
+        /* background-color: rgba(0, 0, 0, 0.872); */
+        /* border: 1px solid; */
+    
+    }
+    .animated-arrow-1{
+        display: none;
+        cursor: pointer;
+        /* width: 17px; */
+        font-size: 50px;
+        color:#33bfbf;
+        font-weight: 700;
+        animation-name: moveForword;
+        animation-duration: 2s;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+    }
+    .animated-arrow-1{
+        display: none;
     }
 }
 

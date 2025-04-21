@@ -6,6 +6,7 @@ import assets from "../assets/asset.js";
 import { fetchUserData } from "../components/data/data.jsx";
 import SkeletonAnimation from "./SkeletonAnim/SkeletonAnimation.jsx";
 import { globalStore } from "./context/StoreContext.jsx";
+import { FaArrowRight } from "react-icons/fa";
 
 const Course = () => {
   // "http://localhost:4000/courses"
@@ -21,7 +22,11 @@ const Course = () => {
       </div>
 
       <div className="right-arrow">
-        <img className="animate" src={assets.right_arrow} />
+        <img  src={assets.right_arrow} />
+      </div>
+
+      <div className="animated-arrow">
+      <FaArrowRight className="animate"/>
       </div>
 
       <div className="courses-content" id="course">

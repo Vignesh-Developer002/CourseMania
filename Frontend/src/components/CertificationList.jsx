@@ -5,6 +5,7 @@ import assets, { certificates } from "../assets/asset.js";
 import { fetchUserData } from "./data/data.jsx";
 import SkeletonAnimation from "./SkeletonAnim/SkeletonAnimation.jsx";
 import { globalStore } from "./context/StoreContext.jsx";
+import { FaArrowRight } from "react-icons/fa";
 
 const CertificationList = () => {
   // let certificateURL = "http://localhost:4000/Certification";
@@ -24,6 +25,10 @@ const CertificationList = () => {
       </div>
 
       <img className="right-arrow-2" src={assets.right_arrow} />
+
+      <div className="animated-arrow-bg">
+      <FaArrowRight className="animated-arrow-1" />
+      </div>
 
       <div className="certification-list-container">
         {isLoading ? (
