@@ -442,8 +442,8 @@
     border-radius: 50%;
     position: absolute;
     z-index: 4px;
-    top: 89px;
-    right: 25px;
+    top: 90px;
+    right: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -875,10 +875,11 @@
       background-color: #155a5a;
     }
 
-    .right-content .red-dot{
+    /* .right-content .red-dot{
       right: 13px;
       top: 22px;
-    }
+      
+    } */
 
     .right-content .cart{
       cursor: pointer;
@@ -888,14 +889,14 @@
 
     .right-content .red-dot{
       position: absolute;
-      width:15px;
-      height: 15px;
+      width:12px;
+      height: 12px;
       background-color: #C5331E;
       color: #ffffff;
       border-radius: 20px;
       font-size: 17px;
-      right: 40px;
-      top: 17px;
+      right: 34px;
+      top: 20px;
       text-align: center;
     }
 
@@ -962,7 +963,7 @@
 
   @media(min-width:1024px){
     .Nav-content{
-      padding: 30px 40px;
+      padding: 30px 30px;
       position: relative;
       z-index: 3;
       
@@ -973,7 +974,7 @@
   }
   
   .Nav-content ul{
-      gap: 30px;
+      gap: 20px;
      align-items: center;
   }
   
@@ -1010,11 +1011,30 @@
       padding: 12px 24px;
     }
 
-    .right-content .red-dot{
+    /* .right-content .red-dot{
       right: 68px;
       top: 30px;
       width: 15px;
       height: 15px;
+    } */
+
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
+      width: 25px;
+    }
+
+    .right-content .red-dot{
+      position: absolute;
+      width:12px;
+      height: 12px;
+      background-color: #C5331E;
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 17px;
+      right: 70px;
+      top: 32px;
+      text-align: center;
     }
     .greenLine{
       text-decoration: underline;
@@ -1121,12 +1141,31 @@
       font-size: 20px;
       padding: 12px 24px;
     }
-
+/* 
     .right-content .red-dot{
       right: 100px;
       top: 32px;
       width: 15px;
       height: 15px;
+    } */
+
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
+      width: 25px;
+    }
+
+    .right-content .red-dot{
+      position: absolute;
+      width:12px;
+      height: 12px;
+      background-color: #C5331E;
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 17px;
+      right: 94px;
+      top: 34px;
+      text-align: center;
     }
           /*user loggedIn display*/
   .userLoggedIn{
@@ -1234,6 +1273,24 @@
     .right-content .red-dot{
       right: 120px;
       top: 35px;
+    }
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
+      width: 25px;
+    }
+
+    .right-content .red-dot{
+      position: absolute;
+      width:12px;
+      height: 12px;
+      background-color: #C5331E;
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 17px;
+      right: 110px;
+      top: 34px;
+      text-align: center;
     }
     .greenLine{
       text-decoration: underline;
@@ -1345,10 +1402,28 @@
       padding: 12px 24px;
     }
 
-    .right-content .red-dot{
+    /* .right-content .red-dot{
       right: 165px;
       top: 23px;
 
+    } */
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
+      width: 25px;
+    }
+
+    .right-content .red-dot{
+      position: absolute;
+      width:12px;
+      height: 12px;
+      background-color: #C5331E;
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 17px;
+      right:20px;
+      top: 25px;
+      text-align: center;
     }
     .right-content .cart{
       cursor: pointer;
@@ -1469,10 +1544,29 @@
       padding: 12px 24px;
     }
 
-    .right-content .red-dot{
+    /* .right-content .red-dot{
       right: 165px;
       top: 23px;
 
+    } */
+
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
+      width: 25px;
+    }
+
+    .right-content .red-dot{
+      position: absolute;
+      width:12px;
+      height: 12px;
+      background-color: #C5331E;
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 17px;
+      right: 260px;
+      top: 25px;
+      text-align: center;
     }
     .right-content .cart{
       cursor: pointer;
@@ -1593,10 +1687,29 @@
       padding: 12px 24px;
     }
 
-    .right-content .red-dot{
+    /* .right-content .red-dot{
       right: 165px;
       top: 23px;
 
+    } */
+
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
+      width: 25px;
+    }
+
+    .right-content .red-dot{
+      position: absolute;
+      width:12px;
+      height: 12px;
+      background-color: #C5331E;
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 17px;
+      right: 325px;
+      top: 25px;
+      text-align: center;
     }
     .right-content .cart{
       cursor: pointer;
@@ -1716,10 +1829,27 @@
       padding: 12px 24px;
     }
 
-    .right-content .red-dot{
+    /* .right-content .red-dot{
       right: 165px;
       top: 23px;
 
+    } */
+
+    .right-content .red-dot{
+      position: absolute;
+      width:12px;
+      height: 12px;
+      background-color: #C5331E;
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 17px;
+      right: 405px;
+      top: 24px;
+      text-align: center;
+    }
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
     }
     .right-content .cart{
       cursor: pointer;

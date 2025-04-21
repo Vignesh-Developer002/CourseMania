@@ -1,89 +1,159 @@
 import React, { useEffect, useState } from "react";
 import assets from "../../assets/asset.js";
 import "../aboutPage/About.css";
-import {useNavigate} from "react-router-dom"
-import axios from "axios"
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { TbPoint } from "react-icons/tb";
+import { ImInstagram } from "react-icons/im";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa6";
 
 const About = () => {
+  const [aboutData, setAboutData] = useState([]);
+  const navigate = useNavigate();
 
-  const [aboutData, setAboutData]=useState([])
-  const navigate =useNavigate()
-
-  useEffect(()=>{
-    async function handleFetch(){
-      const response = await axios.get('http://192.168.1.82:4000/contactdetail')
-     if(response.data.success){
-      console.log(response.data.result)
-      setAboutData(response.data.result[0])//--------- for fetching the all data ---------------
-     }else{
-      return
-     }
+  useEffect(() => {
+    async function handleFetch() {
+      const response = await axios.get(
+        "http://192.168.1.82:4000/contactdetail"
+      );
+      if (response.data.success) {
+        console.log(response.data.result);
+        setAboutData(response.data.result[0]); //--------- for fetching the all data ---------------
+      } else {
+        return;
+      }
     }
-   
-    handleFetch()
-  },[])
 
+    handleFetch();
+  }, []);
 
   return (
+    // width-80%
     <div className="about-content">
-      {/* flex */}
-      <div className="nav-bar">
-      <h1 className="about-heading">About Us</h1>
-        <div className="left-nav">
-          <img src={assets.left_arrow} alt="" />
-          <span onClick={()=>navigate('/')}>Back</span>
-        </div>
-      </div>
-
-      <div className="about-main-content-2">
-        <div className="img-cont-2">
-          <img
-            className="contact-img-2"
-            src={assets.certification_img_2}
-            alt=""
-          />
-        </div>
-      </div>
       {/* flex-column */}
-      <div className="about-main-content-3">
-        <div className="img-cont-2">
-          <div className="detail-cont">
-            <h1>Contact Details</h1>
-            <div className="detail">
-              <div className="company-name">
-                <div className="inner-company">
-                  <p className="company-head">1. Company Name</p>
-                  <p className={aboutData["name"]?"company-details":"company-red"}> {aboutData["name"] ? aboutData["name"]: "no data found"}</p>
-                </div>
+      <div className="about-inner">
+        {/* flex */}
+        <div className="about-nav">
+          <h1>About Us</h1>
+          {/* flex */}
+          <div onClick={() => navigate("/")} className="back-button">
+            <img src={assets.left_arrow} alt="" />
+            <p>Back</p>
+          </div>
+        </div>
+        {/* image-content */}
+        <div className="img-content">
+          <img src={assets.certification_img_2} alt="" />
+        </div>
+
+        {/* details */}
+        <div className="about-details">
+          <h1>Contact Details :</h1>
+          {/* flex-column */}
+          <div className="inner-container">
+            {/* flex-column */}
+            <div className="company-name">
+              <div className="detail-main">
+                <TbPoint className="point" />
+                <p className="detail-head">Company Name :</p>
               </div>
-              <div className="company-address">
-                <div className="inner-address">
-                  <p className="company-head">2. Address</p>
-                  <p className={aboutData["address"]?"company-details":"company-red"}> {aboutData["address"]? aboutData["address"]:"no data found"}</p>
-                </div>
+              <p className="detail-sub">
+                {aboutData["companyName"]
+                  ? aboutData["companyName"]
+                  : "no details available"}
+              </p>
+            </div>
+
+            <div className="company-address">
+              <div className="detail-main">
+                <TbPoint className="point" />
+                <p className="detail-head">Address :</p>
               </div>
-              <div className="company-phone">
-                <div className="inner-phone">
-                  <p className="company-head">3. Phone</p>
-                  <p className={aboutData["phone"]?"company-details":"company-red"}> +91 - {aboutData["phone"]? aboutData["phone"]:"no data found"}</p>
-                </div>
+              <p className="detail-sub">
+                {aboutData["address"]
+                  ? aboutData["address"]
+                  : "no details available"}
+              </p>
+            </div>
+
+            <div className="Phone">
+              <div className="detail-main">
+                <TbPoint className="point" />
+                <p className="detail-head">Phone :</p>
               </div>
-              <div className="company-insta">
-                <div className="inner-ista">
-                  <p className="company-head">4. Instagram URL</p>
-                  <p className={aboutData["instaUrl"]?"company-details":"company-red"}>{aboutData["instaUrl"]? aboutData["instaUrl"]:"no data found"}</p>
-                </div>
+              <p className="detail-sub">
+                {" "}
+                +91 -{" "}
+                {aboutData["phone"]
+                  ? aboutData["phone"]
+                  : "no details available"}
+              </p>
+            </div>
+
+            <div className="Instagram">
+              <div className="detail-main">
+                <TbPoint className="point" />
+                <p className="detail-head">Instagram :</p>
               </div>
-              <div className="company-linked">
-                <div className="inner-linkedIn">
-                  <p className="company-head">5. LinkedIn URL</p>
-                  <p className={aboutData["linkedInUrl"]?"company-details":"company-red"}>{aboutData["linkedInUrl"]?aboutData["linkedInUrl"]:"no data found"}</p>
-                </div>
+              <p className="detail-sub">
+                {aboutData["instaUrl"]
+                  ? aboutData["instaUrl"]
+                  : "no details available"}
+              </p>
+            </div>
+
+            <div className="linkedInUrl">
+              <div className="detail-main">
+                <TbPoint className="point" />
+                <p className="detail-head">LinkedIn :</p>
               </div>
+              <p className="detail-sub">
+                {aboutData["linkedInUrl"]
+                  ? aboutData["linkedInUrl"]
+                  : "no details available"}
+              </p>
             </div>
           </div>
         </div>
       </div>
+      {/* footer */}
+
+      {/* flex */}
+      <div className="about-foot">
+        <div className="left-about">
+          <ul className="about-li">
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Careers</li>
+            <li>Blog</li>
+          </ul>
+
+          <ul className="about-li">
+            <li>Udemy Business</li>
+            <li>Tech On Udemy</li>
+            <li>Get The App</li>
+          </ul>
+
+          <ul className="about-li">
+            <li>Help and Support</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+        <div className="right-about">
+          <div className="about-logo">
+            <a href="">Follow us :</a>
+            <div className="about-icons">
+              <ImInstagram className="about-footer-logo" />
+              <FaFacebookSquare className="about-footer-logo" />
+              <FaTwitter className="about-footer-logo"/>
+              <FaYoutube className="about-footer-logo"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* footer-end */}
     </div>
   );
 };

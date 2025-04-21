@@ -496,7 +496,7 @@ cursor: pointer;
 @media(min-width:320px){
     .course-page-container{
         width: 100%;
-        margin: 10px 5px;
+        margin: 10px 0px;
     }
 
     /*rating stars*/
@@ -559,7 +559,6 @@ cursor: pointer;
     /*right-side-course-container*/
     
     .right-side-course-container{
-        
         display: none;
     }
     
@@ -674,7 +673,7 @@ cursor: pointer;
     .creator-main-container{
         padding: 0px;
         display: flex;
-        gap: 10px;
+        gap:8px;
         align-items: center;
         margin-left: 3px;
         margin-top: -10px;

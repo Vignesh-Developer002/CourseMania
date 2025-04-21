@@ -16,7 +16,6 @@ const CoursePage = () => {
     searchClick,
   } = useContext(globalStore); // course-length:13 and Certificate-length:12
   const navigate = useNavigate();
-  const [goldStar, setGoldStar] = useState("");
   // console.log(apiData)
   console.log(coursesPage)
   function handleBackPage() {

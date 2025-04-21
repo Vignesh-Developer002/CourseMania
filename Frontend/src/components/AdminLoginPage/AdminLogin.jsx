@@ -112,13 +112,13 @@ const AdminLogin = () => {
       err.password = "Password must contain 5 character";
     }
     if (value.name.length > 5 && value.password.length > 5) {
-      err.name = "Looks good";
-      err.password = "Looks good";
+      err.name = "Name match";
+      err.password = "Password match";
     }
     if (value.name.length > 5) {
-      err.name = "Looks good";
+      err.name = "Name match";
     } else if (value.password.length > 5) {
-      err.password = "Looks good";
+      err.password = "Password match";
     }
 
     return err;
@@ -161,7 +161,7 @@ const AdminLogin = () => {
             </div>
             <span
               className={
-                error.name === "Looks good" ? "green-color" : "red-color"
+                error.name === "Name match" ? "green-color" : "red-color"
               }
             >
               {error.name}
@@ -198,7 +198,7 @@ const AdminLogin = () => {
             </div>
             <span
               className={
-                error.password === "Looks good" ? "green-color" : "red-color"
+                error.password === "Password match" ? "green-color" : "red-color"
               }
             >
               {error.password}
