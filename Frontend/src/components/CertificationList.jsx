@@ -34,18 +34,18 @@ const CertificationList = () => {
           </p>
         ) : (
           certificateFilterData.map((certificate, i) => {
-            let images;
-            if (i % 2 == 0) {
-              images = certificates[1].img;
-            } else {
-              images = certificates[2].img;
-            }
+            // let images;
+            // if (i % 2 == 0) {
+            //   images = certificates[1].img;
+            // } else {
+            //   images = certificates[2].img;
+            // }
             return (
               <Certificate
                 key={certificate.id}
                 id={certificate.id}
                 certificationName={certificate.name}
-                img={images}
+                img={certificate.image}
                 trending={certificate.status}
                 duration={certificate.duration}
                 price={certificate.new_price}

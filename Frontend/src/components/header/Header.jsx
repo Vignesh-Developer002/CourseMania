@@ -21,13 +21,6 @@ const Header = () => {
     setIsClicked(true);
     navigate("CoursePage");
   }
-  // useEffect(()=>{
-  //   document.getElementById("demo").innerHTML = 
-  //   "Screen width is " + screen.width;
-  
-
-  // },[])
-   
 
   return (
     <>
@@ -61,7 +54,7 @@ const Header = () => {
           <p className="para-2"> Learning The Most</p>
         </div>
 
-         {/* <div className="background-Image">
+        {/* <div className="background-Image">
           <img src={assets.background_img} alt="" />
         </div> */}
 

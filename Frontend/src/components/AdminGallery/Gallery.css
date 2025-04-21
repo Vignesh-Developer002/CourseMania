@@ -12,13 +12,11 @@
     border-radius: 3px;
     cursor: pointer;
 }
-
-.Admin-center{
-    /* border: 1px solid; */
+ .Admin-center{
     margin-top: 120px;
     width: 1600px;
     margin-left: 270px;
-}
+} 
 
 /*dynamic content*/
 .dynamic-content{
@@ -2706,6 +2704,7 @@
     .inner-content .head-1{
       color:#00000080;
       font-weight: 400;
+      font-size: 14px;
     }
     
     .inner-sub{
@@ -2713,7 +2712,7 @@
         padding: 10px 30px;
     }
     .inner-sub p{
-        font-size: 12px;
+        font-size: 14px;
         padding-left: 10px;
     }
     

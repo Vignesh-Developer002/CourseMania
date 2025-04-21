@@ -17,6 +17,7 @@ const Gallery = () => {
   const {
     setGalleryName,
     contactsecData,
+    setNameDesc,
     setContactSecData,
     storeImgToDisplay,
     editData,
@@ -29,18 +30,18 @@ const Gallery = () => {
 
   // console.log(storeImgToDisplay);
   const [count, setCount] = useState(0);
-  const[deletBtn, setDeleteBtn]=useState(false)
+  const [deletBtn, setDeleteBtn] = useState(false);
   const navigate = useNavigate();
   // function for handling the manage gallery name
   function handleGalleryName() {
-    setSaveId(null)
+    setSaveId(null);
     setGalleryName(true);
     navigate("/ManageContact");
   }
 
   //function for delete the perticular data in db
   async function handleDelete(num) {
-    setDeleteBtn((prev)=>(!prev))
+    setDeleteBtn((prev) => !prev);
     const response = await axios.post(
       `http://192.168.1.82:4000/deleteContact/${num}`
     );
@@ -81,7 +82,7 @@ const Gallery = () => {
     );
     if (response.data.result) {
       setEditData(response.data.result);
-      // console.log(response.data.result);
+      console.log(response.data.result);
     } else {
       console.log("no data found");
     }
@@ -92,9 +93,10 @@ const Gallery = () => {
       const response = await axios.get(
         "http://192.168.1.82:4000/contactdetail"
       );
-
+      console.log(contactsecData);
       if (response?.data?.result && Array.isArray(response?.data?.result)) {
         setContactSecData(response?.data?.result);
+        console.log(contactsecData);
       } else {
         toast.error("no data available", {
           position: "top-right",
@@ -124,7 +126,7 @@ const Gallery = () => {
         <div className="dynamic-content">
           <div className="filter_content">
             <div className="filter-left">
-              <img src={assets.filter_logo} alt=""/>
+              <img src={assets.filter_logo} alt="" />
               <div className="filetr-search-content">
                 <input type="text" placeholder="Search objective code" />
                 <img src={assets.search_logo2} alt="" />
@@ -150,8 +152,9 @@ const Gallery = () => {
 
           {contactsecData.map((dt, idx) => (
             <div key={dt.id} className="inner-content inner-sub">
-              <p className="serialNumber">{dt.id || ""}</p>
-              <img className="thumbnail" src={assets.teaching_icon} alt="" />
+              <p className="serialNumber">{`${dt.id} .` || ""}</p>
+              {/* assets.teaching_icon */}
+              <img className="thumbnail" src={dt.imageurl} alt="" />
 
               <p>{dt.name || ""}</p>
               <p>{dt.description || ""}</p>
@@ -178,7 +181,9 @@ const Gallery = () => {
             <div className="show-content">
               <span className="showEntries">Show</span>
               <div className="number">
-                <span className="num-Count">{count}</span>
+                <span className="num-Count">
+                  {count < 0 ? setCount(0) : count}
+                </span>
                 {/* flex-column */}
                 <div className="up-down">
                   <FaAngleUp onClick={() => setCount((prev) => prev + 1)} />

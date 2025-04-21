@@ -4,18 +4,22 @@ import { globalStore } from "../context/StoreContext";
 import { useNavigate } from "react-router-dom";
 
 const AdminNav = () => {
-  const { galleryName, setGalleryName,setSaveId } = useContext(globalStore);
-  const navigate = useNavigate()
+  const { galleryName, setGalleryName, setSaveId, setEditData, setEditImg } =
+    useContext(globalStore);
+  const navigate = useNavigate();
 
-  function handlePageNavigation(){
-    setGalleryName(false)
-    navigate("/Gallery")
-    setSaveId(null)
-
+  function handlePageNavigation() {
+    setGalleryName(false);
+    navigate("/Gallery");
+    setSaveId(null);
+    setEditData([]); //------------------ok------------------
+    setEditImg(null);//------------------------------------
   }
   return (
     <div className="admin-nav">
-      <h1 className="nav-title" onClick={()=>handlePageNavigation()}>CourseMania</h1>
+      <h1 className="nav-title" onClick={() => handlePageNavigation()}>
+        CourseMania
+      </h1>
     </div>
   );
 };

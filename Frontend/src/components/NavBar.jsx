@@ -40,6 +40,7 @@ const NavBar = ({
 
   function changeColor() {
     setUnderLine("About");
+    navigate('/About')
   }
 
   //Getting user name from local storage for display in home page

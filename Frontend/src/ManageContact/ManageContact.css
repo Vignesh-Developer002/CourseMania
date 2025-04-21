@@ -1,3 +1,7 @@
+/* .gallery-container{
+    padding: 20px;
+} */
+
 .contact-details{
     border: 1px solid #00000040;
     margin-top: 20px;
@@ -10,6 +14,12 @@
     font-size: 22px;
     font-weight: 500;
 }
+ /* .Admin-center-1{ */
+    /* border: 1px solid; */
+    /* margin-top: 120px;
+    width: 1600px;
+    margin-left: 255px;
+} */
 .contact-hr{
     margin-bottom: 10px;
     background-color: #0000002c;

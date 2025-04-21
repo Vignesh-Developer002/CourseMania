@@ -135,7 +135,7 @@ const CartPage = () => {
                 <div className="cart-details grid" key={i}>
                   <div className="img-heading">
                     {/* object */}
-                    <img src={assets.course_img_2} alt="" />
+                    <img src={course.image ? course.image :assets.course_img_2} alt="" />
                     <p>
                       {course.name.length > 10
                         ? course.name.slice(0, 8) + "..."
@@ -177,7 +177,7 @@ const CartPage = () => {
               return (
                 <div className="cart-details grid" key={i}>
                   <div className="img-heading">
-                    <img src={assets.certification_img_2} alt="" />
+                    <img src={certi.image ? certi.image :assets.certification_img_2} alt="" />
                     <p>
                       {certi.name.length < 14
                         ? certi.name + "...."

@@ -6,14 +6,12 @@ import pool from "./config/db_connection.js";
 import certifictionCourse from "../Backend/data/Certification.json" with {type:"json"};
 import multer from "multer"
 import path from "path"
-import { error, log } from "console";
-import { pathToFileURL } from "url";
 
 
 const app = express();
 dotenv.config()
 // to access the image
-app.use('/profile', express.static('./upload/images'))
+app.use('/image', express.static('upload/images'))
 
 
 //storage
@@ -45,16 +43,38 @@ app.use((req,res,next)=>{
 // server running message
  app.listen( PORT,()=>{console.log(`server is running on port ${PORT}`)});
 
- //routes
- // courses API
- app.get("/courses", (req,res)=>{  
-    return res.status(200).json(course)
- });
 
-//  certificationCourse API
- app.get("/Certification", (req,res)=>{ 
-        return res.status(200).json(certifictionCourse)
+ // courses API
+
+//  app.get("/courses", (req,res)=>{  
+//     return res.status(200).json(course)
+//  });
+
+
+ app.get("/courses", (req, res)=>{
+    pool.query(`select * from course`, (err, result)=>{
+      if (err){
+        return res.status(500).send({success:false, message: "no data found"})
+      }else{
+       return res.status(200).send(result)
+      }
+    })
  })
+//  certificationCourse API
+
+//  app.get("/Certification", (req,res)=>{ 
+//         return res.status(200).json(certifictionCourse)
+//  })
+
+app.get("/Certification", (req, res)=>{
+   pool.query(`select * from certificate`, (err, result)=>{
+   if(err){
+    return res.status(500).send({success:true, message:"No data found"})
+   }else{ 
+        return res.status(200).send(result)
+   }
+   })
+})
 
  //inerting data to the user table
  app.post('/users', (req, res) => {
@@ -119,20 +139,22 @@ app.use((req,res,next)=>{
   // contact section details api for insert the contact detail in db
 
   app.post('/contactdetail', upload.single('image'), (req, res)=>{
-    const {name,description,image,companyName,address, phone, instaUrl,linkedInUrl} = req.body
-    pool.query(`INSERT into contactdetails (name, description,companyName , address, phone, instaUrl,linkedInUrl) VALUES (?, ?, ?, ?, ?, ?, ?) `, [name,description,companyName,address, phone, instaUrl,linkedInUrl],(err,result)=>{
+    const {filename} = req.file;
+    const {name,description,companyName,address, phone, instaUrl,linkedInUrl} = req.body
+    console.log(name,description,companyName,address, phone, instaUrl,linkedInUrl)
+    pool.query(`INSERT into contactdetails (name, description,imageurl,companyName , address, phone, instaUrl,linkedInUrl) VALUES (?, ?, ?, ?, ?, ?, ?, ?) `, [name,description,`http://192.168.1.82:4000/image/${filename}`,companyName,address, phone, instaUrl,linkedInUrl],(err,result)=>{
     if(err){
        return res.status(500).send({success:false, message:"data not inserted"})
     }else{
-    return res.status(200).send({success:true, message:"Data inserted successfully"})
+    return res.status(200).send({success:true, message:"Data inserted successfully", img_url :`http://192.168.1.82:4000/image/${req.file.filename}`})
    }
    })
       
   })
 
-  //getting all contact data from the database
+  //getting all contact data from the database --------------------------
    app.get('/contactdetail',(req,res)=>{
-      pool.query(`select id,name,description,companyName,address, substring(stored_date,1,11) as stored_date,instaUrl ,linkedInUrl  from contactdetails`, (err,result)=>{
+      pool.query(`select id,name,imageurl,description,companyName,address,phone, substring(stored_date,1,11) as stored_date,instaUrl ,linkedInUrl  from contactdetails`, (err,result)=>{
          if(err){
              return res.status(500).send({success:false, message:"no data found"})
          }else{
@@ -141,7 +163,7 @@ app.use((req,res,next)=>{
       })
    })
 
-   // deleting the perticular contactdetails  data
+   // deleting the perticular contactdetails  data -------------------
    app.post('/deleteContact/:id', (req, res)=>{
     const {id}= req.params
     pool.query('delete from contactdetails where id =? ', [id], (err, result)=>{
@@ -154,7 +176,7 @@ app.use((req,res,next)=>{
     })
    })
 
-   //getting the particular contact details data based on id for edit
+   //getting the particular contact details data based on id for edit ------------
 
    app.post('/contactdetail/:id', (req, res)=>{
     const {id}=req.params
@@ -180,4 +202,18 @@ app.use((req,res,next)=>{
           return res.status(200).send({success:true, message:"data updated successfully"})
         }
        })
+   })
+
+   //for delete the image
+
+   app.post('/imageDelete', (req,res)=>{
+    const {i} = req.body
+    console.log(i)
+    pool.query(`delete from contactdetails where imageurl = ?`,[i], (err, result)=>{
+        if(err){
+          return res.status(500).send({success:false,message:"image not available"})
+        }else{
+          return res.status(200).send({success:true, result})
+        }
+    })
    })

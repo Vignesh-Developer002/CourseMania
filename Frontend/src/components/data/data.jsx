@@ -14,9 +14,9 @@ export function fetchUserData(url) {
           throw new Error("No data found :(");
         } else {
           const data = await response.json();
-          if (data.length === 20) {
+          if (data.length === 6) {  // data .length === 20 
             setUserData(data);
-          } else if (data.length === 30) {
+          } else if (data.length === 7) { // data.length === 30
             setCertificateData(data);
           }
           setUserData(data);

@@ -6,6 +6,7 @@ export const globalStore = createContext(null);
 const StoreContext = ({ children }) => {
   // let courseUrl = "http://localhost:4000/courses";
   // let certificateUrl = "http://localhost:4000/Certification";
+  const [editImg, setEditImg]=useState(null)// for getting and setting the image in edit page
   const [saveId, setSaveId]=useState(null)// for save the edit data id for same replace 
   const [callUseEffect, setCallUseEffect]=useState(false)// for handle the useEffect to run  
   const [editData, setEditData]=useState([])// for assigning the edit data retrived from the data base
@@ -75,6 +76,7 @@ const StoreContext = ({ children }) => {
   });
   const [courseFilterData, setCourseFilterData] = useState([]);
 
+
   // course filter type
   let courses;
   useEffect(() => {
@@ -98,7 +100,7 @@ const StoreContext = ({ children }) => {
   });
   //certificate filter state data
   const [certificateFilterData, setCertificateFilterData] = useState([]);
-
+ console.log(certificateFilterData)
   //certificate filter
   let certificates;
   useEffect(() => {
@@ -321,6 +323,7 @@ const StoreContext = ({ children }) => {
     setGalleryName,
     contactsecData,
     setContactSecData,
+    editImg, setEditImg
   };
 
   return (

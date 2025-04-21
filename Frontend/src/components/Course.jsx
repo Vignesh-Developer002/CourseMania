@@ -21,7 +21,7 @@ const Course = () => {
       </div>
 
       <div className="right-arrow">
-        <img src={assets.right_arrow} />
+        <img className="animate" src={assets.right_arrow} />
       </div>
 
       <div className="courses-content" id="course">
@@ -33,12 +33,12 @@ const Course = () => {
           </p>
         ) : (
           courseFilterData.map((course, index) => {
-            let image;
-            if (index % 2 === 0) {
-              image = courses[1].img;
-            } else {
-              image = courses[2].img;
-            }
+            // let image;
+            // if (index % 2 === 0) {
+            //   image = courses[1].img;
+            // } else {
+            //   image = courses[2].img;
+            // }
             return (
               <Cart
                 course={course}
@@ -49,7 +49,7 @@ const Course = () => {
                 courseName={course.name}
                 status={course.status}
                 duration={course.duration}
-                img={image}
+                img={course.image}
                 totalPurchase={course.total_purchased}
                 price={course.new_price}
                 course_type={course.course_type}

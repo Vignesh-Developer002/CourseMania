@@ -18,7 +18,7 @@ const CoursePage = () => {
   const navigate = useNavigate();
   const [goldStar, setGoldStar] = useState("");
   // console.log(apiData)
-
+  console.log(coursesPage)
   function handleBackPage() {
     setIsClicked(false);
     navigate("/");
@@ -74,13 +74,13 @@ const CoursePage = () => {
             {/* <video src={assets.video_logo}>
                     
             </video> */}
+            
             <img
               className="video-logo"
-              src={
-                Object.keys(coursesPage).length === 13
-                  ? assets.certification_img_2
-                  : assets.video_logo
-              }
+              // Object.keys(coursesPage).length === 13
+              //     ? assets.certification_img_2
+              //     : assets.video_logo
+              src={coursesPage["image"] ? coursesPage["image"]:assets.video_logo}
               alt=""
             />
             {/* temporary */}

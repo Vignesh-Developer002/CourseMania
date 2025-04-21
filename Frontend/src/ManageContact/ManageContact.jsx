@@ -21,8 +21,10 @@ const ManageContact = () => {
     setCallUseEffect,
     saveId,
     setSaveId,
+    setEditData,
+    editImg,
+    setEditImg,
   } = useContext(globalStore);
-  console.log(saveId);
   const navigate = useNavigate();
   const [btns, setBtns] = useState("");
   // const [image, setIamge] = useState(false); // for upload the image
@@ -35,11 +37,19 @@ const ManageContact = () => {
     linkedInUrl: "",
   });
 
+  console.log(saveId);
+  console.log(editImg);
+
   console.log(editData);
   // for setting the data in form for edit
   useEffect(() => {
     if (callUseEffect) {
       for (let d in editData) {
+        // getting image for edit
+        // setIamge(editData[d].imageurl)
+        //  //------------------------------
+        setEditImg(editData[d].imageurl);
+        // console.log(editData[d].imageurl);
         setNameDesc({
           Name: editData[d].name,
           Description: editData[d].description,
@@ -59,6 +69,7 @@ const ManageContact = () => {
   //function for storing image in the state variable
   function handleImage(e) {
     setIamge(e.target.files[0]);
+    console.log(e.target.files[0]);
   }
 
   // console.log(storeImgToDisplay)
@@ -76,9 +87,18 @@ const ManageContact = () => {
 
   //function for handle back to page
   function handleBackPage() {
+    setEditImg(null); //--------------------------------------
+    setEditData([]); //--------------------------------------
     setSaveId(null);
     setBtns("cancel");
     navigate("/Gallery");
+  }
+
+  //function for edit the image
+
+  async function handleEditImg() {
+    setIamge(false);
+    setEditImg(null);
   }
 
   //function for handle the submit of the form data and api call to post the data
@@ -96,19 +116,16 @@ const ManageContact = () => {
     formData.append("phone", Number(contactSection.phone));
     formData.append("instaUrl", contactSection.instaUrl);
     formData.append("linkedInUrl", contactSection.linkedInUrl);
-    formData.append("dummy", "dummy data");
-    console.log(formData);
-    console.log("---------------------------------------")
+
     // api call for posting the contact form data to the backend
-    console.log(saveId);
     if (
-      nameDesc.Name.length > 0 &&
-      nameDesc.Description.length > 0 &&
-      contactSection.companyName.length > 0 &&
-      contactSection.address.length > 0 &&
-      contactSection.instaUrl.length > 0 &&
-      contactSection.phone.length > 0 &&
-      contactSection.linkedInUrl.length > 0 &&
+      nameDesc.Name.length > 1 &&
+      nameDesc.Description.length > 1 &&
+      contactSection.companyName.length > 1 &&
+      contactSection.address.length > 1 &&
+      contactSection.instaUrl.length > 1 &&
+      contactSection.phone.length > 1 &&
+      contactSection.linkedInUrl.length > 1 &&
       saveId === null
     ) {
       console.log("normal api call");
@@ -137,33 +154,47 @@ const ManageContact = () => {
           theme: "light",
           transition: Bounce,
         });
-      } else {
-        console.log(response.data.message, "error accours");
-        toast.error("error accour while upload", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          transition: Bounce,
-        });
       }
     }
-
-    //FOR UPDATE THE CONTACT DETAILS API (i.e edit)
-    else {
-      console.log(nameDesc);
-      console.log(contactSection);
-
-      // console.log(saveId);
-      // console.log("edit data");
+    //error message
+    else if (
+      nameDesc.Name.length == 0 &&
+      nameDesc.Description.length == 0 &&
+      contactSection.companyName.length == 0 &&
+      contactSection.address.length == 0 &&
+      contactSection.instaUrl.length == 0 &&
+      contactSection.phone.length == 0 &&
+      contactSection.linkedInUrl.length == 0 &&
+      saveId === null
+    ) {
       console.log(formData);
+      toast.error("please fill the form", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+    //FOR UPDATE THE CONTACT DETAILS API (i.e edit)
+    else if (
+      nameDesc.Name.length !== 0 &&
+      nameDesc.Description.length !== 0 &&
+      contactSection.companyName.length !== 0 &&
+      contactSection.address.length !== 0 &&
+      contactSection.instaUrl.length !== 0 &&
+      contactSection.phone.length !== 0 &&
+      contactSection.linkedInUrl.length !== 0 &&
+      saveId !== null
+    ) {
+      console.log("update api call");
       const response = await axios.post(
         `http://192.168.1.82:4000/contactdetailUpdate/${saveId}`,
-       formData
+        formData
       );
 
       if (response.data.success) {
@@ -176,7 +207,7 @@ const ManageContact = () => {
           instaUrl: "",
           linkedInUrl: "",
         });
-        toast.success("data uploaded successfully", {
+        toast.success("data updated successfully", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -188,7 +219,6 @@ const ManageContact = () => {
           transition: Bounce,
         });
       } else {
-        console.log(response.data.message, "error accours");
         toast.error("error accour while upload", {
           position: "top-right",
           autoClose: 5000,
@@ -203,6 +233,8 @@ const ManageContact = () => {
       }
     }
   }
+
+  console.log(image, editImg);
 
   return (
     <div className="gallery-container">
@@ -270,22 +302,37 @@ const ManageContact = () => {
                   {image ? (
                     <img
                       className="delete"
-                      onClick={() => setIamge(false)}
+                      onClick={() => handleEditImg(editImg)}
                       src={assets.delete_logo}
                       alt=""
                     />
                   ) : null}
-                  <img
-                    className={!image ? "image-available" : "pre-image"}
-                    src={
-                      image ? URL.createObjectURL(image) : assets.no_prev_image
-                    }
-                    alt="No image available"
-                  />
 
-                  <span className={!image ? "center-text" : "none"}>
-                    No image
-                  </span>
+                  {editImg ? (
+                    <img
+                      src={editImg}
+                      className={editImg ? "pre-image" : "image-available"}
+                    />
+                  ) : (
+                    <img
+                      className={!image ? "image-available" : "pre-image"}
+                      src={
+                        image
+                          ? URL.createObjectURL(image)
+                          : assets.no_prev_image
+                      }
+                      alt="No image available"
+                    />
+                  )}
+                  {editImg ? (
+                    <span className={!editImg ? "center-text" : "none"}>
+                      {editImg ? "" : "No image"}
+                    </span>
+                  ) : (
+                    <span className={!image ? "center-text" : "none"}>
+                      No image
+                    </span>
+                  )}
                 </div>
                 {/* flex-column -parent*/}
                 <div className="details-right">
@@ -379,7 +426,8 @@ const ManageContact = () => {
           </button>
           <button
             type="submit"
-            className={btns === "update" ? "greenBackground" : "update"}
+            // btns === "update" ? : "update"
+            className={"greenBackground"}
             onClick={(e) => handleSubmit(e)}
           >
             update

@@ -175,7 +175,7 @@ const CheckOutPage = () => {
                 return (
                   <div key={i}>
                     <div className="teaching">
-                      <img src={assets.teaching_icon} alt="" />
+                      <img src={course.image? course.image :assets.teaching_icon} alt="" />
                       <div className="teaching-para">
                         <p className="para-3">{course.name} </p>
                         <p className="para-2">{course.duration}</p>
@@ -195,7 +195,7 @@ const CheckOutPage = () => {
                 return (
                   <div key={i}>
                     <div className="teaching">
-                      <img src={assets.teaching_icon} alt="" />
+                      <img src={course.image ?course.image :assets.teaching_icon} alt="" />
                       <div className="teaching-para">
                         <p className="para-3">{course.name} </p>
                         <p className="para-2">{course.duration}</p>

@@ -1,0 +1,142 @@
+.about-content{
+    border: 1px solid rgba(0, 0, 0, 0.159) ;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 20px;
+    background-color: rgba(250, 235, 215, 0.451);
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    /* padding-left: 70px; */
+    margin: 30px 70px 0px 70px;
+
+}
+
+.left-nav{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.left-nav img{
+   width: 10px;
+   cursor: pointer;
+}
+.left-nav span{
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.about-heading{
+    font-size: 30px;
+    font-weight: 700;
+    color:transparent;
+    background: linear-gradient(#17ACAC,#17ACAC,#000000);
+    background-clip: text;
+  }
+
+
+/*about-content*/
+.about-main-content-2{
+    /* border: 1px solid; */
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-cont-2{
+    max-width: 1400px;
+    width: 100%;
+    height:500px ;
+    border-radius: 20px;
+    border: none;
+    /* border: 1px solid; */
+}
+
+.img-cont-2 .contact-img-2{
+    object-fit:cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: none;
+   
+}
+
+/*content section*/
+
+.about-main-content-3{
+    /* border: 1px solid; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.detail-cont{
+    /* border: 1px solid rgba(0, 0, 0, 0.173); */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background:rgba(128, 128, 128, 0.104);
+    width: 100%;
+    border-radius: 20px;
+
+}
+
+/* .detail-cont p{
+    font-size: 18px;
+    font-weight: 500;
+    color: #00000080;
+} */
+
+.detail-cont h1{
+  font-size: 30px;
+  font-weight: 700;
+  color:transparent;
+  background: linear-gradient(#17ACAC,#17ACAC,#000000);
+  background-clip: text;
+}
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.inner-company, .inner-address, .inner-phone, .inner-ista, .inner-linkedIn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.company-head{
+    color:#000000;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.company-details{
+    color: #00000080;
+    text-indent: 20px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.company-red{
+    color: rgb(212, 11, 11);
+    text-indent: 20px;
+    font-size: 17px;
+    font-weight: 500;
+}
