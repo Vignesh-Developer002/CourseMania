@@ -3,7 +3,7 @@ import "../AdminGallery/Gallery.css";
 import AdminNav from "../AdminNav/AdminNav";
 import AdminNavTop from "../AdminNav-top/AdminNavTop";
 import ManageGallery from "../../ManageGallery/ManageGallery";
-import assets, { courses } from "../../assets/asset";
+import assets from "../../assets/asset";
 import { FaAngleDown } from "react-icons/fa";
 import { FaAngleUp } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";

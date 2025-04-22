@@ -13,6 +13,7 @@ const About = () => {
   const [aboutData, setAboutData] = useState([]);
   const navigate = useNavigate();
 
+  console.log(aboutData);
   useEffect(() => {
     async function handleFetch() {
       const response = await axios.get(
@@ -44,8 +45,22 @@ const About = () => {
           </div>
         </div>
         {/* image-content */}
-        <div className="img-content">
-          <img src={assets.certification_img_2} alt="" />
+        <div className="img-content" style={{ position: "relative" }}>
+          {aboutData["imageurl"] ? (
+            <img src={aboutData["imageurl"]} alt="" />
+          ) : (
+            <p
+              style={{
+                color: "red",
+                textAlign: "center",
+                position: "absolute",
+                top: "50%",
+                left: "40%",
+              }}
+            >
+              No image available
+            </p>
+          )}
         </div>
 
         {/* details */}
@@ -147,8 +162,8 @@ const About = () => {
             <div className="about-icons">
               <ImInstagram className="about-footer-logo" />
               <FaFacebookSquare className="about-footer-logo" />
-              <FaTwitter className="about-footer-logo"/>
-              <FaYoutube className="about-footer-logo"/>
+              <FaTwitter className="about-footer-logo" />
+              <FaYoutube className="about-footer-logo" />
             </div>
           </div>
         </div>

@@ -20,6 +20,8 @@ const AdminNav = () => {
       <h1 className="nav-title" onClick={() => handlePageNavigation()}>
         CourseMania
       </h1>
+      <p onClick={()=>navigate('/')} className="home-redirect">Home</p>
+
     </div>
   );
 };

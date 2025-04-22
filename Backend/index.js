@@ -136,6 +136,18 @@ app.get("/Certification", (req, res)=>{
         })
   })
 
+  //getting the admin user name for diplay in the nav bar
+
+  app.get('/adminName', (req,res)=>{
+     pool.query(`select name from admin`,(err, result)=>{
+       if(err){
+        return  res.status(500).send({success:false, message:"User not found"})
+       }else{
+        return res.status(200).send({success:true, result})
+       }
+     })
+  })
+
   // contact section details api for insert the contact detail in db
 
   app.post('/contactdetail', upload.single('image'), (req, res)=>{

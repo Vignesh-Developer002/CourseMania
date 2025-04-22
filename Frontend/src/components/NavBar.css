@@ -1482,6 +1482,24 @@
 }
   }
 
+  @media(min-width:920px){
+    .right-content .red-dot{
+      position: absolute;
+      width:12px;
+      height: 12px;
+      background-color: #C5331E;
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 17px;
+      right:166px;
+      top: 25px;
+      text-align: center;
+    }
+    .right-content .cart{
+      cursor: pointer;
+      position: relative;
+    }
+  }
 
   @media(min-width:2200px){
 
