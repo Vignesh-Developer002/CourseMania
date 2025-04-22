@@ -6,11 +6,11 @@ export const globalStore = createContext(null);
 const StoreContext = ({ children }) => {
   // let courseUrl = "http://localhost:4000/courses";
   // let certificateUrl = "http://localhost:4000/Certification";
-  const [editImg, setEditImg]=useState(null)// for getting and setting the image in edit page
-  const [saveId, setSaveId]=useState(null)// for save the edit data id for same replace 
-  const [callUseEffect, setCallUseEffect]=useState(false)// for handle the useEffect to run  
-  const [editData, setEditData]=useState([])// for assigning the edit data retrived from the data base
-  const [storeImgToDisplay,setStoreImgToDisplay]=useState([])// for storing the image to display in gallery 
+  const [editImg, setEditImg] = useState(null); // for getting and setting the image in edit page
+  const [saveId, setSaveId] = useState(null); // for save the edit data id for same replace
+  const [callUseEffect, setCallUseEffect] = useState(false); // for handle the useEffect to run
+  const [editData, setEditData] = useState([]); // for assigning the edit data retrived from the data base
+  const [storeImgToDisplay, setStoreImgToDisplay] = useState([]); // for storing the image to display in gallery
   const [contactsecData, setContactSecData] = useState([]);
   const [image, setIamge] = useState(false); // for upload the image
   const [galleryName, setGalleryName] = useState(false); // for dynamically change the manage gallery heading based on condition
@@ -25,14 +25,14 @@ const StoreContext = ({ children }) => {
   const { certificateData } = fetchUserData(
     "http://192.168.1.82:4000/Certification"
   ); // length ===30 (Certificate)
- const [filterName, setFilterName]=useState("")// for assign the clicked name in search 
+  const [filterName, setFilterName] = useState(""); // for assign the clicked name in search
   const [show, setShow] = useState(""); // show and hide of login register form
   //search for course
   const [searchCourse, setSearchCourse] = useState("");
   //entire course and certificate api data
   const [courseCertiData, setCourseCertiData] = useState([]);
   const [searchErr, setSearchErr] = useState("");
-  const [seleCourseCerti, setSeleCourseCerti]=useState([])// for assigning the the particular clicked data by filter search
+  const [seleCourseCerti, setSeleCourseCerti] = useState([]); // for assigning the the particular clicked data by filter search
 
   //combing api data for showing in coursePage
   const [apiData, setApiData] = useState([]);
@@ -43,8 +43,8 @@ const StoreContext = ({ children }) => {
     let entireApiData = courseData.concat(certificateData);
     setApiData(entireApiData);
   }, [isClicked]);
-  
-  console.log(apiData)
+
+  console.log(apiData);
 
   //search result storing state for display in header.jsx component
   const [filterSearchResult, setFilterSearchResult] = useState([]);
@@ -78,7 +78,6 @@ const StoreContext = ({ children }) => {
     paidCourse: false,
   });
   const [courseFilterData, setCourseFilterData] = useState([]);
-
 
   // course filter type
   let courses;
@@ -203,8 +202,8 @@ const StoreContext = ({ children }) => {
 
   //selecting perticular course page
   function selectCourse(courseId) {
-    console.log(courseId)
-    let selectedCourse = courseData.find((course) =>course.id === courseId)
+    console.log(courseId);
+    let selectedCourse = courseData.find((course) => course.id === courseId);
     setCoursePage(selectedCourse);
   }
 
@@ -272,13 +271,20 @@ const StoreContext = ({ children }) => {
     return total1;
   }
   const contextValue = {
-    filterName, setFilterName,
-    seleCourseCerti, setSeleCourseCerti,
-    saveId, setSaveId,
-    callUseEffect, setCallUseEffect,
-    editData, setEditData,
-    storeImgToDisplay,setStoreImgToDisplay,
-    image, setIamge,
+    filterName,
+    setFilterName,
+    seleCourseCerti,
+    setSeleCourseCerti,
+    saveId,
+    setSaveId,
+    callUseEffect,
+    setCallUseEffect,
+    editData,
+    setEditData,
+    storeImgToDisplay,
+    setStoreImgToDisplay,
+    image,
+    setIamge,
     cartItems,
     certiItem,
     addToCart,
@@ -327,7 +333,8 @@ const StoreContext = ({ children }) => {
     setGalleryName,
     contactsecData,
     setContactSecData,
-    editImg, setEditImg
+    editImg,
+    setEditImg,
   };
 
   return (

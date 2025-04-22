@@ -14,7 +14,7 @@ const Header = () => {
     setIsClicked,
     setFilterName,
   } = useContext(globalStore);
-  
+
   //removing duplicate from the search filter array
   let uniqueData = Array.from(new Set(filterSearchResult));
   function handleCourseClick(name) {

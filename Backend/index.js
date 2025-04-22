@@ -203,7 +203,7 @@ app.get("/Certification", (req, res)=>{
    //update the edited data
   
    app.post('/contactdetailUpdate/:id',upload.single('image'), (req, res)=>{
-       const {id}=req.params
+       const {id} = req.params 
        const {name,description,companyName,address, phone, instaUrl,linkedInUrl} = req.body
        console.log(name,description,companyName,address, phone, instaUrl,linkedInUrl)
        pool.query(`update contactdetails set name=?, description=?, companyName = ?, address=?, phone=?, instaUrl=?, linkedInUrl=? where id =? `, [name,description,companyName,address, phone, instaUrl,linkedInUrl,id],(err, result)=>{
