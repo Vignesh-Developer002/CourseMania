@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../header/Header.jsx";
 import Home from "../Home.jsx";
 import Course from "../Course.jsx";

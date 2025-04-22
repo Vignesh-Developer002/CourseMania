@@ -4,7 +4,7 @@ import { globalStore } from "../context/StoreContext";
 import { useNavigate } from "react-router-dom";
 
 const AdminNav = () => {
-  const { galleryName, setGalleryName, setSaveId, setEditData, setEditImg } =
+  const { setGalleryName, setSaveId, setEditData, setEditImg } =
     useContext(globalStore);
   const navigate = useNavigate();
 

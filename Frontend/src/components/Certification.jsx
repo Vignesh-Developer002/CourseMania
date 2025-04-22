@@ -7,7 +7,6 @@ const Certification = () => {
     isCertificateChecked,
     setIsCertificateChecked,
     certificateTrend,
-    setCertificateTrend,
     setCertificateValue,
   } = useContext(globalStore);
 

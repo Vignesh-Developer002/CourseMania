@@ -21,18 +21,15 @@ const RegisterLogin = ({
   setLogin,
   setIslogged,
 }) => {
-  const {
-    setLoginEmail,
-    setLoginPassword,
-    setDispalyUserName,
-    setIsSubmit,
-    show,
-    setShow,
-  } = useContext(globalStore);
+  const { setLoginEmail, setLoginPassword, setDispalyUserName, setIsSubmit } =
+    useContext(globalStore);
   const [databaseLoginData, setDatabaseLoginData] = useState(null); //assigning the matched login data email and password from data base
   const [formError, setFormError] = useState({}); // register form error handling
   const [registerDuplicateData, setregisterDuplicateRecord] = useState(""); // assigning duplicate data stored in local storage
-  const [loginFormErrMsg, setLoginFormErrMsg] = useState({EmailErr:"",passwordErr:""}); //for showing the extra error msg in login form while the data is not found in database
+  const [loginFormErrMsg, setLoginFormErrMsg] = useState({
+    EmailErr: "",
+    passwordErr: "",
+  }); //for showing the extra error msg in login form while the data is not found in database
 
   //getting duplicate data to local storage
   let dupData;
@@ -175,9 +172,12 @@ const RegisterLogin = ({
             theme: "colored",
             transition: Flip,
           });
-        } 
-        else if(loginUser.data?.results.length===0){
-          setLoginFormErrMsg((prev)=>({...prev,EmailErr:"Email Mismatch",passwordErr:"password mismatch"}))
+        } else if (loginUser.data?.results.length === 0) {
+          setLoginFormErrMsg((prev) => ({
+            ...prev,
+            EmailErr: "Email Mismatch",
+            passwordErr: "password mismatch",
+          }));
           setLogin(false);
           setIslogged(
             true
@@ -195,13 +195,11 @@ const RegisterLogin = ({
             theme: "colored",
             transition: Flip,
           });
-         
         }
         setDatabaseLoginData(loginUser.data.results[0]);
       }
     } catch (err) {
       console.log(err.results.length);
-    
     }
   }
 

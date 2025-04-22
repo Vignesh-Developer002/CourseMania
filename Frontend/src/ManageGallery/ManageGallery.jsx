@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import "../ManageGallery/ManageGallery.css";
 import assets from "../assets/asset";
-import AdminNav from "../components/AdminNav/AdminNav";
-import AdminNavTop from "../components/AdminNav-top/AdminNavTop";
 import { globalStore } from "../components/context/StoreContext";
 
 const ManageGallery = () => {
-   const {galleryName,setGalleryName} = useContext(globalStore)
+   const {galleryName} = useContext(globalStore)
   return (
     <>
       <div className="manage-gallery-content">

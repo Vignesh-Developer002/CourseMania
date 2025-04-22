@@ -8,23 +8,27 @@ import { Rating } from "react-simple-star-rating";
 
 const CoursePage = () => {
   const {
-    coursesPage,
-    courseCertiData,
+    filterName, // clicked name from the filter data
     apiData,
     setIsClicked,
     setSearchClick,
-    searchClick,
+    setFilterName,
+    coursesPage,
   } = useContext(globalStore); // course-length:13 and Certificate-length:12
   const navigate = useNavigate();
-  // console.log(apiData)
-  console.log(coursesPage)
+
+  // finding the single clicked data based on name (i.e: filter search data)
+  let res = apiData.find(
+    (courseCertiData, idx) => courseCertiData.name.toLowerCase() === filterName
+  );
+
+console.log(coursesPage)
   function handleBackPage() {
+    setFilterName("");
     setIsClicked(false);
     navigate("/");
     setSearchClick(false);
   }
-
-  const [ratingValue, setRatingValue] = useState(0);
 
   const handleRating = (rate) => {
     setRatingValue(rate);
@@ -59,27 +63,29 @@ const CoursePage = () => {
       <div className="course-sub-conatainer">
         <div className="course-main">
           <h2>
-            {coursesPage.length !== 0 ? coursesPage["name"] : "Unconcious Bias"}
+            { res && Object.keys(res).length > 1 
+              ? res["name"] : Object.keys(coursesPage).length>0 ? coursesPage["name"]
+              : "Unconcious Bias"}
           </h2>
           {/* relative */}
           <div className="video-container">
             {/* absolute */}
             <div className="popular-overlay">
               <span>
-                {coursesPage.length !== 0 ? coursesPage["status"] : "popular"}
+                {res && Object.keys(res).length > 1 ? res["status"] : Object.keys(coursesPage).length>0 ? coursesPage["status"]: "popular"}
               </span>
             </div>
             {/* width-100% */}
             {/* <video src={assets.video_logo}>
                     
             </video> */}
-            
+
             <img
               className="video-logo"
               // Object.keys(coursesPage).length === 13
               //     ? assets.certification_img_2
               //     : assets.video_logo
-              src={coursesPage["image"] ? coursesPage["image"]:assets.video_logo}
+              src={res && res["image"] ? res["image"] : coursesPage["image"] ? coursesPage["image"] :assets.video_logo}
               alt=""
             />
             {/* temporary */}
@@ -91,7 +97,9 @@ const CoursePage = () => {
 
             <div className="absol">
               <span>
-                {coursesPage.length !== 0 ? coursesPage["duration"] : "25mins"}
+                {res && Object.keys(res).length > 1
+                  ? res["duration"] :Object.keys(coursesPage).length>0 ? coursesPage["duration"]
+                  : "25mins"}
               </span>
             </div>
           </div>
@@ -104,8 +112,8 @@ const CoursePage = () => {
                 <img src={assets.user_icon} alt="" />
                 <span className="black">Creater :</span>
                 <span className="green-1 green-line-1">
-                  {coursesPage.length !== 0
-                    ? coursesPage["academy_name"]
+                  {res && Object.keys(res).length > 1
+                    ? res["academy_name"] :Object.keys(coursesPage).length>0 ? coursesPage["academy_name"]
                     : "Reena Jacob"}
                 </span>
               </div>
@@ -118,8 +126,8 @@ const CoursePage = () => {
                 <img src={assets.Time_icon} alt="" />
                 <span className="black">duration :</span>
                 <span className="green-1">
-                  {coursesPage.length !== 0
-                    ? coursesPage["duration"]
+                  {res && Object.keys(res).length > 1
+                    ? res["duration"] :Object.keys(coursesPage).length>0 ? coursesPage["duration"]
                     : "25mins"}
                 </span>
               </div>
@@ -132,8 +140,8 @@ const CoursePage = () => {
               {/* position-absolute */}
               <div className="free-overlay">
                 <span>
-                  {coursesPage.length !== 0
-                    ? coursesPage["course_type"]
+                  {res && Object.keys(res).length > 1
+                    ? res["course_type"] :Object.keys(coursesPage).length>0 ? coursesPage["course_type"]
                     : "Free"}
                 </span>
               </div>
@@ -147,8 +155,8 @@ const CoursePage = () => {
               <div className="star-ratings-2">
                 <img src={assets.star_icon} alt="" />
                 <span>
-                  {coursesPage.length !== 0
-                    ? `(${coursesPage["total_purchased"]})`
+                  {res && Object.keys(res).length > 1
+                    ? `(${res["total_purchased"]})`:Object.keys(coursesPage).length>0 ? coursesPage["total_purchased"]
                     : "(43,435)"}
                 </span>
               </div>
@@ -158,8 +166,8 @@ const CoursePage = () => {
           <div className="detail-container">
             <h3>Details</h3>
             <div className="para">
-              {coursesPage.length !== 0
-                ? coursesPage["details"]
+              {res && Object.keys(res).length > 1 
+                ? res["details"] :Object.keys(coursesPage).length>0 ? coursesPage["details"]
                 : `Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Excepturi, rem ea est provident quibusdam maxime harum accusantium
               quidem magni soluta reprehenderit voluptatibus voluptate
@@ -250,52 +258,6 @@ const CoursePage = () => {
                     fillColor="yellow"
                     onClick={handleRating}
                   />
-
-                  {/* <img
-                    onClick={() => setGoldStar("gold-1")}
-                    src={
-                      goldStar === "gold-1"
-                        ? assets.single_star
-                        : assets.colorless_star
-                    }
-                    alt=""
-                  />
-                  <img
-                    onClick={() => setGoldStar("gold-2")}
-                    src={
-                      goldStar === "gold-2"
-                        ? assets.single_star
-                        : assets.colorless_star
-                    }
-                    alt=""
-                  />
-                  <img
-                    onClick={() => setGoldStar("gold-3")}
-                    src={
-                      goldStar === "gold-3"
-                        ? assets.single_star
-                        : assets.colorless_star
-                    }
-                    alt=""
-                  />
-                  <img
-                    onClick={() => setGoldStar("gold-4")}
-                    src={
-                      goldStar === "gold-4"
-                        ? assets.single_star
-                        : assets.colorless_star
-                    }
-                    alt=""
-                  />
-                  <img
-                    onClick={() => setGoldStar("gold-5")}
-                    src={
-                      goldStar === "gold-5"
-                        ? assets.single_star
-                        : assets.colorless_star
-                    }
-                    alt=""
-                  // /> */}
                 </div>
               </div>
 

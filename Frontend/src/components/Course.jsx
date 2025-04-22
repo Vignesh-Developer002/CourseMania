@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext} from "react";
 import "../components/Course.css";
-import { courses } from "../assets/asset.js";
 import Cart from "./Cart.jsx";
 import assets from "../assets/asset.js";
 import { fetchUserData } from "../components/data/data.jsx";

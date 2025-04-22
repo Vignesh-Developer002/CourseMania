@@ -25,13 +25,14 @@ const StoreContext = ({ children }) => {
   const { certificateData } = fetchUserData(
     "http://192.168.1.82:4000/Certification"
   ); // length ===30 (Certificate)
-
+ const [filterName, setFilterName]=useState("")// for assign the clicked name in search 
   const [show, setShow] = useState(""); // show and hide of login register form
   //search for course
   const [searchCourse, setSearchCourse] = useState("");
   //entire course and certificate api data
   const [courseCertiData, setCourseCertiData] = useState([]);
   const [searchErr, setSearchErr] = useState("");
+  const [seleCourseCerti, setSeleCourseCerti]=useState([])// for assigning the the particular clicked data by filter search
 
   //combing api data for showing in coursePage
   const [apiData, setApiData] = useState([]);
@@ -42,6 +43,8 @@ const StoreContext = ({ children }) => {
     let entireApiData = courseData.concat(certificateData);
     setApiData(entireApiData);
   }, [isClicked]);
+  
+  console.log(apiData)
 
   //search result storing state for display in header.jsx component
   const [filterSearchResult, setFilterSearchResult] = useState([]);
@@ -100,7 +103,6 @@ const StoreContext = ({ children }) => {
   });
   //certificate filter state data
   const [certificateFilterData, setCertificateFilterData] = useState([]);
- console.log(certificateFilterData)
   //certificate filter
   let certificates;
   useEffect(() => {
@@ -201,7 +203,8 @@ const StoreContext = ({ children }) => {
 
   //selecting perticular course page
   function selectCourse(courseId) {
-    let selectedCourse = courseData.find((course) => course.id === courseId);
+    console.log(courseId)
+    let selectedCourse = courseData.find((course) =>course.id === courseId)
     setCoursePage(selectedCourse);
   }
 
@@ -268,8 +271,9 @@ const StoreContext = ({ children }) => {
     }
     return total1;
   }
-// console.log(JSON.parse(localStorage.getItem('storedImg')))
   const contextValue = {
+    filterName, setFilterName,
+    seleCourseCerti, setSeleCourseCerti,
     saveId, setSaveId,
     callUseEffect, setCallUseEffect,
     editData, setEditData,

@@ -14,22 +14,23 @@ const Cart = ({
   price,
   totalPurchase,
   course_type,
-  course,
 }) => {
   const navigate = useNavigate();
-  const { addToCart, selectCourse, removeFromCart, cartItems } =
+  const { addToCart, selectCourse, removeFromCart, cartItems, setIsClicked, isClicked } =
     useContext(globalStore);
   const [btnColor, setBtnColor] = useState(false);
   const [addPlus, setPlus] = useState("plus");
 
   function handleNavigate(courseId) {
-    navigate("Coursepage");
+    navigate("/Coursepage");
     selectCourse(courseId);
+    setIsClicked(true) /**--------------------------------- */
   }
 
   function addCourseHandler(id) {
     setPlus("redTick");
     addToCart(id);
+   
   }
 
   return (

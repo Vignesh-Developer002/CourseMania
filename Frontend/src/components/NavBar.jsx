@@ -1,4 +1,4 @@
-import React, { use, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import "../components/NavBar.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -23,7 +23,6 @@ const NavBar = ({
     setDispalyUserName,
     isSubmit,
     setIsSubmit,
-    show,
     setShow,
   } = useContext(globalStore);
   const { cartItems, certiItem } = useContext(globalStore);

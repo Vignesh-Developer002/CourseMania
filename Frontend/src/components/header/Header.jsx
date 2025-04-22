@@ -11,13 +11,13 @@ const Header = () => {
     searchCourse,
     setSearchCourse,
     filterSearchResult,
-    searchErr,
     setIsClicked,
+    setFilterName,
   } = useContext(globalStore);
   //removing duplicate from the search filter array
   let uniqueData = Array.from(new Set(filterSearchResult));
-
-  function handleCourseClick() {
+  function handleCourseClick(name) {
+    setFilterName(name);
     setIsClicked(true);
     navigate("CoursePage");
   }
@@ -41,7 +41,7 @@ const Header = () => {
           <div className="search-container">
             <ul className="unOrder">
               {uniqueData.map((res, i) => (
-                <li onClick={() => handleCourseClick()} key={i}>
+                <li onClick={() => handleCourseClick(res)} key={i}>
                   {res}
                 </li>
               ))}

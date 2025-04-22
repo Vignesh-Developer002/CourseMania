@@ -17,14 +17,9 @@ const Gallery = () => {
   const {
     setGalleryName,
     contactsecData,
-    setNameDesc,
     setContactSecData,
-    storeImgToDisplay,
-    editData,
     setEditData,
-    callUseEffect,
     setCallUseEffect,
-    saveId,
     setSaveId,
   } = useContext(globalStore);
 

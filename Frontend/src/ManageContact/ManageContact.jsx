@@ -14,7 +14,6 @@ const ManageContact = () => {
   const {
     image,
     setIamge,
-    storeImgToDisplay,
     setStoreImgToDisplay,
     editData,
     callUseEffect,
@@ -37,10 +36,6 @@ const ManageContact = () => {
     linkedInUrl: "",
   });
 
-  console.log(saveId);
-  console.log(editImg);
-
-  console.log(editData);
   // for setting the data in form for edit
   useEffect(() => {
     if (callUseEffect) {

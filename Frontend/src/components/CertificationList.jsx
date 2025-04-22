@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "../components/CertificationList.css";
 import Certificate from "./Certificate.jsx";
-import assets, { certificates } from "../assets/asset.js";
+import assets from "../assets/asset.js";
 import { fetchUserData } from "./data/data.jsx";
 import SkeletonAnimation from "./SkeletonAnim/SkeletonAnimation.jsx";
 import { globalStore } from "./context/StoreContext.jsx";

@@ -16,11 +16,9 @@ const Certificate = ({
   certificate_type,
 }) => {
   const [btnColor, setBtnColor] = useState(false);
-  const [addPlus, setPlus] = useState("plus");
   const {
     addToCartCerti,
     selectCertificate,
-    cartItems,
     removeFromCerti,
     certiItem,
   } = useContext(globalStore);
