@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "../header/Header.css";
 import { FaSearch } from "react-icons/fa";
 import assets from "../../assets/asset.js";
@@ -14,6 +14,7 @@ const Header = () => {
     setIsClicked,
     setFilterName,
   } = useContext(globalStore);
+  
   //removing duplicate from the search filter array
   let uniqueData = Array.from(new Set(filterSearchResult));
   function handleCourseClick(name) {

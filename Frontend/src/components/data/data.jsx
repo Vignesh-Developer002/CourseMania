@@ -22,7 +22,7 @@ export function fetchUserData(url) {
           setUserData(data);
           setTimeout(() => {
             setIsLoading(false);
-          }, 3000);
+          }, 1000);
         }
       } catch (error) {
         setError(error.message);

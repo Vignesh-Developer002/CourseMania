@@ -3144,7 +3144,7 @@ hr{
         margin-left: 2px;
         margin-top: 18px;
         position: absolute;
-        top:-181px;
+        top:-190px;
         z-index:0;
     }
     
@@ -3333,6 +3333,7 @@ hr{
         margin-top: -50px;
         margin-left: 25px;
         margin-right: 50px;
+        border: 1px;
     }
     
     .udemy{

@@ -86,8 +86,7 @@ app.get("/Certification", (req, res)=>{
            res.status(500).send({success:false,message:'Error creating user'});
            console.log(results)
        } else {
-           res.status(200).send('User is created successfully');
-           
+           res.status(200).send('User is created successfully');  
        }
    });
 });

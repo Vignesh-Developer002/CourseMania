@@ -26,6 +26,7 @@ const AdminNavTop = () => {
   //function for handle the admin logout
   function handleAdminLogOut() {
     setAdminLoggedIn(false);
+    setAdminName("");
   }
 
   return (
