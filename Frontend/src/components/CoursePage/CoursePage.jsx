@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "../CoursePage/CoursePage.css";
 import { FaShoppingCart } from "react-icons/fa";
 import assets from "../../assets/asset.js";
@@ -17,7 +17,7 @@ const CoursePage = () => {
   } = useContext(globalStore); // course-length:13 and Certificate-length:12
   const navigate = useNavigate();
 
-  // finding the single clicked data based on name (i.e: filter search data)
+  // finding the single clicked data based on name(i.e:filter search data)
   let res = apiData.find(
     (courseCertiData, idx) => courseCertiData.name.toLowerCase() === filterName
   );
@@ -62,8 +62,10 @@ const CoursePage = () => {
       <div className="course-sub-conatainer">
         <div className="course-main">
           <h2>
-            { res && Object.keys(res).length > 1 
-              ? res["name"] : Object.keys(coursesPage).length>0 ? coursesPage["name"]
+            {res && Object.keys(res).length > 1
+              ? res["name"]
+              : Object.keys(coursesPage).length > 0
+              ? coursesPage["name"]
               : "Unconcious Bias"}
           </h2>
           {/* relative */}
@@ -71,7 +73,11 @@ const CoursePage = () => {
             {/* absolute */}
             <div className="popular-overlay">
               <span>
-                {res && Object.keys(res).length > 1 ? res["status"] : Object.keys(coursesPage).length>0 ? coursesPage["status"]: "popular"}
+                {res && Object.keys(res).length > 1
+                  ? res["status"]
+                  : Object.keys(coursesPage).length > 0
+                  ? coursesPage["status"]
+                  : "popular"}
               </span>
             </div>
             {/* width-100% */}
@@ -84,7 +90,13 @@ const CoursePage = () => {
               // Object.keys(coursesPage).length === 13
               //     ? assets.certification_img_2
               //     : assets.video_logo
-              src={res && res["image"] ? res["image"] : coursesPage["image"] ? coursesPage["image"] :assets.video_logo}
+              src={
+                res && res["image"]
+                  ? res["image"]
+                  : coursesPage["image"]
+                  ? coursesPage["image"]
+                  : assets.video_logo
+              }
               alt=""
             />
             {/* temporary */}
@@ -97,7 +109,9 @@ const CoursePage = () => {
             <div className="absol">
               <span>
                 {res && Object.keys(res).length > 1
-                  ? res["duration"] :Object.keys(coursesPage).length>0 ? coursesPage["duration"]
+                  ? res["duration"]
+                  : Object.keys(coursesPage).length > 0
+                  ? coursesPage["duration"]
                   : "25mins"}
               </span>
             </div>
@@ -112,7 +126,9 @@ const CoursePage = () => {
                 <span className="black">Creater :</span>
                 <span className="green-1 green-line-1">
                   {res && Object.keys(res).length > 1
-                    ? res["academy_name"] :Object.keys(coursesPage).length>0 ? coursesPage["academy_name"]
+                    ? res["academy_name"]
+                    : Object.keys(coursesPage).length > 0
+                    ? coursesPage["academy_name"]
                     : "Reena Jacob"}
                 </span>
               </div>
@@ -126,7 +142,9 @@ const CoursePage = () => {
                 <span className="black">duration :</span>
                 <span className="green-1">
                   {res && Object.keys(res).length > 1
-                    ? res["duration"] :Object.keys(coursesPage).length>0 ? coursesPage["duration"]
+                    ? res["duration"]
+                    : Object.keys(coursesPage).length > 0
+                    ? coursesPage["duration"]
                     : "25mins"}
                 </span>
               </div>
@@ -140,7 +158,9 @@ const CoursePage = () => {
               <div className="free-overlay">
                 <span>
                   {res && Object.keys(res).length > 1
-                    ? res["course_type"] :Object.keys(coursesPage).length>0 ? coursesPage["course_type"]
+                    ? res["course_type"]
+                    : Object.keys(coursesPage).length > 0
+                    ? coursesPage["course_type"]
                     : "Free"}
                 </span>
               </div>
@@ -155,7 +175,9 @@ const CoursePage = () => {
                 <img src={assets.star_icon} alt="" />
                 <span>
                   {res && Object.keys(res).length > 1
-                    ? `(${res["total_purchased"]})`:Object.keys(coursesPage).length>0 ? coursesPage["total_purchased"]
+                    ? `(${res["total_purchased"]})`
+                    : Object.keys(coursesPage).length > 0
+                    ? coursesPage["total_purchased"]
                     : "(43,435)"}
                 </span>
               </div>
@@ -165,8 +187,10 @@ const CoursePage = () => {
           <div className="detail-container">
             <h3>Details</h3>
             <div className="para">
-              {res && Object.keys(res).length > 1 
-                ? res["details"] :Object.keys(coursesPage).length>0 ? coursesPage["details"]
+              {res && Object.keys(res).length > 1
+                ? res["details"]
+                : Object.keys(coursesPage).length > 0
+                ? coursesPage["details"]
                 : `Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Excepturi, rem ea est provident quibusdam maxime harum accusantium
               quidem magni soluta reprehenderit voluptatibus voluptate
