@@ -42,7 +42,7 @@ const Gallery = () => {
   async function handleDelete(num) {
     setDeleteBtn((prev)=>(!prev))
     const response = await axios.post(
-      `https://coursemania-backend.onrender.com/deleteContact/${num}`
+      `http://192.168.1.82:4000/deleteContact/${num}`
     );
     if (response.data) {
       toast.success(`${response.data.message}`, {
@@ -77,7 +77,7 @@ const Gallery = () => {
     setCallUseEffect(true);
     navigate("/ManageContact");
     const response = await axios.post(
-      `https://coursemania-backend.onrender.com/contactdetail/${num}`
+      `http://192.168.1.82:4000/contactdetail/${num}`
     );
     if (response.data.result) {
       setEditData(response.data.result);
@@ -90,7 +90,7 @@ const Gallery = () => {
   useEffect(() => {
     async function getContactSectionDetails() {
       const response = await axios.get(
-        "https://coursemania-backend.onrender.com/contactdetail"
+        "http://192.168.1.82:4000/contactdetail"
       );
 
       if (response?.data?.result && Array.isArray(response?.data?.result)) {
