@@ -19,9 +19,9 @@ import { fetchUserData } from "../data/data.jsx";
 const CartPage = () => {
   //  let courseUrl = "http://localhost:4000/courses"
   // let certificateUrl = "http://localhost:4000/Certification"
-  const { courseData } = fetchUserData("https://coursemania-backend.onrender.com/courses");
+  const { courseData } = fetchUserData("http://192.168.1.82:4000/courses");
   const { certificateData } = fetchUserData(
-    "https://coursemania-backend.onrender.com/Certification"
+    "http://192.168.1.82:4000/Certification"
   );
 
   const {
