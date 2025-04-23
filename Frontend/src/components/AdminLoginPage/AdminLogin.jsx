@@ -34,7 +34,7 @@ const AdminLogin = () => {
     try {
       if (adminDetails.name && adminDetails.password) {
         let adminData = await axios.post(
-          "http://192.168.1.82:4000/admins",
+          "https://coursemania-backend.onrender.com/admins",
           adminDetails
         );
 
