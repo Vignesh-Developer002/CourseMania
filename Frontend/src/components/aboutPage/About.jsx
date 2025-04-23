@@ -12,12 +12,13 @@ import { FaYoutube } from "react-icons/fa6";
 const About = () => {
   const [aboutData, setAboutData] = useState([]);
   const navigate = useNavigate();
-
-  console.log(aboutData);
+  // http://192.168.1.82:4000
+  const url= "http://192.168.1.82:4000";
+  
   useEffect(() => {
     async function handleFetch() {
       const response = await axios.get(
-        "http://192.168.1.82:4000/contactdetail"
+       ` ${url}/contactdetail`
       );
       if (response.data.success) {
         console.log(response.data.result);

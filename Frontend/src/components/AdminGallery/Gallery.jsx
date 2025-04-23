@@ -27,6 +27,7 @@ const Gallery = () => {
   const [count, setCount] = useState(0);
   const [deletBtn, setDeleteBtn] = useState(false);
   const navigate = useNavigate();
+  const url ="http://192.168.1.82:4000"
   // function for handling the manage gallery name
   function handleGalleryName() {
     setSaveId(null);
@@ -38,7 +39,7 @@ const Gallery = () => {
   async function handleDelete(num) {
     setDeleteBtn((prev) => !prev);
     const response = await axios.post(
-      `http://192.168.1.82:4000/deleteContact/${num}`
+      `${url}/deleteContact/${num}`
     );
     if (response.data) {
       toast.success(`${response.data.message}`, {
@@ -73,7 +74,7 @@ const Gallery = () => {
     setCallUseEffect(true);
     navigate("/ManageContact");
     const response = await axios.post(
-      `http://192.168.1.82:4000/contactdetail/${num}`
+      `${url}/contactdetail/${num}`
     );
     if (response.data.result) {
       setEditData(response.data.result);
@@ -86,7 +87,7 @@ const Gallery = () => {
   useEffect(() => {
     async function getContactSectionDetails() {
       const response = await axios.get(
-        "http://192.168.1.82:4000/contactdetail"
+        `${url}/contactdetail`
       );
       console.log(contactsecData);
       if (response?.data?.result && Array.isArray(response?.data?.result)) {

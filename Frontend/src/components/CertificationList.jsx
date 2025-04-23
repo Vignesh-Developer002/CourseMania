@@ -10,8 +10,10 @@ import { FaArrowRight } from "react-icons/fa";
 const CertificationList = () => {
   // let certificateURL = "http://localhost:4000/Certification";
 
+const url = "http://192.168.1.82:4000"
+
   const { error, isLoading } = fetchUserData(
-    "http://192.168.1.82:4000/Certification"
+    `${url}/Certification`
   );
 
   const { certificateFilterData } = useContext(globalStore);

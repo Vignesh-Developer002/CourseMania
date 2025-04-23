@@ -4,6 +4,7 @@ import React from "react";
 export const globalStore = createContext(null);
 
 const StoreContext = ({ children }) => {
+  const url = "http://192.168.1.82:4000"
   // let courseUrl = "http://localhost:4000/courses";
   // let certificateUrl = "http://localhost:4000/Certification";
   const [editImg, setEditImg] = useState(null); // for getting and setting the image in edit page
@@ -21,9 +22,9 @@ const StoreContext = ({ children }) => {
   const [loginPassword, setLoginPassword] = useState(""); ////assigning the password from database for validation
   const [cartItems, setCartItems] = useState({}); // course adding object
   const [certiItem, setCertiItem] = useState({}); // certificate adding object
-  const { courseData } = fetchUserData("http://192.168.1.82:4000/courses"); // length ===20 (course)
+  const { courseData } = fetchUserData(`${url}/courses`); // length ===20 (course)
   const { certificateData } = fetchUserData(
-    "http://192.168.1.82:4000/Certification"
+   `${url}/Certification`
   ); // length ===30 (Certificate)
   const [filterName, setFilterName] = useState(""); // for assign the clicked name in search
   const [show, setShow] = useState(""); // show and hide of login register form

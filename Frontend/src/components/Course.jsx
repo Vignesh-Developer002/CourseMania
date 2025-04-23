@@ -8,9 +8,10 @@ import { globalStore } from "./context/StoreContext.jsx";
 import { FaArrowRight } from "react-icons/fa";
 
 const Course = () => {
+  const url = "http://192.168.1.82:4000"
   // "http://localhost:4000/courses"
   const { courseData, error, isLoading } = fetchUserData(
-    "http://192.168.1.82:4000/courses"
+   ` ${url}/courses`
   );
   const { courseFilterData } = useContext(globalStore);
 

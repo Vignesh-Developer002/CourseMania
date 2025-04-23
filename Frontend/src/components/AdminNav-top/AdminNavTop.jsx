@@ -10,10 +10,11 @@ const AdminNavTop = () => {
   const [adminName, setAdminName] = useState("");
   const [adminLoggedIn, setAdminLoggedIn] = useState(false); //show and hide the loggout option
   const [overlay, setOverlay] = useState(false);
+  const url = "http://192.168.1.82:4000";
   useEffect(() => {
     async function gettingUserName() {
       try {
-        const response = await axios.get("http://192.168.1.82:4000/adminName");
+        const response = await axios.get(`${url}/adminName`);
         if (response.data.success) {
           const lowerName = response.data.result[0].name;
           setAdminName(lowerName);

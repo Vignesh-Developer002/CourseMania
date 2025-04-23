@@ -17,7 +17,8 @@ const AdminLogin = () => {
   const [error, setError] = useState({});
   const [userNotFound, setUserNotFound] = useState(false);
   const [adminDt, setAdminDt] = useState([]);
-  console.log(typeof adminDt, userNotFound);
+  const url = "http://192.168.1.82:4000"
+
   function handleNavigate() {
     navigate("/");
     setIsBackBtnClick(false);
@@ -35,7 +36,7 @@ const AdminLogin = () => {
     try {
       if (adminDetails.name && adminDetails.password) {
         let adminData = await axios.post(
-          "http://192.168.1.82:4000/admins",
+          `${url}/admins`,
           adminDetails
         );
 
