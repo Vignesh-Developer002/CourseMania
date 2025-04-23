@@ -10,7 +10,7 @@ const CertificationList = () => {
   // let certificateURL = "http://localhost:4000/Certification";
 
   const { error, isLoading } = fetchUserData(
-    "https://coursemania-backend.onrender.com/Certification"
+    "http://192.168.1.82:4000/Certification"
   );
 
   const { certificateFilterData } = useContext(globalStore);
