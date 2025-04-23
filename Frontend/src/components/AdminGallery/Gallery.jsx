@@ -27,7 +27,7 @@ const Gallery = () => {
   const [count, setCount] = useState(0);
   const [deletBtn, setDeleteBtn] = useState(false);
   const navigate = useNavigate();
-  const url ="http://192.168.1.82:4000"
+  const url = "http://192.168.1.82:4000";
   // function for handling the manage gallery name
   function handleGalleryName() {
     setSaveId(null);
@@ -38,9 +38,7 @@ const Gallery = () => {
   //function for delete the perticular data in db
   async function handleDelete(num) {
     setDeleteBtn((prev) => !prev);
-    const response = await axios.post(
-      `${url}/deleteContact/${num}`
-    );
+    const response = await axios.post(`${url}/deleteContact/${num}`);
     if (response.data) {
       toast.success(`${response.data.message}`, {
         position: "top-right",
@@ -73,9 +71,7 @@ const Gallery = () => {
     setSaveId(num);
     setCallUseEffect(true);
     navigate("/ManageContact");
-    const response = await axios.post(
-      `${url}/contactdetail/${num}`
-    );
+    const response = await axios.post(`${url}/contactdetail/${num}`);
     if (response.data.result) {
       setEditData(response.data.result);
       console.log(response.data.result);
@@ -86,9 +82,7 @@ const Gallery = () => {
   // setInterval(()=>{
   useEffect(() => {
     async function getContactSectionDetails() {
-      const response = await axios.get(
-        `${url}/contactdetail`
-      );
+      const response = await axios.get(`${url}/contactdetail`);
       console.log(contactsecData);
       if (response?.data?.result && Array.isArray(response?.data?.result)) {
         setContactSecData(response?.data?.result);
