@@ -10,7 +10,7 @@ import { globalStore } from "./context/StoreContext.jsx";
 const Course = () => {
   // "http://localhost:4000/courses"
   const { courseData, error, isLoading } = fetchUserData(
-    "http://192.168.1.82:4000/courses"
+    "https://coursemania-backend.onrender.com/courses"
   );
   const { courseFilterData } = useContext(globalStore);
 
