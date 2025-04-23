@@ -24,6 +24,7 @@ const ManageContact = () => {
     editImg,
     setEditImg,
   } = useContext(globalStore);
+  const url = "http://192.168.1.82:4000"
   const navigate = useNavigate();
   const [btns, setBtns] = useState("");
   // const [image, setIamge] = useState(false); // for upload the image
@@ -125,7 +126,7 @@ const ManageContact = () => {
     ) {
       console.log("normal api call");
       const response = await axios.post(
-        "http://192.168.1.82:4000/contactdetail",
+        `${url}/contactdetail`,
         formData
       );
       if (response.data.success) {
@@ -188,7 +189,7 @@ const ManageContact = () => {
     ) {
       console.log("update api call");
       const response = await axios.post(
-        `http://192.168.1.82:4000/contactdetailUpdate/${saveId}`,
+        `${url}/contactdetailUpdate/${saveId}`,
         formData
       );
 
