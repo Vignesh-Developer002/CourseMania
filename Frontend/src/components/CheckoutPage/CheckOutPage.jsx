@@ -22,9 +22,9 @@ const CheckOutPage = () => {
 
   const { cartItems, certiItem, getCertificateTotal, getTotal } =
     useContext(globalStore);
-  const { courseData } = fetchUserData("http://192.168.1.82:4000/courses");
+  const { courseData } = fetchUserData("https://coursemania-backend.onrender.com/courses");
   const { certificateData } = fetchUserData(
-    "http://192.168.1.82:4000/Certification"
+    "https://coursemania-backend.onrender.com/Certification"
   );
 
   let res;
