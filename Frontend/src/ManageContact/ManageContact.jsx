@@ -113,7 +113,7 @@ const ManageContact = () => {
     ) {
       console.log("normal api call");
       const response = await axios.post(
-        "http://192.168.1.82:4000/contactdetail",
+        "https://coursemania-backend.onrender.com/contactdetail",
         formData
       );
       if (response.data.success) {
@@ -162,7 +162,7 @@ const ManageContact = () => {
       // console.log("edit data");
       console.log(formData);
       const response = await axios.post(
-        `http://192.168.1.82:4000/contactdetailUpdate/${saveId}`,
+        `https://coursemania-backend.onrender.com/contactdetailUpdate/${saveId}`,
        formData
       );
 
