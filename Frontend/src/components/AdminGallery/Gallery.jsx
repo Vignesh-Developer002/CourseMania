@@ -90,7 +90,7 @@ const Gallery = () => {
   useEffect(() => {
     async function getContactSectionDetails() {
       const response = await axios.get(
-        "http://192.168.1.82:4000/contactdetail"
+        "https://coursemania-backend.onrender.com/contactdetail"
       );
 
       if (response?.data?.result && Array.isArray(response?.data?.result)) {
