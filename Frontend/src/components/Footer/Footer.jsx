@@ -9,12 +9,12 @@ import { Link } from "react-router-dom";
 import { globalStore } from "../context/StoreContext";
 
 const Footer = () => {
-  const {setIsBackBtnClick} = useContext(globalStore);
+  const { setIsBackBtnClick } = useContext(globalStore);
 
-  function handleAdminData(){
-    setIsBackBtnClick(true)
+  function handleAdminData() {
+    setIsBackBtnClick(true);
   }
-  
+
   return (
     <>
       <div className="footer-main-content" id="footer">
@@ -49,7 +49,7 @@ const Footer = () => {
 
           <ul className="support">
             <li>
-              <a href="">Hel And Support</a>
+              <a href="">Help And Support</a>
             </li>
             <li>
               <a href="">Privacy Policy</a>
@@ -58,7 +58,9 @@ const Footer = () => {
         </div>
 
         <div className="Admin-foot">
-          <Link onClick={()=> handleAdminData()} to="AdminLogin">Admin Login</Link>
+          <Link onClick={() => handleAdminData()} to="AdminLogin">
+            Admin Login
+          </Link>
         </div>
 
         <div className="social-icon-container">

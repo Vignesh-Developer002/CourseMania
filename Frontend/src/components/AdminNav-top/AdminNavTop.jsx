@@ -4,12 +4,14 @@ import assets from "../../assets/asset";
 import { RxHamburgerMenu } from "react-icons/rx";
 import axios from "axios";
 import { IoIosLogOut } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 
 const AdminNavTop = () => {
   const [adminName, setAdminName] = useState("");
-  const [adminLoggedIn, setAdminLoggedIn] = useState(false); // show and hide the loggout option
+  const [adminLoggedIn, setAdminLoggedIn] = useState(false); //show and hide the loggout option
+  const [overlay, setOverlay] = useState(false);
   useEffect(() => {
-    async function gettingUserName() {
+    async function gettingUserName(){
       try {
         const response = await axios.get("http://192.168.1.82:4000/adminName");
         if (response.data.success) {
@@ -29,15 +31,60 @@ const AdminNavTop = () => {
     setAdminName("");
   }
 
+  // function for handle menu overlay
+  function handleOverlay() {
+    setOverlay(true);
+  }
+
   return (
     <>
-      <RxHamburgerMenu className="AdminBurger" />
+      {/* mobile menu overlay-start */}
+      <RxHamburgerMenu
+        className="AdminBurger"
+        onClick={() => handleOverlay()}
+      />
+      {overlay && (
+        <>
+        <div className= {overlay ?"admin-menu-show": "admin-mobile-hide"}>
+          <div className="admin-top-profile">
+            <div className="admin-login-profile">
+              <span>v</span>
+            </div>
+
+            <RxCross2  className="admin-close" onClick={()=>setOverlay(false)}/>
+          </div>
+
+          <hr className="profile-bottom-border"/>
+
+          <div className="admin-bottom-list">
+            <ul>
+              <li>Home</li>
+              <li>About</li>
+              <li>Course</li>
+              <li>Tutor</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <hr className="foot-line"/>
+
+          <div className="admin-footer">
+            <h1>CourseMania</h1>
+          </div>
+
+          <hr className="footer-last-line"/>
+        </div>
+        <div className={overlay ?"bg-overlay": "admin-mobile-hide"} onClick={()=>setOverlay(false)}> 
+        </div>
+      </>  
+       )} 
+
+      {/* mobile menu overlay-end */}
       <div className="adminNavTop">
         {/* flex-between */}
         <div className="left-side-admin">
           <div className="left_log">
             <img src={assets.edit_logo} alt="" />
-            <img src={assets.message_logo} alt="" />
+            <img src={assets.message_logo} alt=""/>
           </div>
           <div className="search_bar">
             <img src={assets.search_logo} alt="" />

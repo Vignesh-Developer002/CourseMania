@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import "../AdminLoginPage/Adminlogin.css";
 import assets from "../../assets/asset.js";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +15,9 @@ const AdminLogin = () => {
   });
 
   const [error, setError] = useState({});
-
+  const [userNotFound, setUserNotFound] = useState(false);
+  const [adminDt, setAdminDt] = useState([]);
+  console.log(typeof adminDt, userNotFound);
   function handleNavigate() {
     navigate("/");
     setIsBackBtnClick(false);
@@ -41,6 +43,8 @@ const AdminLogin = () => {
           adminData.status === 200 &&
           Object.keys(adminData.data.results[0])
         ) {
+          setAdminDt(adminData.data.results[0]);
+          setUserNotFound(false);
           toast.success("Welcome Admin!", {
             position: "top-center",
             autoClose: 5000,
@@ -62,6 +66,8 @@ const AdminLogin = () => {
     } catch (err) {
       console.log(err.results);
       if (err.results === undefined) {
+        setUserNotFound(true);
+        console.log("true");
         toast.error("User not found !", {
           position: "top-right",
           autoClose: 5000,
@@ -102,6 +108,7 @@ const AdminLogin = () => {
 
     if (!value.name) {
       err.name = "Name is required";
+      //
     } else if (value.name.length <= 5) {
       err.name = "Name must contain 5 character";
     }
@@ -110,14 +117,13 @@ const AdminLogin = () => {
     } else if (value.password.length <= 5) {
       err.password = "Password must contain 5 character";
     }
-    if (value.name.length > 5 && value.password.length > 5) {
+    console.log(adminDt.length);
+    if (adminDt.length == 0 && userNotFound === true) {
+      err.name = "Name Mismatch";
+      err.password = "password Mismatch";
+    } else if (Object.values(adminDt).length > 0 && userNotFound === false) {
       err.name = "Name match";
-      err.password = "Password match";
-    }
-    if (value.name.length > 5) {
-      err.name = "Name match";
-    } else if (value.password.length > 5) {
-      err.password = "Password match";
+      err.password = "password match";
     }
 
     return err;
@@ -197,7 +203,9 @@ const AdminLogin = () => {
             </div>
             <span
               className={
-                error.password === "Password match" ? "green-color" : "red-color"
+                error.password === "Password match"
+                  ? "green-color"
+                  : "red-color"
               }
             >
               {error.password}

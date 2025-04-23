@@ -32,17 +32,16 @@ const PORT = process.env.PORT ||4000;
 app.use(cors());
 app.use(express.json());
  
-app.use((req,res,next)=>{
-   console.log("request url =", req.url);
-   console.log("request method =",  req.method);
-   console.log("request body =", req.body);
-   console.log("request PARARMAS =", req.params);
-   next()
-});
+// app.use((req,res,next)=>{
+//    console.log("request url =", req.url);
+//    console.log("request method =",  req.method);
+//    console.log("request body =", req.body);
+//    console.log("request PARARMAS =", req.params);
+//    next()
+// });
 
 // server running message
  app.listen( PORT,()=>{console.log(`server is running on port ${PORT}`)});
-
 
  // courses API
 
@@ -60,6 +59,7 @@ app.use((req,res,next)=>{
       }
     })
  })
+
 //  certificationCourse API
 
 //  app.get("/Certification", (req,res)=>{ 
@@ -86,7 +86,7 @@ app.get("/Certification", (req, res)=>{
            res.status(500).send({success:false,message:'Error creating user'});
            console.log(results)
        } else {
-           res.status(200).send('User is created successfully');  
+           res.status(200).send('User created successfully');  
        }
    });
 });
@@ -124,7 +124,7 @@ app.get("/Certification", (req, res)=>{
   //getting and validating the admin name and password 
   app.post('/admins', (req,res)=>{
         const {name,password}=req.body
-        pool.query('SELECT Name, password from admin where Name= ? and password = ?', [name, password], (error, results)=>{
+        pool.query('SELECT Name,password from admin where Name= ? and password = ?', [name, password], (error, results)=>{
            if(error){
             console.error(error.code);
             res.status(500).send({success:false, message:'Error accours user not found'});
@@ -187,6 +187,7 @@ app.get("/Certification", (req, res)=>{
     })
    })
 
+   
    //getting the particular contact details data based on id for edit ------------
 
    app.post('/contactdetail/:id', (req, res)=>{

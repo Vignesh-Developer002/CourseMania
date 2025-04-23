@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import "../components/Course.css";
 import Cart from "./Cart.jsx";
 import assets from "../assets/asset.js";
@@ -21,11 +21,11 @@ const Course = () => {
       </div>
 
       <div className="right-arrow">
-        <img  src={assets.right_arrow} />
+        <img src={assets.right_arrow} />
       </div>
 
       <div className="animated-arrow">
-      <FaArrowRight className="animate"/>
+        <FaArrowRight className="animate" />
       </div>
 
       <div className="courses-content" id="course">

@@ -86,7 +86,7 @@
 
     .animated-arrow{
         position: absolute;
-        z-index: 3;
+        z-index: 2;
         top: 490px;
         right: 34px;
         cursor: pointer;
@@ -176,7 +176,7 @@
     }
     .animated-arrow{
         position: absolute;
-        z-index: 3;
+        z-index: 2;
         top: 550px;
         right: 20px;
         cursor: pointer;
@@ -241,7 +241,7 @@
     }
     .animated-arrow{
         position: absolute;
-        z-index: 3;
+        z-index: 2;
         top: 580px;
         right: 34px;
         cursor: pointer;
@@ -270,7 +270,7 @@
     }
     .animated-arrow{
         position: absolute;
-        z-index: 3;
+        z-index: 2;
         top: 690px;
         right: 34px;
         cursor: pointer;
@@ -312,7 +312,7 @@
     }
     .animated-arrow{
         position: absolute;
-        z-index: 3;
+        z-index: 2;
         top: 750px;
         right: 34px;
         cursor: pointer;

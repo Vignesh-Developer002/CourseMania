@@ -22,7 +22,6 @@ const CoursePage = () => {
     (courseCertiData, idx) => courseCertiData.name.toLowerCase() === filterName
   );
 
-console.log(coursesPage)
   function handleBackPage() {
     setFilterName("");
     setIsClicked(false);
