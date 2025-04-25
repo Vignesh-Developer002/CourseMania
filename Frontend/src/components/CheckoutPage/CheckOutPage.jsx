@@ -16,6 +16,7 @@ import { fetchUserData } from "../data/data.jsx";
 import { useContext } from "react";
 import { globalStore } from "../context/StoreContext.jsx";
 
+
 const CheckOutPage = () => {
   const [overlayMenuBar, setOverLayMenuBar] = useState(false);
   const Navigate = useNavigate();
@@ -202,7 +203,7 @@ const CheckOutPage = () => {
                   return (
                     <div key={i}>
                       <div className="teaching">
-                        <img
+                        <img className="checkout-image"
                           src={
                             course.image ? course.image : assets.teaching_icon
                           }

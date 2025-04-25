@@ -1,15 +1,12 @@
 import mysql from "mysql";
 
 const pool = mysql.createPool({
-        host: process.env.HOST || "localhost",
-        user: process.env. USER || "root",
-        password:process.env.PASSWORD ||  "",
-        database: process.env.DATABASE || "userdetails",
+        host:"localhost",
+        user:"root",
+        password:"",
+        database:"userdetails",
       });
 
+      // process.env.HOST ||process.env. USER ||process.env.PASSWORD ||process.env.DATABASE ||
   
-
-
-
-
   export default pool;

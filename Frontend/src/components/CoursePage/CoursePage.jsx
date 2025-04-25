@@ -22,6 +22,7 @@ const CoursePage = () => {
     (courseCertiData, idx) => courseCertiData.name.toLowerCase() === filterName
   );
 
+  console.log(coursesPage);
   function handleBackPage() {
     setFilterName("");
     setIsClicked(false);
@@ -128,7 +129,7 @@ const CoursePage = () => {
                   {res && Object.keys(res).length > 1
                     ? res["academy_name"]
                     : Object.keys(coursesPage).length > 0
-                    ? coursesPage["academy_name"]
+                    ? coursesPage["acedemy_name"]
                     : "Reena Jacob"}
                 </span>
               </div>

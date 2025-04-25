@@ -260,6 +260,7 @@
 .teaching img{
     width: 120px;
     height: 70px;
+    object-fit: cover;
 }
 
 .teaching-para{
