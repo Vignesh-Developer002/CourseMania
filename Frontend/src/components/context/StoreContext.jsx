@@ -4,7 +4,7 @@ import React from "react";
 export const globalStore = createContext(null);
 
 const StoreContext = ({ children }) => {
-  const url = "http://192.168.1.82:4000"
+  const url = "http://192.168.1.82:4000";
   // let courseUrl = "http://localhost:4000/courses";
   // let certificateUrl = "http://localhost:4000/Certification";
   const [editImg, setEditImg] = useState(null); // for getting and setting the image in edit page
@@ -23,9 +23,7 @@ const StoreContext = ({ children }) => {
   const [cartItems, setCartItems] = useState({}); // course adding object
   const [certiItem, setCertiItem] = useState({}); // certificate adding object
   const { courseData } = fetchUserData(`${url}/courses`); // length ===20 (course)
-  const { certificateData } = fetchUserData(
-   `${url}/Certification`
-  ); // length ===30 (Certificate)
+  const { certificateData } = fetchUserData(`${url}/Certification`); // length ===30 (Certificate)
   const [filterName, setFilterName] = useState(""); // for assign the clicked name in search
   const [show, setShow] = useState(""); // show and hide of login register form
   //search for course
@@ -229,7 +227,7 @@ const StoreContext = ({ children }) => {
   function removeFromCart(itemId) {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   }
-  
+
   // ----------------------------------------------//
 
   //function for certificate add

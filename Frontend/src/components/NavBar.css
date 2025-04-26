@@ -1214,9 +1214,10 @@
   @media(min-width:1440px){
   
     .Nav-content{
+      display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 30px 40px;
+      padding: 30px 50px;
       position: relative;
       z-index: 3;
       
@@ -1227,7 +1228,7 @@
   }
   
   .Nav-content ul{
-      gap: 60px;
+      gap: 35px;
   }
   .Nav-content li{
     list-style-type: none;
@@ -1255,8 +1256,7 @@
       gap: 30px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      
+      justify-content: center; 
     }
     
   
