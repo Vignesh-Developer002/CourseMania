@@ -8,6 +8,8 @@ const StoreContext = ({ children }) => {
   const url = "http://192.168.1.82:4000";
   // let courseUrl = "http://localhost:4000/courses";
   // let certificateUrl = "http://localhost:4000/Certification";
+  const[cousreImg, setCourseImg]=useState(false)// for set the cpurse image added by admin in admin pannel
+  const[certificateImg,setCertificateImg]=useState(false)
   const [editImg, setEditImg] = useState(null); // for getting and setting the image in edit page
   const [saveId, setSaveId] = useState(null); // for save the edit data id for same replace
   const [callUseEffect, setCallUseEffect] = useState(false); // for handle the useEffect to run
@@ -335,6 +337,8 @@ const StoreContext = ({ children }) => {
     setContactSecData,
     editImg,
     setEditImg,
+    cousreImg, setCourseImg,
+    certificateImg,setCertificateImg
   };
 
   return (

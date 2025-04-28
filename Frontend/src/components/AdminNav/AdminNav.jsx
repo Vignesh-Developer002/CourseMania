@@ -13,15 +13,19 @@ const AdminNav = () => {
     navigate("/Gallery");
     setSaveId(null);
     setEditData([]); //------------------ok------------------
-    setEditImg(null);//------------------------------------
+    setEditImg(null); //------------------------------------
   }
   return (
     <div className="admin-nav">
       <h1 className="nav-title" onClick={() => handlePageNavigation()}>
         CourseMania
       </h1>
-      <p onClick={()=>navigate('/')} className="home-redirect">Home</p>
-
+      <div className="side-nav">
+        <ul className="nav-list-1">
+          <li onClick={() => navigate("/") } className="home-redirect">Home</li>
+          <li onClick={() => navigate("/CourseCertificate") } className="home-redirect">Add Courses</li>
+        </ul>
+      </div>
     </div>
   );
 };

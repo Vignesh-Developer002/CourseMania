@@ -10,6 +10,7 @@ import AdminLogin from "./components/AdminLoginPage/AdminLogin.jsx";
 import Gallery from "./components/AdminGallery/Gallery.jsx";
 import ManageContact from "./ManageContact/ManageContact.jsx";
 import About from "./components/aboutPage/About.jsx";
+import CourseCertificate from "./components/courseCertificate/CourseCertificate.jsx";
 
 const App = () => {
   const [login, setLogin] = useState(false); //register page input field setup
@@ -74,6 +75,7 @@ const App = () => {
         <Route path="/Gallery" element={<Gallery />} />
         <Route path="/ManageContact" element={<ManageContact/>}/>
         <Route path="/About" element={<About/>}/>
+        <Route path="/CourseCertificate" element={<CourseCertificate/>}/>
       </Routes>
     </div>
   );

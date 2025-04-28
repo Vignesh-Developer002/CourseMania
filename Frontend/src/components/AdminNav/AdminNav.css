@@ -15,12 +15,20 @@
     cursor: pointer;
 }
 
-.home-redirect{
+.side-nav{
     margin-top: 20px;
-    margin-left: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+}
+.nav-list-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+.nav-list-1 li{
+    color: #00000088;
 }
 
 .home-redirect:hover{

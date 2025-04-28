@@ -348,7 +348,8 @@ const ManageContact = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> 
+        {/*  */}
         {/* contact -section -details */}
         <div className="contact-section">
           <h1>Add Contact Section Detail</h1>
