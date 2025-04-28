@@ -211,13 +211,11 @@ app.post("/contactdetail", upload.single("image"), (req, res) => {
           .status(500)
           .send({ success: false, message: "data not inserted" });
       } else {
-        return res
-          .status(200)
-          .send({
-            success: true,
-            message: "Data inserted successfully",
-            img_url: `http://192.168.1.82:4000/image/${req.file.filename}`,
-          });
+        return res.status(200).send({
+          success: true,
+          message: "Data inserted successfully",
+          img_url: `http://192.168.1.82:4000/image/${req.file.filename}`,
+        });
       }
     }
   );

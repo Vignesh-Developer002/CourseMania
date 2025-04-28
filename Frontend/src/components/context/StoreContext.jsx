@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { fetchUserData } from "../data/data.jsx";
 import React from "react";
+
 export const globalStore = createContext(null);
 
 const StoreContext = ({ children }) => {
