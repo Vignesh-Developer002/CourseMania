@@ -7,7 +7,7 @@ import { globalStore } from "../context/StoreContext";
 import axios from "axios";
 
 const CourseCertificate = () => {
-    const url ="http://192.168.1.82:4000"
+  const url = "http://192.168.1.82:4000";
   const { cousreImg, setCourseImg, certificateImg, setCertificateImg } =
     useContext(globalStore);
   const [btnStatusLeft, setBtnLeftStatus] = useState(false);
@@ -74,10 +74,13 @@ const CourseCertificate = () => {
       Object.values(certiAdminData).every((i) => i.length > 0)
     ) {
       //call api
-      const response = await axios.post(`${url}/addCourseCertificate`)
-      console.log(response.data)
+      const response = await axios.post(
+        `${url}/addCourseCertificate`,
+        courseAdminData,
+        certiAdminData
+      );
+      console.log(response.data);
     } else {
-
     }
   }
 

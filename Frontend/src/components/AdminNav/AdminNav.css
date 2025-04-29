@@ -19,6 +19,7 @@
     margin-top: 20px;
     display: flex;
     justify-content: flex-start;
+    padding-left: 10px;
 }
 .nav-list-1{
     display: flex;
