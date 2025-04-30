@@ -11,6 +11,8 @@ const app = express();
 dotenv.config();
 // to access the image
 app.use("/image", express.static("upload/images"));
+// app.use("/courseImg", express.static("upload/CourseImg"));
+// app.use("/certiImg", express.static("upload/certiImg"));
 
 //storage
 const storage = multer.diskStorage({
@@ -23,22 +25,60 @@ const storage = multer.diskStorage({
   },
 });
 
+const storage2 = multer.diskStorage({
+  destination: "upload/images2/",
+  filename: (req, file, cb) => cb(null, Date.now() + "-" + file.originalname),
+});
+
+const storage3 = multer.diskStorage({
+  destination: "upload/images3/",
+  filename: (req, file, cb) => cb(null, Date.now() + "-" + file.originalname),
+});
+
+// course image storage
+// const courseStorage = multer.diskStorage({
+//   destination: "./upload/CourseImg",
+//   filename: (req, file, cb) => {
+//     return cb(
+//       null,
+//       `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
+//     );
+//   },
+// });
+// certificate image storage
+// const certificateStorage = multer.diskStorage({
+//   destination: "./upload/certiImg",
+//   filename: (req, file, cb) => {
+//     return cb(
+//       null,
+//       `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
+//     );
+//   },
+// });
+// for gallery
 const upload = multer({
   storage: storage,
 });
+const upload2 = multer({ storage: storage2 });
+const upload3 = multer({ storage: storage3 });
+// for course image
+// const courseUpload = multer({ storage: courseStorage });
+// console.log(courseUpload);
+// for certificate imgae
+// const certificateUpload = multer({ storage: certificateStorage });
 
 //PORT CONFIGURATION
 const PORT = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
-// app.use((req,res,next)=>{
-//    console.log("request url =", req.url);
-//    console.log("request method =",  req.method);
-//    console.log("request body =", req.body);
-//    console.log("request PARARMAS =", req.params);
-//    next()
-// });
+app.use((req, res, next) => {
+  console.log("request url =", req.url);
+  console.log("request method =", req.method);
+  console.log("request body =", req.body);
+  console.log("request PARARMAS =", req.params);
+  next();
+});
 
 // server running message
 app.listen(PORT, () => {
@@ -322,6 +362,114 @@ app.post("/imageDelete", (req, res) => {
         return res
           .status(500)
           .send({ success: false, message: "image not available" });
+      } else {
+        return res.status(200).send({ success: true, result });
+      }
+    }
+  );
+});
+
+// api for adding the new course details through admin pannel
+
+app.post("/courseImageData", upload2.single("CourseImg"), (req, res) => {
+  const { filename } = req.file;
+  console.log(filename, `http://192.168.1.82:4000/courseImg/${filename}`);
+  const {
+    courseName,
+    courseStatus,
+    courseDuration,
+    coursePrice,
+    courseType,
+    courseOldPrice,
+    courseAcedemyName,
+    courseDetails,
+  } = req.body;
+  console.log(
+    courseName,
+    courseStatus,
+    courseDuration,
+    coursePrice,
+    courseType,
+    courseOldPrice,
+    courseAcedemyName,
+    courseDetails,
+    `http://192.168.1.82:4000/courseImg/${filename}`
+  );
+  pool.query(
+    `insert into course (name, image,status, duration,old_price,new_price,course_type,ratings,total_purchased,star_rating,academy_name,details) values(?,?,?,?,?,?,?,?,?,?,?,?)`,
+    [
+      courseName,
+      `http://192.168.1.82:4000/courseImg/${filename}`,
+      courseStatus,
+      courseDuration,
+      courseOldPrice,
+      coursePrice,
+      courseType,
+      5,
+      1250,
+      5,
+      courseAcedemyName,
+      courseDetails,
+    ],
+    (err, result) => {
+      if (err) {
+        return res
+          .status(500)
+          .send({ success: false, message: "Unable to insert" });
+      } else {
+        return res.status(200).send({ success: true, result });
+      }
+    }
+  );
+});
+
+//api  for adding the new certificate details through admin pannel
+app.post("/addCertificateData", upload3.single("certiImg"), (req, res) => {
+  const { filename } = req.file;
+  console.log(filename, `http://192.168.1.82:4000/certiImg/${filename}`);
+  const {
+    certiName,
+    certiDuration,
+    certiPrice,
+    certiType,
+    certiStatus,
+    certiOldPrice,
+    certiDetails,
+    certiAcedemyName,
+  } = req.body;
+  console.log(
+    certiName,
+      `http://192.168.1.82:4000/certiImg/${filename}`,
+      certiStatus,
+      certiDuration,
+      certiOldPrice,
+      certiPrice,
+      5,
+      1200,
+      certiType,
+      certiDetails,
+      certiAcedemyName,
+  );
+  pool.query(
+    `insert into certificate(name,image,status,duration,old_price,new_price,ratings,total_purchases, course_type, details,acedemy_name) values(?,?,?,?,?,?,?,?,?,?,?) `,
+    [
+      certiName,
+      `http://192.168.1.82:4000/certiImg/${filename}`,
+      certiStatus,
+      certiDuration,
+      certiOldPrice,
+      certiPrice,
+      5,
+      1200,
+      certiType,
+      certiDetails,
+      certiAcedemyName,
+    ],
+    (err, result) => {
+      if (err) {
+        return res
+          .status(500)
+          .send({ success: false, message: "data not inserted" });
       } else {
         return res.status(200).send({ success: true, result });
       }

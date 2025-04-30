@@ -106,6 +106,12 @@
     width: 270px;
     height: 270px;
 }
+.certiBorder{
+    width: 270px;
+    height: 270px;
+    border: 1px solid rgba(0, 0, 0, 0.214);
+    border-radius: 10px;
+}
 .prev-img-course-certificate{
     width: 100%;
     height: 100%;
@@ -113,6 +119,14 @@
     border-radius: 10px;
 }
 .courseCerti-del{
+    cursor: pointer;
+    position: absolute;
+    top:14px;
+    right:20px;
+    width: 50px;
+    height:60px;
+}
+.Certi-del{
     cursor: pointer;
     position: absolute;
     top:14px;
@@ -128,7 +142,7 @@
     width: 100%;
     gap: 0px;
     border-radius: 10px;
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 .course-name-prev,.course-duration-prev, .course-price-prev,.course-type-prev, .course-trend-prev{
     display: flex;
@@ -289,6 +303,7 @@
     .course-img-prev{
         width: 240px;
         height: 230px;
+        /* border: 1px solid; */
     }
     .prev-img-course-certificate{
         width: 100%;
@@ -297,6 +312,14 @@
         border-radius: 10px;
     }
     .courseCerti-del{
+        position: absolute;
+        top:14px;
+        right:10px;
+        width: 50px;
+        height:60px;
+    }
+    .Certi-del{
+        cursor: pointer;
         position: absolute;
         top:14px;
         right:10px;
@@ -327,6 +350,25 @@
     .courseCerti-data{
         color: #0000008a;
         font-size: 15px;
+    }
+    .noImage{
+        color: red;
+        position: absolute;
+        bottom: 60px;
+        left: 75px;
+    }
+    .noPrevImgPlaceholder{
+        position: absolute;
+        top: 70px;
+        left: 70px;
+        width:80px;
+        object-fit: contain;
+    }
+    .certiBorder{
+        width: 230px;
+        height: 240px;
+        border: 1px solid rgba(0, 0, 0, 0.214);
+        border-radius: 10px;
     }
 }
 @media(min-width:375px){
@@ -434,14 +476,25 @@
     .course-img-prev{
         width: 240px;
         height: 230px;
+        border: none;
     }
     .prev-img-course-certificate{
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 10px;
+        /* border-radius: 10px; */
+        border: 1px solid #000000f2;
+        outline: none;
     }
     .courseCerti-del{
+        position: absolute;
+        top:14px;
+        right:20px;
+        width: 50px;
+        height:60px;
+    }
+    .Certi-del{
+        cursor: pointer;
         position: absolute;
         top:14px;
         right:20px;
@@ -472,6 +525,25 @@
     .courseCerti-data{
         color: #0000008a;
         font-size: 15px;
+    }
+    .noImage{
+        color: red;
+        position: absolute;
+        bottom: 60px;
+        left: 80px;
+    }
+    .noPrevImgPlaceholder{
+        position: absolute;
+        top: 70px;
+        left: 75px;
+        width:80px;
+        object-fit: contain;
+    }
+    .certiBorder{
+        width: 230px;
+        height: 240px;
+        border: 1px solid rgba(0, 0, 0, 0.214);
+        border-radius: 10px;
     }
 }
 
@@ -596,6 +668,14 @@
         width: 50px;
         height:60px;
     }
+    .Certi-del{
+        cursor: pointer;
+        position: absolute;
+        top:14px;
+        right:10px;
+        width: 50px;
+        height:60px;
+    }
     .course-details-prev{
         display: flex;
         flex-direction: column;
@@ -620,6 +700,19 @@
     .courseCerti-data{
         color: #0000008a;
         font-size: 15px;
+    }
+    .noImage{
+        color: red;
+        position: absolute;
+        bottom: 60px;
+        left: 80px;
+    }
+    .noPrevImgPlaceholder{
+        position: absolute;
+        top: 70px;
+        left: 75px;
+        width:80px;
+        object-fit: contain;
     }
 }
 
@@ -735,6 +828,14 @@
         border-radius: 10px;
     }
     .courseCerti-del{
+        position: absolute;
+        top:14px;
+        right:20px;
+        width: 50px;
+        height:60px;
+    }
+    .Certi-del{
+        cursor: pointer;
         position: absolute;
         top:14px;
         right:20px;
@@ -884,6 +985,14 @@
         width: 50px;
         height:60px;
     }
+    .Certi-del{
+        cursor: pointer;
+        position: absolute;
+        top:14px;
+        right:10px;
+        width: 50px;
+        height:60px;
+    }
     .course-details-prev{
         display: flex;
         flex-direction: column;
@@ -1011,6 +1120,7 @@
     .course-img-prev{
         width: 270px;
         height: 270px;
+        /* border: 1px solid; */
     }
     .prev-img-course-certificate{
         width: 100%;
@@ -1019,6 +1129,14 @@
         border-radius: 10px;
     }
     .courseCerti-del{
+        position: absolute;
+        top:14px;
+        right:20px;
+        width: 50px;
+        height:60px;
+    }
+    .Certi-del{
+        cursor: pointer;
         position: absolute;
         top:14px;
         right:20px;

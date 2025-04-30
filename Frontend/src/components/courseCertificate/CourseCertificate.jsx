@@ -5,8 +5,32 @@ import AdminNavTop from "../AdminNav-top/AdminNavTop";
 import assets from "../../assets/asset";
 import { globalStore } from "../context/StoreContext";
 import axios from "axios";
+import { toast, Bounce } from "react-toastify";
 
 const CourseCertificate = () => {
+  // course Name
+  // course image
+  // course status
+  // course duration
+  // course old price -- need to add
+  // course price -- new price
+  // course type
+  // acedemy name  --- need to add
+  //  details  ---  need to add
+  // rating , star rating, total purchased are added by default
+
+  //name .
+  // image.
+  // status.
+  // duration.
+  // old_price-----need to add in the frontend
+  // new_price.
+  // ratings-----need to add in the frontend
+  // total_purchased----need to add in the frontend
+  // course_type.
+  // details----need to add in the frontend
+  // acedemy_name----need to add in the frontend
+
   const url = "http://192.168.1.82:4000";
   const { cousreImg, setCourseImg, certificateImg, setCertificateImg } =
     useContext(globalStore);
@@ -17,6 +41,9 @@ const CourseCertificate = () => {
     coursePrice: "",
     courseType: "",
     courseStatus: "",
+    courseOldPrice: "",
+    courseAcedemyName: "",
+    courseDetails: "",
   });
   const [certiAdminData, setCertiAdminData] = useState({
     certiName: "",
@@ -24,7 +51,34 @@ const CourseCertificate = () => {
     certiPrice: "",
     certiType: "",
     certiStatus: "",
+    certiOldPrice: "",
+    certiDetails: "",
+    certiAcedemyName: "",
   });
+  //course form data
+  const courseFormData = new FormData();
+  courseFormData.append("courseName", courseAdminData.courseName);
+  courseFormData.append("CourseImg", cousreImg);
+  courseFormData.append("courseStatus", courseAdminData.courseStatus);
+  courseFormData.append("courseDuration", courseAdminData.courseDuration);
+  courseFormData.append("coursePrice", courseAdminData.coursePrice);
+  courseFormData.append("courseType", courseAdminData.courseType);
+  courseFormData.append("courseOldPrice", courseAdminData.courseOldPrice);
+  courseFormData.append("courseAcedemyName", courseAdminData.courseAcedemyName);
+  courseFormData.append("courseDetails", courseAdminData.courseDetails);
+
+  //Certificate form data
+  const certiFormData = new FormData();
+  certiFormData.append("certiName", certiAdminData.certiName);
+  certiFormData.append("certiDuration", certiAdminData.certiDuration);
+  certiFormData.append("certiPrice", certiAdminData.certiPrice);
+  certiFormData.append("certiType", certiAdminData.certiType);
+  certiFormData.append("certiStatus", certiAdminData.certiStatus);
+  certiFormData.append("certiImg", certificateImg);
+  certiFormData.append("certiOldPrice", certiAdminData.certiOldPrice);
+  certiFormData.append("certiDetails", certiAdminData.certiDetails);
+  certiFormData.append("certiAcedemyName", certiAdminData.certiAcedemyName);
+
   //function for handle course and certificate image
   function handleCourseCertiImg(e) {
     const { name } = e.target;
@@ -56,6 +110,9 @@ const CourseCertificate = () => {
       coursePrice: "",
       courseType: "",
       courseStatus: "",
+      courseOldPrice: "",
+      courseAcedemyName: "",
+      courseDetails: "",
     });
     setCertiAdminData({
       certiName: "",
@@ -63,27 +120,63 @@ const CourseCertificate = () => {
       certiPrice: "",
       certiType: "",
       certiStatus: "",
+      certiOldPrice: "",
+      certiDetails: "",
+      certiAcedemyName: "",
     });
   }
 
+  // function for handle the course img delete function
+  function handleDeleteImg() {
+    setCourseImg(false);
+  }
+  //function for handle the certi img delete function
+  function handleCertiImgDelete() {
+    setCertificateImg(false);
+  }
+
   // function fot handel submit
-  async function handleAdminSubmit(e) {
+  async function handleAdminSubmitBtn(e) {
     e.preventDefault();
-    if (
-      Object.values(courseAdminData).every((i) => i.length > 0) &&
-      Object.values(certiAdminData).every((i) => i.length > 0)
-    ) {
-      //call api
-      const response = await axios.post(
-        `${url}/addCourseCertificate`,
-        courseAdminData,
-        certiAdminData
-      );
-      console.log(response.data);
-    } else {
+    try {
+      if (
+        Object.values(courseAdminData).every((i) => i.length > 0) &&
+        Object.values(certiAdminData).every((i) => i.length > 0)
+      ) {
+        //course api
+        const courseResponse = await axios.post(
+          `${url}/courseImageData`,
+          courseFormData
+        );
+        //  certificate
+        const certificateResponse = await axios.post(
+          `${url}/addCertificateData`,
+          certiFormData
+        );
+        if (courseResponse.data.message && certificateResponse.data.message) {
+          console.log("success");
+        } else {
+          console.log("error");
+        }
+      } else {
+        toast.error("Please fill all the details to submit", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 
+  console.log(typeof cousreImg);
   return (
     <div className="gallery-container">
       <AdminNav />
@@ -182,6 +275,43 @@ const CourseCertificate = () => {
                     onChange={(e) => handleCourseData(e)}
                   />
                 </div>
+                {/* flex-col */}
+                {/* courseOldPrice: "", courseAcedemyName: "", courseDetails: "", */}
+                <div className="course-trend">
+                  <p>Course old price</p>
+                  <input
+                    type="text"
+                    placeholder="Status"
+                    name="courseOldPrice"
+                    id=""
+                    value={courseAdminData.courseOldPrice}
+                    onChange={(e) => handleCourseData(e)}
+                  />
+                </div>
+                {/* flex-col */}
+                <div className="course-trend">
+                  <p>Acedemy name</p>
+                  <input
+                    type="text"
+                    placeholder="Status"
+                    name="courseAcedemyName"
+                    id=""
+                    value={courseAdminData.courseAcedemyName}
+                    onChange={(e) => handleCourseData(e)}
+                  />
+                </div>
+                {/* flex-col */}
+                <div className="course-trend">
+                  <p>Course Details</p>
+                  <input
+                    type="text"
+                    placeholder="Status"
+                    name="courseDetails"
+                    id=""
+                    value={courseAdminData.courseDetails}
+                    onChange={(e) => handleCourseData(e)}
+                  />
+                </div>
               </div>
             </div>
             <div className="right-side-course-preview">
@@ -189,18 +319,35 @@ const CourseCertificate = () => {
               {/* flex */}
               <div className="right-prev-det">
                 <div className="right-course-preview">
-                  <div className="course-img-prev">
+                  <div
+                    className={
+                      certificateImg ? "course-img-prev" : "certiBorder"
+                    }
+                  >
+                    {cousreImg ? (
+                      <img
+                        className="prev-img-course-certificate"
+                        src={cousreImg ? URL.createObjectURL(cousreImg) : ""}
+                      />
+                    ) : (
+                      <img
+                        className="noPrevImgPlaceholder"
+                        src={assets.no_prev_image}
+                      />
+                    )}
+                  </div>
+                  {cousreImg ? (
                     <img
-                      className="prev-img-course-certificate"
-                      src={assets.course_img_2}
+                      onClick={() => {
+                        handleDeleteImg();
+                      }}
+                      className="courseCerti-del"
+                      src={assets.delete_logo}
                       alt=""
                     />
-                  </div>
-                  <img
-                    className="courseCerti-del"
-                    src={assets.delete_logo}
-                    alt=""
-                  />
+                  ) : (
+                    <p className="noImage">No Image</p>
+                  )}
                 </div>
                 {/* flex-col */}
                 <div className="course-details-prev">
@@ -246,6 +393,33 @@ const CourseCertificate = () => {
                     <p className="courseCerti-data">
                       {courseAdminData.courseStatus.length > 0
                         ? courseAdminData.courseStatus
+                        : "No Data available"}
+                    </p>
+                  </div>
+                  {/* flex-col */}
+                  <div className="course-trend-prev">
+                    <p className="prev-headings">Course old price :</p>
+                    <p className="courseCerti-data">
+                      {courseAdminData.courseOldPrice.length > 0
+                        ? courseAdminData.courseOldPrice
+                        : "No Data available"}
+                    </p>
+                  </div>
+                  {/* flex-col */}
+                  <div className="course-trend-prev">
+                    <p className="prev-headings">Acedemy Name :</p>
+                    <p className="courseCerti-data">
+                      {courseAdminData.courseAcedemyName.length > 0
+                        ? courseAdminData.courseAcedemyName
+                        : "No Data available"}
+                    </p>
+                  </div>
+                  {/* flex-col */}
+                  <div className="course-trend-prev">
+                    <p className="prev-headings">Course Details :</p>
+                    <p className="courseCerti-data">
+                      {courseAdminData.courseDetails.length > 0
+                        ? courseAdminData.courseDetails
                         : "No Data available"}
                     </p>
                   </div>
@@ -345,6 +519,43 @@ const CourseCertificate = () => {
                     onChange={(e) => handleCertiData(e)}
                   />
                 </div>
+                {/* flex-col */}
+                {/* certiOldPrice: "", certiDetails: "", certiAcedemyName: "", */}
+                <div className="course-trend">
+                  <p>Certificate old price</p>
+                  <input
+                    type="text"
+                    value={certiAdminData.certiOldPrice}
+                    placeholder="Status"
+                    name="certiOldPrice"
+                    id=""
+                    onChange={(e) => handleCertiData(e)}
+                  />
+                </div>
+                {/* flex-col */}
+                <div className="course-trend">
+                  <p>Acedemy Name</p>
+                  <input
+                    type="text"
+                    value={certiAdminData.certiAcedemyName}
+                    placeholder="Status"
+                    name="certiAcedemyName"
+                    id=""
+                    onChange={(e) => handleCertiData(e)}
+                  />
+                </div>
+                {/* flex-col */}
+                <div className="course-trend">
+                  <p>Certificate Details</p>
+                  <input
+                    type="text"
+                    value={certiAdminData.certiDetails}
+                    placeholder="Status"
+                    name="certiDetails"
+                    id=""
+                    onChange={(e) => handleCertiData(e)}
+                  />
+                </div>
               </div>
             </div>
             {/* hr------------- */}
@@ -353,18 +564,37 @@ const CourseCertificate = () => {
               {/* flex */}
               <div className="right-prev-det">
                 <div className="right-course-preview">
-                  <div className="course-img-prev">
+                  <div
+                    className={
+                      certificateImg ? "course-img-prev" : "certiBorder"
+                    }
+                  >
+                    {certificateImg ? (
+                      <img
+                        className="prev-img-course-certificate"
+                        src={
+                          certificateImg
+                            ? URL.createObjectURL(certificateImg)
+                            : ""
+                        }
+                      />
+                    ) : (
+                      <img
+                        className="noPrevImgPlaceholder"
+                        src={assets.no_prev_image}
+                      />
+                    )}
+                  </div>
+                  {certificateImg ? (
                     <img
-                      className="prev-img-course-certificate"
-                      src={assets.certification_img_2}
+                      className="Certi-del"
+                      onClick={() => handleCertiImgDelete()}
+                      src={assets.delete_logo}
                       alt=""
                     />
-                  </div>
-                  <img
-                    className="courseCerti-del"
-                    src={assets.delete_logo}
-                    alt=""
-                  />
+                  ) : (
+                    <p className="noImage">No Image</p>
+                  )}
                 </div>
                 {/* flex-col */}
                 <div className="course-details-prev">
@@ -413,6 +643,33 @@ const CourseCertificate = () => {
                         : "No Data available"}
                     </p>
                   </div>
+                  {/* flex-col */}
+                  <div className="course-trend-prev">
+                    <p className="prev-headings">Certificate old price :</p>
+                    <p className="courseCerti-data">
+                      {certiAdminData.certiOldPrice.length > 0
+                        ? certiAdminData.certiOldPrice
+                        : "No Data available"}
+                    </p>
+                  </div>
+                  {/* flex-col */}
+                  <div className="course-trend-prev">
+                    <p className="prev-headings">Acedemy Name :</p>
+                    <p className="courseCerti-data">
+                      {certiAdminData.certiAcedemyName.length > 0
+                        ? certiAdminData.certiAcedemyName
+                        : "No Data available"}
+                    </p>
+                  </div>
+                  {/* flex-col */}
+                  <div className="course-trend-prev">
+                    <p className="prev-headings">Certificate Details :</p>
+                    <p className="courseCerti-data">
+                      {certiAdminData.certiDetails.length > 0
+                        ? certiAdminData.certiDetails
+                        : "No Data available"}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -430,7 +687,7 @@ const CourseCertificate = () => {
           </button>
           <button
             className={"courseCerti-green"}
-            onClick={(e) => handleAdminSubmit(e)}
+            onClick={(e) => handleAdminSubmitBtn(e)}
           >
             Update
           </button>

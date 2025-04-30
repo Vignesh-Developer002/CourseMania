@@ -112,6 +112,7 @@ const ManageContact = () => {
     formData.append("phone", Number(contactSection.phone));
     formData.append("instaUrl", contactSection.instaUrl);
     formData.append("linkedInUrl", contactSection.linkedInUrl);
+    console.log(formData)
 
     // api call for posting the contact form data to the backend
     if (
