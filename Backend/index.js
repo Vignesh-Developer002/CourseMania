@@ -11,8 +11,8 @@ const app = express();
 dotenv.config();
 // to access the image
 app.use("/image", express.static("upload/images"));
-// app.use("/CourseImg", express.static("upload/image2"));
-// app.use("/certiImg", express.static("upload/image3"));
+app.use("/CourseImg", express.static("upload/image2"));
+app.use("/certiImg", express.static("upload/image3"));
 
 //storage
 const storage = multer.diskStorage({
@@ -34,7 +34,6 @@ const storage3 = multer.diskStorage({
   destination: "upload/images3/",
   filename: (req, file, cb) => cb(null, Date.now() + "-" + file.originalname),
 });
-
 
 // for gallery
 const upload = multer({

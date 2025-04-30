@@ -154,7 +154,7 @@ const CourseCertificate = () => {
           certiFormData
         );
         if (courseResponse.data.success && certificateResponse.data.success) {
-          toast.success('Data added successfully', {
+          toast.success("Data added successfully", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -164,9 +164,39 @@ const CourseCertificate = () => {
             progress: undefined,
             theme: "light",
             transition: Bounce,
-            });
+          });
+          setCourseAdminData({
+            courseName: "",
+            courseDuration: "",
+            coursePrice: "",
+            courseType: "",
+            courseStatus: "",
+            courseOldPrice: "",
+            courseAcedemyName: "",
+            courseDetails: "",
+          });
+          setCertiAdminData({
+            certiName: "",
+            certiDuration: "",
+            certiPrice: "",
+            certiType: "",
+            certiStatus: "",
+            certiOldPrice: "",
+            certiDetails: "",
+            certiAcedemyName: "",
+          });
         } else {
-          console.log("error");
+          toast.error("Data not updated", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+          });
         }
       } else {
         toast.error("Please fill all the details to submit", {
@@ -186,7 +216,6 @@ const CourseCertificate = () => {
     }
   }
 
-  
   return (
     <div className="gallery-container">
       <AdminNav />
