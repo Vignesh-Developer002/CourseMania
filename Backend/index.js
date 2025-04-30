@@ -11,8 +11,8 @@ const app = express();
 dotenv.config();
 // to access the image
 app.use("/image", express.static("upload/images"));
-// app.use("/courseImg", express.static("upload/CourseImg"));
-// app.use("/certiImg", express.static("upload/certiImg"));
+// app.use("/CourseImg", express.static("upload/image2"));
+// app.use("/certiImg", express.static("upload/image3"));
 
 //storage
 const storage = multer.diskStorage({
@@ -35,37 +35,13 @@ const storage3 = multer.diskStorage({
   filename: (req, file, cb) => cb(null, Date.now() + "-" + file.originalname),
 });
 
-// course image storage
-// const courseStorage = multer.diskStorage({
-//   destination: "./upload/CourseImg",
-//   filename: (req, file, cb) => {
-//     return cb(
-//       null,
-//       `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
-//     );
-//   },
-// });
-// certificate image storage
-// const certificateStorage = multer.diskStorage({
-//   destination: "./upload/certiImg",
-//   filename: (req, file, cb) => {
-//     return cb(
-//       null,
-//       `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
-//     );
-//   },
-// });
+
 // for gallery
 const upload = multer({
   storage: storage,
 });
 const upload2 = multer({ storage: storage2 });
 const upload3 = multer({ storage: storage3 });
-// for course image
-// const courseUpload = multer({ storage: courseStorage });
-// console.log(courseUpload);
-// for certificate imgae
-// const certificateUpload = multer({ storage: certificateStorage });
 
 //PORT CONFIGURATION
 const PORT = process.env.PORT || 4000;
@@ -439,19 +415,19 @@ app.post("/addCertificateData", upload3.single("certiImg"), (req, res) => {
   } = req.body;
   console.log(
     certiName,
-      `http://192.168.1.82:4000/certiImg/${filename}`,
-      certiStatus,
-      certiDuration,
-      certiOldPrice,
-      certiPrice,
-      5,
-      1200,
-      certiType,
-      certiDetails,
-      certiAcedemyName,
+    `http://192.168.1.82:4000/certiImg/${filename}`,
+    certiStatus,
+    certiDuration,
+    certiOldPrice,
+    certiPrice,
+    5,
+    1200,
+    certiType,
+    certiDetails,
+    certiAcedemyName
   );
   pool.query(
-    `insert into certificate(name,image,status,duration,old_price,new_price,ratings,total_purchases, course_type, details,acedemy_name) values(?,?,?,?,?,?,?,?,?,?,?) `,
+    `insert into certificate(name,image,status,duration,old_price,new_price,ratings,total_purchased, course_type, details,acedemy_name) values(?,?,?,?,?,?,?,?,?,?,?) `,
     [
       certiName,
       `http://192.168.1.82:4000/certiImg/${filename}`,

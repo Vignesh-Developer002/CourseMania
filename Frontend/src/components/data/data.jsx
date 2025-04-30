@@ -14,9 +14,15 @@ export function fetchUserData(url) {
           throw new Error("No data found :(");
         } else {
           const data = await response.json();
-          if (data.length === 6) {  // data .length === 20 
+          let courseDt = data.map((d) => d["star_rating"]);
+          const certiDt = data.map((d) => d["star_rating"]);
+
+          if (courseDt === true) {
+            // (data.length === 6)
             setUserData(data);
-          } else if (data.length === 7) { // data.length === 30
+          } else {
+            // (data.length === 7)
+            console.log(certiDt);
             setCertificateData(data);
           }
           setUserData(data);

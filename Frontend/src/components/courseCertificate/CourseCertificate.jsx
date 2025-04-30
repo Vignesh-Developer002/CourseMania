@@ -153,8 +153,18 @@ const CourseCertificate = () => {
           `${url}/addCertificateData`,
           certiFormData
         );
-        if (courseResponse.data.message && certificateResponse.data.message) {
-          console.log("success");
+        if (courseResponse.data.success && certificateResponse.data.success) {
+          toast.success('Data added successfully', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+            });
         } else {
           console.log("error");
         }
@@ -176,7 +186,7 @@ const CourseCertificate = () => {
     }
   }
 
-  console.log(typeof cousreImg);
+  
   return (
     <div className="gallery-container">
       <AdminNav />
