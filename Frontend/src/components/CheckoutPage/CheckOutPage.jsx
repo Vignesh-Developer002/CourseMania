@@ -23,7 +23,7 @@ const CheckOutPage = () => {
 
   const { cartItems, certiItem, getCertificateTotal, getTotal } =
     useContext(globalStore);
-  const url = "http://192.168.1.82:4000"
+  const url = "http://192.168.10.20:4000"
 
   const { courseData } = fetchUserData(`${url}/courses`);
   const { certificateData } = fetchUserData(

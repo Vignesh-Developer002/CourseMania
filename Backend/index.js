@@ -213,7 +213,7 @@ app.post("/contactdetail", upload.single("image"), (req, res) => {
     [
       name,
       description,
-      `http://192.168.1.82:4000/image/${filename}`,
+      `http://192.168.10.20:4000/image/${filename}`,
       companyName,
       address,
       phone,
@@ -229,7 +229,7 @@ app.post("/contactdetail", upload.single("image"), (req, res) => {
         return res.status(200).send({
           success: true,
           message: "Data inserted successfully",
-          img_url: `http://192.168.1.82:4000/image/${req.file.filename}`,
+          img_url: `http://192.168.10.20:4000/image/${req.file.filename}`,
         });
       }
     }
@@ -348,7 +348,7 @@ app.post("/imageDelete", (req, res) => {
 
 app.post("/courseImageData", upload2.single("CourseImg"), (req, res) => {
   const { filename } = req.file;
-  console.log(filename, `http://192.168.1.82:4000/courseImg/${filename}`);
+  console.log(filename, `http://192.168.10.20:4000/courseImg/${filename}`);
   const {
     courseName,
     courseStatus,
@@ -368,13 +368,13 @@ app.post("/courseImageData", upload2.single("CourseImg"), (req, res) => {
     courseOldPrice,
     courseAcedemyName,
     courseDetails,
-    `http://192.168.1.82:4000/courseImg/${filename}`
+    `http://192.168.10.20:4000/courseImg/${filename}`
   );
   pool.query(
     `insert into course (name, image,status, duration,old_price,new_price,course_type,ratings,total_purchased,star_rating,academy_name,details) values(?,?,?,?,?,?,?,?,?,?,?,?)`,
     [
       courseName,
-      `http://192.168.1.82:4000/courseImg/${filename}`,
+      `http://192.168.10.20:4000/courseImg/${filename}`,
       courseStatus,
       courseDuration,
       courseOldPrice,
@@ -401,7 +401,7 @@ app.post("/courseImageData", upload2.single("CourseImg"), (req, res) => {
 //api  for adding the new certificate details through admin pannel
 app.post("/addCertificateData", upload3.single("certiImg"), (req, res) => {
   const { filename } = req.file;
-  console.log(filename, `http://192.168.1.82:4000/certiImg/${filename}`);
+  console.log(filename, `http://192.168.10.20:4000/certiImg/${filename}`);
   const {
     certiName,
     certiDuration,
@@ -414,7 +414,7 @@ app.post("/addCertificateData", upload3.single("certiImg"), (req, res) => {
   } = req.body;
   console.log(
     certiName,
-    `http://192.168.1.82:4000/certiImg/${filename}`,
+    `http://192.168.10.20:4000/certiImg/${filename}`,
     certiStatus,
     certiDuration,
     certiOldPrice,
@@ -429,7 +429,7 @@ app.post("/addCertificateData", upload3.single("certiImg"), (req, res) => {
     `insert into certificate(name,image,status,duration,old_price,new_price,ratings,total_purchased, course_type, details,acedemy_name) values(?,?,?,?,?,?,?,?,?,?,?) `,
     [
       certiName,
-      `http://192.168.1.82:4000/certiImg/${filename}`,
+      `http://192.168.10.20:4000/certiImg/${filename}`,
       certiStatus,
       certiDuration,
       certiOldPrice,

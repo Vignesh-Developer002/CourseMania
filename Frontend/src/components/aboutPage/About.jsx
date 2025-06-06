@@ -13,7 +13,7 @@ const About = () => {
   const [aboutData, setAboutData] = useState([]);
   const navigate = useNavigate();
   // http://192.168.1.82:4000
-  const url= "http://192.168.1.82:4000";
+  const url= "http://192.168.10.20:4000";
   
   useEffect(() => {
     async function handleFetch() {

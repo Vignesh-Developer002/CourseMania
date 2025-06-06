@@ -27,7 +27,7 @@ const Gallery = () => {
   const [count, setCount] = useState(0);
   const [deletBtn, setDeleteBtn] = useState(false);
   const navigate = useNavigate();
-  const url = "http://192.168.1.82:4000";
+  const url = "http://192.168.10.20:4000";
   // function for handling the manage gallery name
   function handleGalleryName() {
     setSaveId(null);

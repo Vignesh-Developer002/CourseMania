@@ -17,7 +17,7 @@ const AdminLogin = () => {
   const [error, setError] = useState({});
   const [userNotFound, setUserNotFound] = useState(false);
   const [adminDt, setAdminDt] = useState([]);
-  const url = "http://192.168.1.82:4000"
+  const url = "http://192.168.10.20:4000"
 
   function handleNavigate() {
     navigate("/");

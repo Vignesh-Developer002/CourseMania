@@ -24,7 +24,7 @@ const ManageContact = () => {
     editImg,
     setEditImg,
   } = useContext(globalStore);
-  const url = "http://192.168.1.82:4000"
+  const url = "http://192.168.10.20:4000"
   const navigate = useNavigate();
   const [btns, setBtns] = useState("");
   // const [image, setIamge] = useState(false); // for upload the image
