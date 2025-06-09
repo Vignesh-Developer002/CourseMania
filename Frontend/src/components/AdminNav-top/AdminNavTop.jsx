@@ -10,7 +10,7 @@ const AdminNavTop = () => {
   const [adminName, setAdminName] = useState("");
   const [adminLoggedIn, setAdminLoggedIn] = useState(false); //show and hide the loggout option
   const [overlay, setOverlay] = useState(false);
-  const url = "http://192.168.10.20:4000";
+  const url = "http://localhost:4000";
   useEffect(() => {
     async function gettingUserName() {
       try {

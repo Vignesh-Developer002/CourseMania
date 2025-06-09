@@ -31,7 +31,7 @@ const CourseCertificate = () => {
   // details----need to add in the frontend
   // acedemy_name----need to add in the frontend
 
-  const url = "http://192.168.10.20:4000";
+  const url = "http://localhost:4000";
   const { cousreImg, setCourseImg, certificateImg, setCertificateImg } =
     useContext(globalStore);
   const [btnStatusLeft, setBtnLeftStatus] = useState(false);

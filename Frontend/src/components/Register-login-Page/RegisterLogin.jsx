@@ -74,7 +74,7 @@ const RegisterLogin = ({
           Object.keys(formError).length === 0
         ) {
           const res = await axios.post(
-            "http://192.168.10.20:4000/users",
+            "http://localhost:4000/users",
             userName
           );
           if (res.status == 200 && Object.keys(formError).length === 0) {
@@ -138,13 +138,13 @@ const RegisterLogin = ({
       // checking the login data and the database register data are same for login
       if (loginData.email && loginData.password) {
         const loginUser = await axios.post(
-          "http://192.168.10.20:4000/login",
+          "http://localhost:4000/login",
           loginData
         );
 
         // getting the user name from database for display the profile in navbar
         const getUserData = await axios.post(
-          "http://192.168.10.20:4000/userData",
+          "http://localhost:4000/userData",
           loginData
         );
 

@@ -5,7 +5,7 @@ import React from "react";
 export const globalStore = createContext(null);
 
 const StoreContext = ({ children }) => {
-  const url = "http://192.168.10.20:4000";
+  const url = "http://localhost:4000";
   // let courseUrl = "http://localhost:4000/courses";
   // let certificateUrl = "http://localhost:4000/Certification";
   const[cousreImg, setCourseImg]=useState(false)// for set the cpurse image added by admin in admin pannel
